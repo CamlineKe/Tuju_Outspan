@@ -6,6 +6,8 @@
 
 Each page below specifies exact background treatments, section layouts, component usage, and background texture rules. All values reference tokens from `design.md` and colors from `color-palette.md`.
 
+**Icon usage:** All UI icons are Lucide outline icons (per `design.md` section 9). WhatsApp CTAs render with the `MessageCircle` icon, navigation arrows with `ArrowRight`, and contact rows with `MapPin`, `Clock`, `Phone`, `Mail`, and `Globe`. Labels below are written without emoji; emojis are never used as UI icons.
+
 ---
 
 ## Page 1: Home (`/`)
@@ -23,10 +25,10 @@ The conversion engine. Every section pushes toward WhatsApp contact. Visual rhyt
 | **Position** | Fixed, top 0, z-index 100 |
 | **Height** | 64px |
 | **Border-bottom** | 1px solid Gray-200 |
-| **On scroll** | White + `backdrop-filter: blur(12px)`, shadow-sm |
-| **Logo** | TO mark (40×40px, Navy-900 bg, white text) + "TUJU OUTSPAN" text (Navy-900, 18px, weight 700) |
+| **On scroll** | White + `backdrop-filter: blur(12px)`, shadow-navy-sm |
+| **Logo** | TO mark (32×32px, Navy-900 bg, white text) + "TUJU OUTSPAN" text (Navy-900, 18px, weight 700) |
 | **Nav links** | Gray-600, 14px, weight 500. Gap 28px. Hover: Navy-900. Active: Navy-900 + 2px Orange-500 underline |
-| **CTA** | Primary Button (Small): "💬 WhatsApp" — Orange-500 bg, white text |
+| **CTA** | Primary Button (Small): "WhatsApp" (MessageCircle icon) — Orange-500 bg, white text |
 | **Mobile** | Hamburger icon (24px, Navy-900). Full-screen overlay menu. Slide from right, 300ms ease-out |
 
 **Background texture:** None. Pure white. Clean, unobtrusive.
@@ -55,7 +57,7 @@ This is the ONLY decorative background element on the entire site. Purpose: Crea
 - **Overline:** "YOUR HUSTLE. OUR TECH. MADE EASY." — Orange-400, 13px, weight 600, letter-spacing 2px, uppercase
 - **Headline:** "All Your Digital & Government Services — Handled Professionally" — White, Display size (48px→32px mobile), weight 700, max-width 700px, centered
 - **Subheadline:** "From KRA and HELB to design and printing. Fast, reliable, and affordable at Ikonge–Ekerenyo Stage." — Gray-400, Body-large (18px), max-width 560px, centered
-- **CTAs:** Primary Button "💬 Chat on WhatsApp" + Outline Button "Explore Services →" (white border, white text)
+- **CTAs:** Primary Button "Chat on WhatsApp" (MessageCircle icon) + Outline Button "Explore Services" (ArrowRight icon) (white border, white text)
 - **Trust bar:** 3 items horizontal, centered, gap 32px. Each: Orange-500 dot (6px) + text (Gray-400, 14px, weight 500). Items: "Fast Turnaround", "Trusted by Locals", "Open Daily Until Late"
 
 ---
@@ -82,9 +84,9 @@ This is the ONLY decorative background element on the entire site. Purpose: Crea
 - Icon container: 44×44px, Navy-50 bg, 10px radius, centered icon (24px, Navy-900)
 - Title: H4 (20px, 600), Navy-900, margin-top 16px
 - List: 3 items, Body-small (14px), Gray-600, Orange-500 bullet
-- Link: "View Details →" — Navy-700, 14px, weight 600. Arrow shifts right 4px on hover
+- Link: "View Details" (ArrowRight icon) — Navy-700, 14px, weight 600. Arrow shifts right 4px on hover
 
-**Hover effect:** Border → Navy-800, translateY(-4px), shadow-md. Transition 0.3s ease-out.
+**Hover effect:** Border → Navy-800, translateY(-4px), shadow-navy-md. Transition 0.3s ease-out.
 
 **Background texture:** None. White cards on white bg. Card borders create structure.
 
@@ -184,9 +186,9 @@ Z-index: 0
 | **Layout** | Flex, centered, gap 48px, wrap |
 
 **Items:**
-- 📍 **Ikonge–Ekerenyo Stage**, Chuka University — White (strong), Gray-400 (location)
-- ⏰ **Open Daily** Until Late
-- 📞 **0715 616 633**
+- **Ikonge–Ekerenyo Stage**, Chuka University (MapPin icon) — White (strong), Gray-400 (location)
+- **Open Daily** Until Late (Clock icon)
+- **0715 616 633** (Phone icon)
 
 Font: 14px, weight 500. Icons implicit (can use Lucide map-pin, clock, phone).
 
@@ -205,7 +207,7 @@ Font: 14px, weight 500. Icons implicit (can use Lucide map-pin, clock, phone).
 **Content:**
 - Headline: "Ready to Get Started?" — White, H1 (36px), weight 700
 - Subtext: "One WhatsApp message is all it takes." — White at 85% opacity, Body-large (17px)
-- CTA: Primary Button inverted — White bg, Navy-900 text, "💬 Chat on WhatsApp"
+- CTA: Primary Button inverted — White bg, Navy-900 text, "Chat on WhatsApp" (MessageCircle icon)
 
 **Background texture:** None. Solid Orange-500. The color itself is the statement. No patterns needed — the boldness of the orange creates impact.
 
@@ -230,9 +232,9 @@ Font: 14px, weight 500. Icons implicit (can use Lucide map-pin, clock, phone).
 - Links: Gray-400, 14px. Hover: White
 
 **Contact column:**
-- Phone: "📞 0715 616 633" — White (strong)
+- Phone: "0715 616 633" (Phone icon) — White (strong)
 - Email, Location, Hours: Gray-400
-- Social buttons: Navy-800 bg, White text, 8px radius. "💬 Group" and "📢 Channel"
+- Social buttons: Navy-800 bg, White text, 8px radius. "WhatsApp Group" (MessageCircle icon) and "WhatsApp Channel" (Megaphone icon)
 
 **Bottom bar:**
 - Border-top: 1px Navy-800
@@ -324,7 +326,7 @@ Values: Accessibility, Integrity, Speed, Community.
 | **Layout** | Centered, max-width 800px |
 
 **Content:**
-- Photo: 200×200px circle, border 4px White, shadow-md
+- Photo: 200×200px circle, border 4px White, shadow-navy-md
 - Name: H3 (24px, 700), Navy-900, centered
 - Role: Body (16px), Gray-600, centered
 - Bio: 2–3 sentences, Body (16px), Gray-600, centered, max-width 600px
@@ -362,7 +364,7 @@ Values: Accessibility, Integrity, Speed, Community.
 **Content:**
 - Title: "Want to Work with Us?" — H3, Navy-900
 - Subtext: "We're one message away." — Body, Gray-600
-- CTA: Primary Button "💬 Chat on WhatsApp"
+- CTA: Primary Button "Chat on WhatsApp" (MessageCircle icon)
 
 **Background texture:** None. Orange-50 is warm and inviting without being aggressive.
 
@@ -421,7 +423,7 @@ Clean directory. Gateway to 7 category pages. Search-first if implemented.
 
 **Card enhancement (vs Home):**
 - 4–5 service items listed (vs 3 on Home)
-- "View Details →" link more prominent
+- "View Details" link (ArrowRight icon) more prominent
 - Category icon slightly larger (28px)
 
 **Background texture:** None.
@@ -439,7 +441,7 @@ Clean directory. Gateway to 7 category pages. Search-first if implemented.
 **Content:**
 - Title: "Looking for Something Else?" — H4, Navy-900
 - Subtext: "We probably do it. Just ask." — Body, Gray-600
-- CTA: Primary Button "💬 Ask on WhatsApp"
+- CTA: Primary Button "Ask on WhatsApp" (MessageCircle icon)
 
 **Background texture:** None.
 
@@ -545,7 +547,7 @@ Same 3-step process as Home, but with category-specific copy.
 **Content:**
 - Title: "Transparent Pricing" — H4, Navy-900
 - Text: "Rates vary by service complexity. No hidden fees. Get an exact quote on WhatsApp." — Body, Gray-600
-- CTA: Primary Button "💬 Get a Quote"
+- CTA: Primary Button "Get a Quote" (MessageCircle icon)
 
 **Background texture:** None. Orange-50 signals "action" without being the CTA banner.
 
@@ -576,7 +578,7 @@ Same 3-step process as Home, but with category-specific copy.
 | **Padding** | 12px 24px |
 | **Border-top** | 1px Gray-200 |
 | **Shadow** | 0 -4px 12px rgba(10,31,68,0.08) |
-| **Content** | Full-width Primary Button "💬 Get Help on WhatsApp" |
+| **Content** | Full-width Primary Button "Get Help on WhatsApp" (MessageCircle icon) |
 
 Visible only on mobile (<768px). Desktop uses floating button + in-page CTAs.
 
@@ -662,7 +664,7 @@ Transparency builds trust. Framework pricing with clear "ask for quote" CTA.
 - Icon: Tag (32px, Orange-500)
 - Title: "Special Rates Available" — H3, Navy-900
 - Text: "Students get discounted rates. Bulk orders enjoy volume discounts. Mention it when you contact us." — Body, Gray-600
-- CTA: Outline Button "💬 Ask About Discounts"
+- CTA: Outline Button "Ask About Discounts" (MessageCircle icon)
 
 **Background texture:** None.
 
@@ -729,7 +731,7 @@ The closer. WhatsApp-first. All channels clearly presented.
 - Title: "Chat with Us on WhatsApp" — H3, Navy-900
 - Number: "0715 616 633" — H2 (28px, 700), Navy-900
 - Subtext: "Fastest way to get help. Usually responds within minutes." — Body-small, Gray-600
-- CTA: Full-width button, WhatsApp green bg, White text, "💬 Start Chat"
+- CTA: Full-width button, WhatsApp green bg, White text, "Start Chat" (MessageCircle icon)
 
 **Background texture:** None.
 
@@ -773,11 +775,11 @@ Cards:
 - Overline: "GET IN TOUCH"
 - Title: "Other Ways to Reach Us" — H3, Navy-900
 - Contact items (stacked, gap 20px):
-  - 📞 Phone: "0715 616 633" — H5, Navy-900. Label: "Call or WhatsApp" — Caption, Gray-400
-  - 📧 Email: "rafaeeltuju902@gmail.com" — H5, Navy-900
-  - 📍 Location: "Ikonge–Ekerenyo Stage, Chuka University" — H5, Navy-900
-  - ⏰ Hours: "Open Daily Until Late" — H5, Navy-900
-  - 🌐 Reach: "Online services available countrywide" — H5, Navy-900
+  - Phone: "0715 616 633" (Phone icon) — H5, Navy-900. Label: "Call or WhatsApp" — Caption, Gray-400
+  - Email: "rafaeeltuju902@gmail.com" (Mail icon) — H5, Navy-900
+  - Location: "Ikonge–Ekerenyo Stage, Chuka University" (MapPin icon) — H5, Navy-900
+  - Hours: "Open Daily Until Late" (Clock icon) — H5, Navy-900
+  - Reach: "Online services available countrywide" (Globe icon) — H5, Navy-900
 
 **Map column:**
 - Google Maps embed
@@ -849,7 +851,7 @@ SEO content hub. Clean, readable, content-focused.
 - Title: H3 (24px, 700), Navy-900
 - Excerpt: Body (16px), Gray-600, 2 lines max
 - Meta: Date + read time — Caption, Gray-400
-- CTA: "Read More →" — Navy-700, 14px, weight 600
+- CTA: "Read More" (ArrowRight icon) — Navy-700, 14px, weight 600
 
 **Background texture:** None.
 
@@ -894,7 +896,7 @@ SEO content hub. Clean, readable, content-focused.
 - Title: H4 (18px, 600), Navy-900, 2 lines max
 - Excerpt: Body-small (14px), Gray-600, 3 lines max
 - Meta: Date + read time — Caption, Gray-400
-- Hover: translateY(-4px), shadow-md, border Navy-800
+- Hover: translateY(-4px), shadow-navy-md, border Navy-800
 
 **Background texture:** None.
 
@@ -928,7 +930,7 @@ SEO content hub. Clean, readable, content-focused.
 **Content:**
 - Title: "Get Updates on WhatsApp" — H4, Navy-900
 - Subtext: "Join our channel for the latest tips and service updates." — Body, Gray-600
-- CTA: Outline Button "📢 Join WhatsApp Channel"
+- CTA: Outline Button "Join WhatsApp Channel" (Megaphone icon)
 
 **Background texture:** None.
 
@@ -993,7 +995,7 @@ Long-form reading. Content is king. Minimal UI chrome.
 - Border-radius: 10px
 - Padding: 20px 24px
 - Text: "Need help with this? Chat with us on WhatsApp." — Body, Navy-900
-- CTA: Small Primary Button "💬 Chat Now"
+- CTA: Small Primary Button "Chat Now" (MessageCircle icon)
 
 **Background texture:** None.
 
@@ -1011,7 +1013,7 @@ Long-form reading. Content is king. Minimal UI chrome.
 - Avatar: 64×64px circle, Navy-50 bg with "TO" text
 - Name: "Tuju Outspan Team" — H5, Navy-900
 - Bio: "Your trusted cyber center in Chuka. Fast, reliable, affordable." — Body-small, Gray-600
-- CTA: "💬 Ask a Question" — Text link, Navy-600
+- CTA: "Ask a Question" (MessageCircle icon) — Text link, Navy-600
 
 **Background texture:** None.
 

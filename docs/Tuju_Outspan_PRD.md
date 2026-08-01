@@ -541,80 +541,9 @@ WhatsApp is the primary conversion channel. It must be omnipresent but not annoy
 
 ## 10. Component Architecture (Next.js)
 
-```
-app/
-├── page.tsx                    # Home
-├── layout.tsx                  # Root layout (Navbar, Footer, WhatsApp Float)
-├── globals.css                 # Global styles, CSS variables
-├── about/
-│   └── page.tsx
-├── services/
-│   ├── page.tsx                # Services Hub
-│   ├── government/
-│   │   └── page.tsx
-│   ├── education/
-│   │   └── page.tsx
-│   ├── health/
-│   │   └── page.tsx
-│   ├── documents/
-│   │   └── page.tsx
-│   ├── design-branding/
-│   │   └── page.tsx
-│   ├── computer-it/
-│   │   └── page.tsx
-│   └── online-career/
-│       └── page.tsx
-├── pricing/
-│   └── page.tsx
-├── contact/
-│   └── page.tsx
-├── blog/
-│   ├── page.tsx                # Blog listing
-│   └── [slug]/
-│       └── page.tsx            # Individual blog post
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   ├── Footer.tsx
-│   │   ├── WhatsAppFloat.tsx
-│   │   └── Container.tsx
-│   ├── ui/
-│   │   ├── Button.tsx
-│   │   ├── ServiceCard.tsx
-│   │   ├── SectionHeader.tsx
-│   │   ├── TestimonialCard.tsx
-│   │   ├── PricingCard.tsx
-│   │   ├── BlogCard.tsx
-│   │   └── ProcessStep.tsx
-│   ├── sections/
-│   │   ├── Hero.tsx
-│   │   ├── ServicesGrid.tsx
-│   │   ├── WhyChooseUs.tsx
-│   │   ├── ProcessSteps.tsx
-│   │   ├── Testimonials.tsx
-│   │   ├── CTABanner.tsx
-│   │   ├── PricingTable.tsx
-│   │   ├── ContactInfo.tsx
-│   │   └── RelatedServices.tsx
-│   └── templates/
-│       └── ServiceCategoryTemplate.tsx
-├── lib/
-│   ├── services-data.ts        # All service data
-│   ├── blog-data.ts            # Blog posts data
-│   └── utils.ts
-└── public/
-    ├── images/
-    │   ├── logo.png
-    │   ├── logo-white.png
-    │   ├── hero-bg.jpg
-    │   ├── about-photo.jpg
-    │   ├── portfolio/
-    │   └── blog/
-    └── favicon.ico
-```
+The canonical project structure, component tree, and data modules are maintained in `architecture.md` (section 5). This section is intentionally not duplicated here; update `architecture.md` and the owning design documents when the structure changes.
 
 ---
-
 ## 11. Success Metrics
 
 | Metric | Target |

@@ -11,6 +11,7 @@
 | 4 | Unified Design System | design.md | ✅ Complete |
 | 5 | Per-Page Design Specs | page-designs.md | ✅ Complete |
 | 6 | Tech Stack & Dependencies | tech-stack.md | ✅ Complete |
+| 7 | Architecture Guide | architecture.md | ✅ Complete |
 
 ---
 
@@ -106,11 +107,11 @@
 
 Honestly? **Very little.** Here's what I'd flag:
 
-1. **Sitemap / XML generation** — Not documented. Next.js static export doesn't auto-generate sitemap.xml. You'll want to add `next-sitemap` or manually create one for SEO.
+1. **Sitemap / XML generation** - Decision recorded in `architecture.md` (section 9.1): generate `sitemap.xml` post-build, since Next.js static export does not auto-generate it.
 
-2. **404 Page** — Not designed. Should have a custom `not-found.tsx` with a friendly message and link back home.
+2. **404 Page** - Now designed. Full spec in `404-and-skeletons.md`; build it as `app/not-found.tsx`.
 
-3. **Loading states** — Not documented. Each page should have a `loading.tsx` skeleton while content loads.
+3. **Loading states** - Now designed. Specs in `404-and-skeletons.md`; file layout in `architecture.md` (section 5).
 
 4. **Open Graph images** — Mentioned in design.md but no actual OG image designed. Need a 1200×630px branded image.
 
@@ -120,7 +121,7 @@ Honestly? **Very little.** Here's what I'd flag:
 
 7. **Progressive Web App (PWA)** — Not in scope. Could add later for "install to home screen" on mobile.
 
-8. **Structured data (JSON-LD)** — Mentioned in design.md but no actual schemas written. Need LocalBusiness, Service, FAQ schemas.
+8. **Structured data (JSON-LD)** - Now specified. Schema list and builder responsibilities in `architecture.md` (sections 7.3 and 9.1).
 
 9. **Image optimization strategy** — Static export means no Next.js Image optimization. Need to manually optimize images before adding to `/public`.
 
@@ -129,6 +130,8 @@ Honestly? **Very little.** Here's what I'd flag:
 ---
 
 ## 📋 RECOMMENDED NEXT STEPS (In Order)
+
+Execution order for the technical steps (7-11) is defined phase by phase in `docs/architecture.md` section 8 (Build Order).
 
 | Step | Action | Priority |
 |------|--------|----------|
@@ -156,6 +159,7 @@ You haven't missed anything **critical**. The foundation is solid:
 - ✅ Color palette extracted from logo
 - ✅ WhatsApp integration strategy clear
 - ✅ Content gaps identified
+- ✅ Architecture guide connects all docs (architecture.md)
 
 The gaps are **content and assets** (photos, testimonials, blog posts) — not structural. The technical foundation is complete and ready to build.
 

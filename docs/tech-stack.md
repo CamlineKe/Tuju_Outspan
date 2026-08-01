@@ -33,7 +33,7 @@
 
 ### Tailwind v4 Configuration Notes
 
-Tailwind v4 uses CSS-based configuration (`@theme` directive in CSS) instead of `tailwind.config.js`. The color palette from `color-palette.md` will be defined in `globals.css` using CSS custom properties and the `@theme` block.
+Tailwind v4 uses CSS-based configuration (`@theme` directive in CSS) instead of `tailwind.config.js`. The color palette from `color-palette.md` will be defined in `globals.css` using CSS custom properties and the `@theme` block. `color-palette.md` remains the canonical value source; the `@theme` block below is the machine-facing rendering of those values.
 
 ```css
 /* globals.css — Tailwind v4 theme configuration */
@@ -502,10 +502,14 @@ tuju-outspan-website/
 ├── tsconfig.json
 ├── vitest.config.ts
 └── docs/                           # Project documentation
-    ├── PRD.md
+    ├── Tuju_Outspan_PRD.md
+    ├── architecture.md
     ├── color-palette.md
+    ├── deliverables-checklist.md
     ├── design.md
-    └── page-designs.md
+    ├── page-designs.md
+    ├── 404-and-skeletons.md
+    └── tech-stack.md
 ```
 
 ---
@@ -530,12 +534,14 @@ export default nextConfig;
 ```
 
 **Note:** Using `output: 'export'` for static site generation. This means:
-- No API routes (form submissions handled via external services or mailto:)
+- No API routes (form submissions handled client-side; see `architecture.md` section 7.4)
 - No server-side rendering
 - All pages pre-rendered at build time
 - Perfect for Vercel static hosting
 
 If you later need server features (API routes, dynamic rendering), change to `output: 'standalone'`.
+
+**Preview:** `next start` and `pnpm start` require `output: 'standalone'` and are invalid with static export. Preview the build with `npx serve dist` after `pnpm build`, or with `vercel dev` during development.
 
 ---
 

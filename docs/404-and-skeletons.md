@@ -53,7 +53,7 @@ Friendly, on-brand, converts the lost visitor back to a useful path. Never a dea
 - Icon: Lucide icon (24px, Navy-900) — Home, Briefcase, Phone, FileText
 - Title: H5 (18px, 600), Navy-900
 - Description: Body-small (14px), Gray-600
-- Link: Full card is clickable. Hover: border Navy-800, shadow-md, translateY(-2px)
+- Link: Full card is clickable. Hover: border Navy-800, shadow-navy-md, translateY(-2px)
 
 **Links:**
 1. 🏠 **Home** — "Back to our main page"

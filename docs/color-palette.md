@@ -201,11 +201,10 @@ Every page and section must follow this ratio:
   --info-light: #DBEAFE;
 
   /* Shadows (derived from navy-900) */
-  --shadow-sm: 0 1px 2px rgba(10, 31, 68, 0.05);
-  --shadow-md: 0 4px 6px rgba(10, 31, 68, 0.07);
-  --shadow-lg: 0 10px 15px rgba(10, 31, 68, 0.1);
-  --shadow-xl: 0 20px 25px rgba(10, 31, 68, 0.12);
-  --shadow-orange: 0 4px 12px rgba(242, 101, 34, 0.15);
+  --shadow-navy-sm: 0 1px 3px rgba(10, 31, 68, 0.08);
+  --shadow-navy-md: 0 4px 12px rgba(10, 31, 68, 0.1);
+  --shadow-navy-lg: 0 10px 24px rgba(10, 31, 68, 0.12);
+  --shadow-orange: 0 4px 16px rgba(242, 101, 34, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -216,73 +215,9 @@ Every page and section must follow this ratio:
 
 ---
 
-## Tailwind CSS Config Snippet
+## Tailwind Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        navy: {
-          50: '#E8EEF7',
-          100: '#D4DDF0',
-          600: '#1A4894',
-          700: '#143874',
-          800: '#0F2B5E',
-          900: '#0A1F44',
-        },
-        orange: {
-          50: '#FEF0E8',
-          100: '#FCE5D8',
-          400: '#F5844A',
-          500: '#F26522',
-          600: '#D4551A',
-        },
-        gray: {
-          50: '#F8F9FA',
-          100: '#F1F3F5',
-          200: '#E4E7EB',
-          300: '#CFD5DD',
-          400: '#9AA5B1',
-          500: '#6B7B8C',
-          600: '#4A5568',
-          700: '#2D3748',
-          800: '#1A202C',
-          900: '#0F1419',
-        },
-        whatsapp: {
-          DEFAULT: '#25D366',
-          dark: '#128C7E',
-        },
-        success: {
-          DEFAULT: '#16A34A',
-          light: '#DCFCE7',
-        },
-        warning: {
-          DEFAULT: '#EAB308',
-          light: '#FEF9C3',
-        },
-        error: {
-          DEFAULT: '#DC2626',
-          light: '#FEE2E2',
-        },
-        info: {
-          DEFAULT: '#2563EB',
-          light: '#DBEAFE',
-        },
-      },
-      boxShadow: {
-        'navy-sm': '0 1px 2px rgba(10, 31, 68, 0.05)',
-        'navy-md': '0 4px 6px rgba(10, 31, 68, 0.07)',
-        'navy-lg': '0 10px 15px rgba(10, 31, 68, 0.1)',
-        'navy-xl': '0 20px 25px rgba(10, 31, 68, 0.12)',
-        'orange': '0 4px 12px rgba(242, 101, 34, 0.15)',
-      },
-    },
-  },
-};
-```
+The machine-facing Tailwind v4 theme is defined in `tech-stack.md` (section 2) as an `@theme` block applied in `app/globals.css`. The CSS custom properties above are the canonical value source; the `@theme` block is generated from them. Tailwind v4 uses CSS-based configuration, so there is no `tailwind.config.js` file.
 
 ---
 
