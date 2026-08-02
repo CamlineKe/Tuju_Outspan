@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cn } from '@/app/lib/utils/cn';
 
@@ -9,13 +9,22 @@ const defaultClasses =
 const errorClasses =
   'border-2 border-error focus:border-error focus:outline-none focus:ring-4 focus:ring-error-light';
 
-interface InputProps extends ComponentPropsWithoutRef<'input'> {
+interface InputProps extends ComponentProps<'input'> {
   label?: string;
   error?: string;
   hint?: string;
 }
 
-export default function Input({ label, error, hint, className, id, name, ...props }: InputProps) {
+export default function Input({
+  label,
+  error,
+  hint,
+  className,
+  id,
+  name,
+  ref,
+  ...props
+}: InputProps) {
   const inputId = id ?? name;
   return (
     <div className="w-full">
@@ -25,6 +34,7 @@ export default function Input({ label, error, hint, className, id, name, ...prop
         </label>
       )}
       <input
+        ref={ref}
         id={inputId}
         name={name}
         aria-invalid={error ? true : undefined}

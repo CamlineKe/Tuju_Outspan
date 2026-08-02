@@ -96,6 +96,15 @@ export function faqJsonLd(faqs: { question: string; answer: string }[]) {
   };
 }
 
+export function contactPageJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Tuju Outspan Cyber Center',
+    url: absolutePageUrl('/contact'),
+  };
+}
+
 export function blogPostingJsonLd(post: {
   title: string;
   description: string;
