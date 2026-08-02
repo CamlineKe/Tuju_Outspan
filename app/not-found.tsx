@@ -1,4 +1,4 @@
-import { Briefcase, FileText, Home, Phone, type LucideIcon } from 'lucide-react';
+import { Briefcase, FileText, House, Phone, type LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import Button from '@/app/components/ui/Button';
@@ -12,7 +12,7 @@ interface QuickLink {
 }
 
 const QUICK_LINKS: QuickLink[] = [
-  { href: '/', title: 'Home', description: 'Back to our main page', icon: Home },
+  { href: '/', title: 'Home', description: 'Back to our main page', icon: House },
   {
     href: '/services',
     title: 'Services',
