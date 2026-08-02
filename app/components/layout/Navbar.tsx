@@ -1,0 +1,147 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { AnimatePresence, motion } from 'framer-motion';
+import { Menu, MessageCircle, X } from 'lucide-react';
+
+import { cn } from '@/app/lib/utils/cn';
+import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+
+const NAV_LINKS = [
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+
+  return (
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-[100] h-16 border-b border-gray-200 bg-white transition-all duration-300',
+        scrolled && 'bg-white/95 shadow-navy-sm backdrop-blur-md'
+      )}
+    >
+      <nav
+        aria-label="Main navigation"
+        className="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6"
+      >
+        <Link href="/" className="flex items-center gap-2">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-navy-900 text-sm font-bold text-white">
+            TO
+          </span>
+          <span className="text-lg font-bold tracking-tight text-navy-900">TUJU OUTSPAN</span>
+        </Link>
+
+        <ul className="hidden items-center gap-7 lg:flex">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={cn(
+                  'relative py-1 text-sm font-medium text-gray-600 transition-colors hover:text-navy-900',
+                  isActive(link.href) &&
+                    'text-navy-900 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-orange-500'
+                )}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-3">
+          <Link
+            href={buildGeneralWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-2 rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:inline-flex"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            WhatsApp
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+            className="inline-flex h-11 w-11 items-center justify-center text-navy-900 lg:hidden"
+          >
+            <Menu className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="fixed inset-0 z-[110] flex flex-col bg-white lg:hidden"
+          >
+            <div className="flex h-16 items-center justify-between px-6">
+              <span className="text-lg font-bold text-navy-900">TUJU OUTSPAN</span>
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+                className="inline-flex h-11 w-11 items-center justify-center text-navy-900"
+              >
+                <X className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <ul className="flex flex-1 flex-col items-center justify-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      'text-3xl font-semibold text-navy-900',
+                      isActive(link.href) && 'text-orange-500'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="p-6">
+              <Link
+                href={buildGeneralWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3.5 font-semibold text-white transition-colors hover:bg-orange-600"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                Chat on WhatsApp
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

@@ -389,7 +389,13 @@ afterEach(() => {
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.10.0",
+  "pnpm": {
+    "overrides": {
+      "motion-dom": "12.9.0",
+      "motion-utils": "12.8.3"
+    }
+  }
 }
 ```
 
@@ -721,5 +727,7 @@ All versions are **pinned exactly** (no `^` or `~` in package.json). This preven
 4. Use `pnpm update --interactive` to review changes
 
 ---
+
+**Transitive pins:** `framer-motion` depends on `motion-dom` and `motion-utils` with caret ranges. Newer `motion-dom` releases dropped exports that `framer-motion@12.9.0` requires, so these are pinned via `pnpm.overrides` (`motion-dom@12.9.0`, `motion-utils@12.8.3`). Do not change these without verifying the full test suite.
 
 *This stack is finalized. No additional packages without justification. Every dependency serves a specific, non-overlapping purpose.*
