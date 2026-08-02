@@ -12,6 +12,8 @@
 | 5 | Per-Page Design Specs | page-designs.md | ✅ Complete |
 | 6 | Tech Stack & Dependencies | tech-stack.md | ✅ Complete |
 | 7 | Architecture Guide | architecture.md | ✅ Complete |
+| 8 | Development Phases | development-phases.md | ✅ Complete |
+| 9 | Project Structure and Asset Map | project-structure.md | ✅ Complete |
 
 ---
 

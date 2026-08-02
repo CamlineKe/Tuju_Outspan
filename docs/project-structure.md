@@ -1,0 +1,311 @@
+# Tuju Outspan Cyber Center: Project Structure and Asset Map
+
+> **Version:** 1.0
+> **Date:** August 2026
+> **Status:** Approved
+> **Role:** The authoritative map of every folder and file, plus asset storage and image format rules. The execution plan is `development-phases.md`; the index of decisions is `architecture.md`.
+
+---
+
+## 1. Canonical File Tree
+
+This tree is the single source of truth for the project layout. If a file is not listed here, it does not belong in the repository.
+
+```
+tuju-outspan-website/
+├── .env.example
+├── .env.local (gitignored)
+├── .gitignore
+├── .prettierrc
+├── .vscode/
+│   └── settings.json
+├── __tests__/
+│   ├── setup.ts
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── sections/
+│   │   └── ui/
+│   ├── lib/
+│   └── pages/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── not-found.tsx
+│   ├── page.tsx
+│   ├── about/
+│   │   └── page.tsx
+│   ├── services/
+│   │   ├── page.tsx
+│   │   ├── loading.tsx
+│   │   ├── government/page.tsx
+│   │   ├── education/page.tsx
+│   │   ├── health/page.tsx
+│   │   ├── documents/page.tsx
+│   │   ├── design-branding/page.tsx
+│   │   ├── computer-it/page.tsx
+│   │   └── online-career/page.tsx
+│   ├── pricing/
+│   │   ├── page.tsx
+│   │   └── loading.tsx
+│   ├── contact/
+│   │   ├── page.tsx
+│   │   └── loading.tsx
+│   ├── blog/
+│   │   ├── page.tsx
+│   │   ├── loading.tsx
+│   │   └── [slug]/
+│   │       ├── page.tsx
+│   │       └── loading.tsx
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Container.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   └── WhatsAppFloat.tsx
+│   │   ├── sections/
+│   │   │   ├── CTABanner.tsx
+│   │   │   ├── ContactInfo.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── LocationStrip.tsx
+│   │   │   ├── PricingTable.tsx
+│   │   │   ├── ProcessSteps.tsx
+│   │   │   ├── RelatedServices.tsx
+│   │   │   ├── ServiceBreakdown.tsx
+│   │   │   ├── ServicesGrid.tsx
+│   │   │   ├── Testimonials.tsx
+│   │   │   └── WhyChooseUs.tsx
+│   │   ├── templates/
+│   │   │   └── ServiceCategoryTemplate.tsx
+│   │   └── ui/
+│   │       ├── BlogCard.tsx
+│   │       ├── Button.tsx
+│   │       ├── FAQItem.tsx
+│   │       ├── Input.tsx
+│   │       ├── PricingCard.tsx
+│   │       ├── ProcessStep.tsx
+│   │       ├── SectionHeader.tsx
+│   │       ├── ServiceCard.tsx
+│   │       ├── Skeleton.tsx
+│   │       ├── SkeletonCard.tsx
+│   │       └── TestimonialCard.tsx
+│   └── lib/
+│       ├── data/
+│       │   ├── blog.ts
+│       │   ├── pricing.ts
+│       │   ├── services.ts
+│       │   └── testimonials.ts
+│       ├── schemas/
+│       │   └── contact.ts
+│       └── utils/
+│           ├── cn.ts
+│           ├── seo.ts
+│           └── whatsapp.ts
+├── docs/
+│   ├── 404-and-skeletons.md
+│   ├── architecture.md
+│   ├── color-palette.md
+│   ├── deliverables-checklist.md
+│   ├── design.md
+│   ├── development-phases.md
+│   ├── page-designs.md
+│   ├── project-structure.md
+│   ├── tech-stack.md
+│   └── Tuju_Outspan_PRD.md
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.mjs
+├── public/
+│   ├── apple-touch-icon.png
+│   ├── favicon.ico
+│   ├── icon-192.png
+│   ├── icon-512.png
+│   ├── robots.txt
+│   ├── sitemap.xml (generated post-build)
+│   └── images/
+│       ├── about/
+│       ├── blog/
+│       ├── logo/
+│       │   ├── logo.svg
+│       │   └── logo-white.svg
+│       ├── og/
+│       │   └── og-default.jpg
+│       └── portfolio/
+├── tsconfig.json
+└── vitest.config.ts
+```
+
+---
+
+## 2. Folder Map
+
+### 2.1 `app/` (Next.js App Router)
+
+| Folder or file | Purpose |
+|---|---|
+| `globals.css` | Tailwind v4 `@theme`, tokens, base styles, focus ring, skip link, reduced motion |
+| `layout.tsx` | Root layout: fonts, metadata base, Navbar, Footer, WhatsAppFloat |
+| `loading.tsx` | Global skeleton mirroring the Home page |
+| `not-found.tsx` | 404 page per `404-and-skeletons.md` |
+| `page.tsx` | Home page |
+| `about/`, `pricing/`, `contact/` | Static pages, each with its own `loading.tsx` |
+| `services/` | Hub plus 7 static category routes driven by `ServiceCategoryTemplate` |
+| `blog/`, `blog/[slug]/` | Blog listing and post pages; `[slug]` uses `generateStaticParams` |
+
+### 2.2 `app/components/`
+
+| Folder | Purpose | Contents |
+|---|---|---|
+| `layout/` | Persistent chrome | Container, Navbar, Footer, WhatsAppFloat |
+| `sections/` | Page-level building blocks | Hero, ServicesGrid, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo |
+| `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 7 service pages) |
+| `ui/` | Small reusable primitives | Button, cards, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
+
+### 2.3 `app/lib/`
+
+| Folder | Purpose |
+|---|---|
+| `data/` | Typed content modules: services, pricing, testimonials, blog. The only content source for pages |
+| `schemas/` | Zod validation, currently the contact form |
+| `utils/` | Shared helpers: `cn.ts` (class merging), `whatsapp.ts` (link builder), `seo.ts` (metadata and JSON-LD) |
+
+### 2.4 `__tests__/`
+
+Mirrors the app structure: `components/` (layout, sections, ui), `lib/`, `pages/`. `setup.ts` configures Testing Library for Vitest.
+
+### 2.5 `public/`
+
+All static assets served at the site root. See section 4 for storage and format rules.
+
+### 2.6 `docs/`
+
+The documentation set. Each file owns one topic; `architecture.md` is the index.
+
+### 2.7 Root config files
+
+| File | Purpose |
+|---|---|
+| `next.config.ts` | Static export, `distDir: 'dist'`, unoptimized images, trailing slash |
+| `tsconfig.json` | Strict TypeScript, `@/*` alias |
+| `postcss.config.mjs` | Tailwind v4 PostCSS plugin |
+| `eslint.config.mjs` | ESLint flat config |
+| `.prettierrc` | Prettier with Tailwind and import sorting |
+| `vitest.config.ts` | jsdom test environment |
+| `.env.example`, `.env.local` | Public environment variables |
+
+---
+
+## 3. File Responsibilities
+
+### 3.1 Data modules
+
+| File | Exports | Consumers |
+|---|---|---|
+| `lib/data/services.ts` | `ServiceCategory` type, `serviceCategories` array (7) | ServicesGrid, ServiceCategoryTemplate, RelatedServices, pricing filters |
+| `lib/data/pricing.ts` | Pricing card data (7 cards) | PricingTable, PricingCard |
+| `lib/data/testimonials.ts` | Testimonial array (3 placeholders) | Testimonials section |
+| `lib/data/blog.ts` | Post type and posts array | Blog listing, blog post pages, `generateStaticParams` |
+
+### 3.2 Utilities and schema
+
+| File | Responsibility |
+|---|---|
+| `lib/utils/cn.ts` | `clsx` + `tailwind-merge` class merge |
+| `lib/utils/whatsapp.ts` | `wa.me` link builder with pre-filled text per service |
+| `lib/utils/seo.ts` | Title, description, Open Graph, JSON-LD builders |
+| `lib/schemas/contact.ts` | Zod schema: name, phone, service, message |
+
+### 3.3 Layout and UI
+
+| Component | Responsibility |
+|---|---|
+| `layout/Navbar.tsx` | Fixed nav, scroll state, active links, mobile menu |
+| `layout/Footer.tsx` | 4-column footer with quick links, services, contact, social buttons |
+| `layout/WhatsAppFloat.tsx` | Floating WhatsApp button, one-time pulse |
+| `layout/Container.tsx` | Max-width wrapper (1200px, 24px padding) |
+| `ui/Button.tsx` | All button variants and sizes |
+| `ui/ServiceCard.tsx` | Service category card with icon, list, link |
+| `ui/TestimonialCard.tsx`, `ui/PricingCard.tsx`, `ui/BlogCard.tsx` | Specified card variants |
+| `ui/SectionHeader.tsx` | Overline + title + description pattern |
+| `ui/ProcessStep.tsx` | Numbered step with connecting line |
+| `ui/FAQItem.tsx` | Single-open accordion |
+| `ui/Input.tsx` | Input, textarea, select, checkbox states |
+| `ui/Skeleton.tsx`, `ui/SkeletonCard.tsx` | Loading placeholders per skeleton spec |
+| `templates/ServiceCategoryTemplate.tsx` | Composition for all 7 service pages |
+
+---
+
+## 4. Asset Storage and Formats
+
+### 4.1 Where assets live
+
+```
+public/
+├── favicon.ico               # 16x16 and 32x32
+├── apple-touch-icon.png      # 180x180
+├── icon-192.png              # PWA manifest
+├── icon-512.png              # PWA manifest
+├── robots.txt
+├── sitemap.xml               # generated post-build
+└── images/
+    ├── logo/
+    │   ├── logo.svg          # master, light backgrounds
+    │   └── logo-white.svg    # master, dark backgrounds
+    ├── about/                # founder and space photos
+    ├── portfolio/            # design and branding work
+    ├── blog/                 # blog post covers
+    └── og/                   # social sharing images
+```
+
+### 4.2 Image format matrix
+
+| Asset type | Format | Notes |
+|---|---|---|
+| Logo masters | SVG | Vector, crisp at any size, single source of truth |
+| Logo-derived icons | PNG | `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` |
+| Favicon | ICO | `favicon.ico` with 16x16 and 32x32 |
+| Photos (about, portfolio, blog) | WebP | Best quality-to-size ratio, supported by all modern browsers |
+| Open Graph image | JPG | `og-default.jpg` at 1200x630; consumed by external crawlers, so use the most compatible format |
+
+There is no hero background image. The approved hero is solid navy-900 with the radial glow; do not add `hero-bg.jpg`.
+
+### 4.3 Naming conventions
+
+- kebab-case, purpose-first, optionally numbered for sets.
+- Examples: `about-founder.webp`, `about-space-01.webp`, `portfolio-poster-01.webp`, `blog-kra-pin-guide.webp`, `og-default.jpg`.
+- One asset, one purpose. Do not reuse a single photo for multiple distinct sections.
+
+### 4.4 Sizes and optimization
+
+Images are user-generated and pre-optimized; static export disables the Next.js image optimizer.
+
+| Use | Recommended size | Target weight |
+|---|---|---|
+| Card covers (blog, portfolio) | 1200px long edge, 16:9 or 4:3 | under 200 KB |
+| About photos | 800-1200px long edge, portrait 3:4 | under 300 KB |
+| OG image | exactly 1200x630 | under 300 KB |
+| Logo SVG | vector, viewBox set | under 20 KB |
+
+### 4.5 Asset rules
+
+- Assets live only under `public/`. Imported images referenced by path, never by URL hotlink.
+- Every image has descriptive alt text.
+- Below-fold images use `loading="lazy"`.
+- Remove unused assets before committing; the repo should not accumulate orphan files.
+
+---
+
+## 5. Related Documents
+
+| Question | Document |
+|---|---|
+| Why does the site exist and what content? | `Tuju_Outspan_PRD.md` |
+| Exact colors and rules | `color-palette.md` |
+| How components look and move | `design.md` |
+| Per-page layouts | `page-designs.md` |
+| 404 and loading states | `404-and-skeletons.md` |
+| Versions, configs, commands | `tech-stack.md` |
+| What to build and in what order | `development-phases.md` |
+| Index, decisions, data model | `architecture.md` |

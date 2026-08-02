@@ -1,6 +1,6 @@
 # Tuju Outspan Cyber Center: Architecture and Development Guide
 
-> **Version:** 1.0
+> **Version:** 1.1
 > **Date:** August 2026
 > **Status:** Baseline, ready for development
 > **Role:** The index and execution guide. Every other document feeds this one. This document does not replace them.
@@ -25,14 +25,16 @@ The source documents remain the owners of their subject matter:
 | What about the 404 page and loading states? | `404-and-skeletons.md` | 404 page spec, skeleton specs |
 | What versions and configs do we use? | `tech-stack.md` | Versions, configs, install and build commands |
 | What is missing or pending? | `deliverables-checklist.md` | Content gaps, open decisions, recommended next steps |
-| What is the full plan from setup to deploy? | **This file** | Canonical structure, data model, build order, verification, decisions |
+| What is the full plan from setup to deploy? | `development-phases.md` | Phase-by-phase execution plan with tasks, files, and acceptance criteria |
+| What does each folder and file do? Where do assets live? | `project-structure.md` | Folder map, file responsibilities, asset storage, image formats |
+| What are the canonical decisions, data model, and verification? | `architecture.md` (this file) | Decision log, data model, verification, doc map |
 
 **Reading path:**
 
-- Setting up the project: start at section 8, Phase 0.
-- Building a page: read the route row in section 6, then the matching section in `page-designs.md`, then the component names in section 5.
+- Setting up the project: start at Phase 0 in `development-phases.md`.
+- Building a page: read the route row in section 6, then the matching section in `page-designs.md`, then the component names in `project-structure.md`.
 - Changing a color, font, or spacing: open `color-palette.md` and `design.md`, then update the `@theme` block in `tech-stack.md` if the token list changes.
-- Adding a page or component: update the owning document and the relevant sections of this file. See section 12.
+- Adding a page or component: update the owning document and the relevant sections of `project-structure.md`. See section 12.
 
 ---
 
@@ -167,126 +169,7 @@ The design is finalized in four documents. Do not invent alternatives:
 
 ## 5. Canonical Project Structure
 
-This is the single authoritative file tree. The component architecture sections in `Tuju_Outspan_PRD.md` and `design.md` are historical duplicates and point here after Phase 2.
-
-```
-tuju-outspan-website/
-├── .env.example
-├── .env.local (gitignored)
-├── .gitignore
-├── .prettierrc
-├── .vscode/
-│   └── settings.json
-├── __tests__/
-│   ├── setup.ts
-│   ├── components/
-│   │   ├── layout/
-│   │   ├── sections/
-│   │   └── ui/
-│   ├── lib/
-│   └── pages/
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── loading.tsx (global skeleton)
-│   ├── not-found.tsx (404 page)
-│   ├── page.tsx (Home)
-│   ├── about/
-│   │   └── page.tsx
-│   ├── services/
-│   │   ├── page.tsx (Services Hub)
-│   │   ├── loading.tsx
-│   │   ├── government/page.tsx
-│   │   ├── education/page.tsx
-│   │   ├── health/page.tsx
-│   │   ├── documents/page.tsx
-│   │   ├── design-branding/page.tsx
-│   │   ├── computer-it/page.tsx
-│   │   └── online-career/page.tsx
-│   ├── pricing/
-│   │   ├── page.tsx
-│   │   └── loading.tsx
-│   ├── contact/
-│   │   ├── page.tsx
-│   │   └── loading.tsx
-│   ├── blog/
-│   │   ├── page.tsx
-│   │   ├── loading.tsx
-│   │   └── [slug]/
-│   │       ├── page.tsx
-│   │       └── loading.tsx
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Container.tsx
-│   │   │   ├── Footer.tsx
-│   │   │   ├── Navbar.tsx
-│   │   │   └── WhatsAppFloat.tsx
-│   │   ├── sections/
-│   │   │   ├── CTABanner.tsx
-│   │   │   ├── ContactInfo.tsx
-│   │   │   ├── Hero.tsx
-│   │   │   ├── LocationStrip.tsx
-│   │   │   ├── PricingTable.tsx
-│   │   │   ├── ProcessSteps.tsx
-│   │   │   ├── RelatedServices.tsx
-│   │   │   ├── ServiceBreakdown.tsx
-│   │   │   ├── ServicesGrid.tsx
-│   │   │   ├── Testimonials.tsx
-│   │   │   └── WhyChooseUs.tsx
-│   │   ├── templates/
-│   │   │   └── ServiceCategoryTemplate.tsx
-│   │   └── ui/
-│   │       ├── BlogCard.tsx
-│   │       ├── Button.tsx
-│   │       ├── FAQItem.tsx
-│   │       ├── Input.tsx
-│   │       ├── PricingCard.tsx
-│   │       ├── ProcessStep.tsx
-│   │       ├── SectionHeader.tsx
-│   │       ├── ServiceCard.tsx
-│   │       ├── Skeleton.tsx
-│   │       ├── SkeletonCard.tsx
-│   │       └── TestimonialCard.tsx
-│   └── lib/
-│       ├── data/
-│       │   ├── blog.ts
-│       │   ├── pricing.ts
-│       │   ├── services.ts
-│       │   └── testimonials.ts
-│       ├── schemas/
-│       │   └── contact.ts
-│       └── utils/
-│           ├── cn.ts
-│           ├── seo.ts
-│           └── whatsapp.ts
-├── docs/
-│   ├── 404-and-skeletons.md
-│   ├── architecture.md (this file)
-│   ├── color-palette.md
-│   ├── deliverables-checklist.md
-│   ├── design.md
-│   ├── page-designs.md
-│   ├── tech-stack.md
-│   └── Tuju_Outspan_PRD.md
-├── eslint.config.mjs
-├── next.config.ts
-├── package.json
-├── pnpm-lock.yaml
-├── postcss.config.mjs
-├── public/
-│   ├── favicon.ico
-│   ├── robots.txt
-│   ├── sitemap.xml (generated post-build)
-│   └── images/
-│       ├── logo.png
-│       ├── logo-white.png
-│       ├── og-default.jpg (1200x630)
-│       ├── about/
-│       ├── blog/
-│       └── portfolio/
-├── tsconfig.json
-└── vitest.config.ts
-```
+The full file tree, folder map, file responsibilities, and asset storage rules are maintained in `docs/project-structure.md`. That file owns the structure; this section records the decisions that shape it.
 
 ### 5.1 Structure Notes
 
@@ -389,74 +272,7 @@ The contact form is client-side only. On submit it validates with the Zod schema
 
 ## 8. Build Order
 
-Recommended execution order. Each phase is small enough to review, verify, and commit separately. Phase boundaries are adjustable by the user.
-
-### Phase 0: Setup and Scaffolding
-
-- Objective: reproducible local environment and all config files in place.
-- Files: `package.json`, `pnpm-lock.yaml`, all config files from section 3.2, `.env.example`, `.env.local`, `.gitignore`, `.vscode/settings.json`, `__tests__/setup.ts`.
-- Notes: git repo initialization and `pnpm install` require explicit approval. Install exact versions from `tech-stack.md` section 15.
-- Acceptance: `pnpm dev` runs; `pnpm format:check`, `pnpm lint`, `pnpm type-check`, `pnpm test:ci` pass; `pnpm build` produces `dist/`; `npx serve dist` previews it.
-
-### Phase 1: Design Tokens and Global Styles
-
-- Objective: the Tailwind v4 theme and global base styles.
-- Files: `app/globals.css` (`@theme` block from `tech-stack.md` section 2, values from `color-palette.md`), Inter font via `next/font`, base focus rings, skip link, reduced-motion support.
-- Acceptance: every palette token resolves as a Tailwind class; section background alternation and glow utility exist; no hardcoded hex values outside `globals.css`.
-
-### Phase 2: Data Layer and Utilities
-
-- Objective: typed content data and shared helpers.
-- Files: `app/lib/data/*`, `app/lib/utils/*`, `app/lib/schemas/contact.ts`, tests.
-- Acceptance: 7 categories with full service lists, pricing, testimonials, blog data; WhatsApp link builder returns encoded pre-filled links; unit tests cover `cn.ts`, `whatsapp.ts`, and schema validation.
-
-### Phase 3: Layout Shell
-
-- Objective: persistent chrome on every page.
-- Files: `components/layout/*`, `app/layout.tsx`.
-- Acceptance: fixed navbar with scroll state and mobile menu, 4-column footer, floating WhatsApp button, root metadata; Navbar and Footer component tests pass.
-
-### Phase 4: UI Primitives
-
-- Objective: the reusable component library.
-- Files: `components/ui/*`.
-- Acceptance: Button variants (primary, secondary, outline, outline-light, whatsapp), ServiceCard, PricingCard, TestimonialCard, BlogCard, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard, all matching `design.md` and `color-palette.md`; component tests for Button and ServiceCard.
-
-### Phase 5: Home Page
-
-- Objective: the conversion engine.
-- Files: `app/page.tsx`, `components/sections/*` (Hero, ServicesGrid, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner), `app/loading.tsx`.
-- Acceptance: all 9 sections per `page-designs.md` Page 1; hero glow; responsive grids; skeleton mirrors page structure.
-
-### Phase 6: Services Hub and Category Pages
-
-- Objective: all 7 service sales pages from one template.
-- Files: `app/services/page.tsx`, `components/templates/ServiceCategoryTemplate.tsx`, seven `app/services/*/page.tsx` files, `app/services/loading.tsx`.
-- Acceptance: hub grid with quick find and can't-find banner; every category renders from `services.ts` with service breakdown, process, FAQ, pricing note, related services, sticky mobile CTA.
-
-### Phase 7: About, Pricing, Contact
-
-- Objective: remaining static pages.
-- Files: `app/about/page.tsx`, `app/pricing/page.tsx`, `app/contact/page.tsx`, their loading files.
-- Acceptance: per-page specs; pricing cards with ask-for-quote CTA; contact form validates and opens pre-filled WhatsApp; map embed reads `NEXT_PUBLIC_MAPS_EMBED_URL`.
-
-### Phase 8: Blog
-
-- Objective: the SEO content hub.
-- Files: `app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, loading files.
-- Acceptance: listing with featured post, category filter, load more; post pages render from `blog.ts` with `generateStaticParams`, inline CTAs, author box, share actions.
-
-### Phase 9: 404, SEO, Sitemap, Assets
-
-- Objective: error handling and search infrastructure.
-- Files: `app/not-found.tsx`, `public/robots.txt`, sitemap generation (post-build), `og-default.jpg`, favicon set, JSON-LD builders.
-- Acceptance: 404 per spec; unique metadata on every page; sitemap lists all routes; robots correct; OG image 1200x630.
-
-### Phase 10: Content, Quality, Deploy
-
-- Objective: launch readiness.
-- Files: real testimonials, photos, portfolio images, blog posts, pricing values, WhatsApp group and channel links, domain configuration.
-- Acceptance: PRD launch checklist complete; Lighthouse >= 90 on performance, accessibility, SEO; deployed to Vercel; analytics added post-launch.
+The detailed phase-by-phase execution plan, with tasks, files, acceptance criteria, and verification commands for each phase, is maintained in `docs/development-phases.md`. Phase boundaries are adjustable by the user; each phase ends with a handoff and approval before the next begins.
 
 ---
 
@@ -513,8 +329,8 @@ Every completed page also passes the design quality checklist in `design.md` sec
 
 | ID | Decision | Status |
 |---|---|---|
-| D1 | Tailwind v4 `@theme` in `tech-stack.md` is the only machine-facing color config; `color-palette.md` owns the values | Phase 2 removes the v3 snippet |
-| D2 | Shadow tokens use `shadow-navy-*` naming plus `shadow-orange` | Phase 2 aligns `color-palette.md` and `design.md` |
+| D1 | Tailwind v4 `@theme` in `tech-stack.md` is the only machine-facing color config; `color-palette.md` owns the values | Done |
+| D2 | Shadow tokens use `shadow-navy-*` naming plus `shadow-orange` | Done |
 | D3 | Lucide outline icons only; no emojis in rendered UI copy | Phase 2 cleans `page-designs.md` examples |
 | D4 | Static export is the deployment model; `next start` is invalid with it; preview via static server | Applied in this file |
 | D5 | Contact form composes a pre-filled WhatsApp message; no email service | Applied in this file |
@@ -536,7 +352,7 @@ Full details in `deliverables-checklist.md`.
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |
 | Exact service prices | Pricing page | No, use `from KSh` or `ask for quote` |
 | OG image and favicon set | Phase 9 | No |
-| Git repo initialization | Version control | Requires approval |
+| Git repo | Version control | Done, initialized on `main` with docs committed |
 | Vercel project and domain DNS | Deploy | No, later phase |
 
 ---
@@ -557,3 +373,4 @@ Rules to keep the documentation set free of duplication:
 | Version | Date | Change |
 |---|---|---|
 | 1.0 | August 2026 | Baseline created from the seven source documents. Establishes canonical structure, data model, build order, verification, and decision log. Phase 1 of the documentation reconciliation plan. |
+| 1.1 | August 2026 | Added `development-phases.md` and `project-structure.md`. Sections 5 and 8 now point to them; asset storage and image format rules moved into `project-structure.md`. |

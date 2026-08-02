@@ -512,6 +512,8 @@ tuju-outspan-website/
     └── tech-stack.md
 ```
 
+**Note:** The canonical project structure is maintained in `docs/project-structure.md`. The tree above is a historical snapshot; refer to that file for the current layout.
+
 ---
 
 ## 12. Next.js Configuration (`next.config.ts`)
