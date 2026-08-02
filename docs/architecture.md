@@ -1,8 +1,8 @@
 # Tuju Outspan Cyber Center: Architecture and Development Guide
 
-> **Version:** 1.1
+> **Version:** 1.2
 > **Date:** August 2026
-> **Status:** Baseline, ready for development
+> **Status:** Implementation complete (Phases 0-9); awaiting owner verification and launch
 > **Role:** The index and execution guide. Every other document feeds this one. This document does not replace them.
 
 ---
@@ -351,7 +351,7 @@ Full details in `deliverables-checklist.md`.
 | Design portfolio images | Design and Branding page | No, labeled placeholder |
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |
 | Exact service prices | Pricing page | No, use `from KSh` or `ask for quote` |
-| OG image and favicon set | Phase 9 | No |
+| OG image and favicon set | Launch assets | No, owner supplies in Phase 10 |
 | Git repo | Version control | Done, initialized on `main` with docs committed |
 | Vercel project and domain DNS | Deploy | No, later phase |
 
@@ -374,3 +374,4 @@ Rules to keep the documentation set free of duplication:
 |---|---|---|
 | 1.0 | August 2026 | Baseline created from the seven source documents. Establishes canonical structure, data model, build order, verification, and decision log. Phase 1 of the documentation reconciliation plan. |
 | 1.1 | August 2026 | Added `development-phases.md` and `project-structure.md`. Sections 5 and 8 now point to them; asset storage and image format rules moved into `project-structure.md`. |
+| 1.2 | August 2026 | Implementation of Phases 0-9 complete. Documents synced with the codebase: structure map, sitemap tooling, and statuses updated. |

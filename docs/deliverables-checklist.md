@@ -133,24 +133,30 @@ Honestly? **Very little.** Here's what I'd flag:
 
 ## 📋 RECOMMENDED NEXT STEPS (In Order)
 
-Execution order for the technical steps (7-11) is defined phase by phase in `docs/architecture.md` section 8 (Build Order).
+Execution order for the technical steps (7-11) is defined phase by phase in `docs/development-phases.md`.
 
-| Step | Action | Priority |
-|------|--------|----------|
-| 1 | Decide domain name | High |
-| 2 | Create WhatsApp Group + Channel | High |
-| 3 | Gather photos (founder, space, portfolio) | High |
-| 4 | Write 3-5 blog articles | Medium |
-| 5 | Design OG image (1200×630) | Medium |
-| 6 | Generate favicon set | Medium |
-| 7 | Scaffold project with pnpm + Next.js | High |
-| 8 | Implement pages (Home → Contact → Services → Others) | High |
-| 9 | Add sitemap.xml generation | Medium |
-| 10 | Test all WhatsApp links | High |
-| 11 | Deploy to Vercel | High |
-| 12 | Add Vercel Analytics | Low (post-launch) |
+| Step | Action | Priority | Status |
+|------|--------|----------|--------|
+| 1 | Decide domain name | High | Pending |
+| 2 | Create WhatsApp Group + Channel | High | Pending |
+| 3 | Gather photos (founder, space, portfolio) | High | Pending |
+| 4 | Write 3-5 blog articles | Medium | Pending |
+| 5 | Design OG image (1200×630) | Medium | Pending |
+| 6 | Generate favicon set | Medium | Pending |
+| 7 | Scaffold project with pnpm + Next.js | High | Done |
+| 8 | Implement pages (Home → Contact → Services → Others) | High | Done |
+| 9 | Add sitemap.xml generation | Medium | Done |
+| 10 | Test all WhatsApp links | High | Pending |
+| 11 | Deploy to Vercel | High | Pending |
+| 12 | Add Vercel Analytics | Low (post-launch) | Post-launch |
 
 ---
+
+## ✅ DEVELOPMENT STATUS
+
+- Phases 0-9 implemented and committed (setup through 404, SEO, and sitemap).
+- Phase 10 in progress: content, assets, domain, and deploy remain owner actions.
+- Final verification suite (format, lint, type-check, tests, build, Lighthouse) is pending owner run.
 
 ## 💡 BOTTOM LINE
 

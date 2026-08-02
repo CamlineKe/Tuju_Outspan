@@ -339,6 +339,7 @@ afterEach(() => {
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "postbuild": "node scripts/generate-sitemap.mjs",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -496,6 +497,8 @@ tuju-outspan-website/
 │   │   └── blog/
 │   ├── favicon.ico
 │   └── robots.txt
+├── scripts/
+│   └── generate-sitemap.mjs
 ├── .env.local                      # Environment variables (gitignored)
 ├── .env.example                    # Example env file
 ├── .gitignore
@@ -673,7 +676,7 @@ pnpm test:ci          # Run Vitest once (for CI)
 pnpm test:coverage    # Run with coverage report
 
 # Production build
-pnpm build            # Build static export to /dist
+pnpm build            # Build static export to /dist (postbuild regenerates sitemap)
 
 # Deploy to Vercel
 vercel --prod         # Production deployment

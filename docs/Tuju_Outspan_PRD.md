@@ -559,17 +559,17 @@ The canonical project structure, component tree, and data modules are maintained
 
 ## 12. Launch Checklist
 
-- [ ] All 14 pages built and reviewed
-- [ ] WhatsApp links tested and working
-- [ ] Mobile responsiveness verified
-- [ ] SEO meta tags on all pages
-- [ ] Google Maps embed on Contact page
-- [ ] Testimonials added (when available)
-- [ ] Photos added (when available)
-- [ ] Blog posts published (minimum 3)
-- [ ] WhatsApp Group and Channel created and linked
-- [ ] Domain connected and SSL active
-- [ ] Analytics installed
+- [x] All 14 pages built (final review pending)
+- [ ] WhatsApp links tested and working (pending verification)
+- [ ] Mobile responsiveness verified (pending)
+- [x] SEO meta tags on all pages (implemented)
+- [ ] Google Maps embed on Contact page (pending embed URL)
+- [ ] Testimonials added (owner content)
+- [ ] Photos added (owner content)
+- [ ] Blog posts published (minimum 3; one starter post exists)
+- [ ] WhatsApp Group and Channel created and linked (owner)
+- [ ] Domain connected and SSL active (owner)
+- [ ] Analytics installed (post-launch)
 
 ---
 

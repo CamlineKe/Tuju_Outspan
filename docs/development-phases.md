@@ -1,8 +1,8 @@
 # Tuju Outspan Cyber Center: Development Phases
 
-> **Version:** 1.0
+> **Version:** 1.1
 > **Date:** August 2026
-> **Status:** Approved for execution
+> **Status:** Active: Phases 0-9 complete, Phase 10 pending owner verification and launch
 > **Role:** The step-by-step execution plan for the whole project, from setup to launch. The index of decisions is `architecture.md`; the code and asset map is `project-structure.md`.
 
 ---
@@ -49,6 +49,8 @@
 
 ## 4. Phase 0: Setup and Scaffolding
 
+**Status:** Done
+
 ### Objective
 
 A reproducible local environment with every config file in place, ready for development.
@@ -65,14 +67,14 @@ A reproducible local environment with every config file in place, ready for deve
 
 ### Tasks
 
-- [ ] Create `package.json` with the exact pinned versions from `tech-stack.md` section 10 and the same scripts.
-- [ ] Create the config files using the exact contents in `tech-stack.md` sections 12-14.
-- [ ] Create `.env.example` from `tech-stack.md` section 14 and `.env.local` from it (real values later).
-- [ ] Create `.gitignore` covering `node_modules`, `.next`, `dist`, `.env.local`, and editor files.
-- [ ] Create `.vscode/settings.json` and `__tests__/setup.ts` per `tech-stack.md` section 9.
-- [ ] Run `pnpm install` with approval.
-- [ ] Confirm `pnpm dev` starts with Turbopack.
-- [ ] Confirm `pnpm build` produces `dist/` and `npx serve dist` previews it.
+- [x] Create `package.json` with the exact pinned versions from `tech-stack.md` section 10 and the same scripts.
+- [x] Create the config files using the exact contents in `tech-stack.md` sections 12-14.
+- [x] Create `.env.example` from `tech-stack.md` section 14 and `.env.local` from it (real values later).
+- [x] Create `.gitignore` covering `node_modules`, `.next`, `dist`, `.env.local`, and editor files.
+- [x] Create `.vscode/settings.json` and `__tests__/setup.ts` per `tech-stack.md` section 9.
+- [x] Run `pnpm install` with approval.
+- [x] Confirm `pnpm dev` starts with Turbopack.
+- [x] Confirm `pnpm build` produces `dist/` and `npx serve dist` previews it.
 
 ### Definition of done
 
@@ -96,6 +98,8 @@ The environment is reproducible on a clean checkout: install, dev, and all quali
 
 ## 5. Phase 1: Design Tokens and Global Styles
 
+**Status:** Done
+
 ### Objective
 
 The Tailwind v4 theme and base styles that every page builds on.
@@ -106,11 +110,11 @@ The Tailwind v4 theme and base styles that every page builds on.
 
 ### Tasks
 
-- [ ] Add the `@theme` block from `tech-stack.md` section 2 to `globals.css`, values owned by `color-palette.md`.
-- [ ] Load Inter via `next/font/google` in the root layout.
-- [ ] Add base styles: `:focus-visible` ring, skip link, `prefers-reduced-motion` handling.
-- [ ] Add section background utilities and the hero radial glow utility per `design.md` section 8.
-- [ ] Remove any hardcoded hex values outside `globals.css`; components use tokens only.
+- [x] Add the `@theme` block from `tech-stack.md` section 2 to `globals.css`, values owned by `color-palette.md`.
+- [x] Load Inter via `next/font/google` in the root layout.
+- [x] Add base styles: `:focus-visible` ring, skip link, `prefers-reduced-motion` handling.
+- [x] Add section background utilities and the hero radial glow utility per `design.md` section 8.
+- [x] Remove any hardcoded hex values outside `globals.css`; components use tokens only.
 
 ### Definition of done
 
@@ -130,6 +134,8 @@ Phase 0.
 
 ## 6. Phase 2: Data Layer and Utilities
 
+**Status:** Done
+
 ### Objective
 
 Typed content data and shared helpers so pages are data-driven.
@@ -140,13 +146,13 @@ Typed content data and shared helpers so pages are data-driven.
 
 ### Tasks
 
-- [ ] Define the `ServiceCategory` type and all 7 categories from PRD pages 4-10.
-- [ ] Define pricing card data from PRD page 11 with `from KSh` or `ask for quote` values.
-- [ ] Add testimonial placeholders (empty content approved; real quotes later).
-- [ ] Add blog stub data structure with at least one example post.
-- [ ] Implement `cn.ts` (clsx + tailwind-merge), `whatsapp.ts` (pre-filled `wa.me` links), `seo.ts` (metadata and JSON-LD builders).
-- [ ] Implement the contact Zod schema: name, phone, service, message.
-- [ ] Add unit tests for `cn`, `whatsapp`, and the contact schema.
+- [x] Define the `ServiceCategory` type and all 7 categories from PRD pages 4-10.
+- [x] Define pricing card data from PRD page 11 with `from KSh` or `ask for quote` values.
+- [x] Add testimonial placeholders (empty content approved; real quotes later).
+- [x] Add blog stub data structure with at least one example post.
+- [x] Implement `cn.ts` (clsx + tailwind-merge), `whatsapp.ts` (pre-filled `wa.me` links), `seo.ts` (metadata and JSON-LD builders).
+- [x] Implement the contact Zod schema: name, phone, service, message.
+- [x] Add unit tests for `cn`, `whatsapp`, and the contact schema.
 
 ### Definition of done
 
@@ -165,6 +171,8 @@ Phase 1.
 
 ## 7. Phase 3: Layout Shell
 
+**Status:** Done
+
 ### Objective
 
 Persistent chrome on every page.
@@ -175,11 +183,11 @@ Persistent chrome on every page.
 
 ### Tasks
 
-- [ ] Root layout: metadata base, Inter font, skip link, navbar, footer, floating button.
-- [ ] Navbar: fixed, transparent-to-solid on scroll, active link underline, mobile full-screen menu.
-- [ ] Footer: 4 columns per `page-designs.md` Page 1 Section 9.
-- [ ] WhatsApp floating button: fixed bottom-right, one-time pulse, tooltip.
-- [ ] Component tests for Navbar and Footer.
+- [x] Root layout: metadata base, Inter font, skip link, navbar, footer, floating button.
+- [x] Navbar: fixed, transparent-to-solid on scroll, active link underline, mobile full-screen menu.
+- [x] Footer: 4 columns per `page-designs.md` Page 1 Section 9.
+- [x] WhatsApp floating button: fixed bottom-right, one-time pulse, tooltip.
+- [x] Component tests for Navbar and Footer.
 
 ### Definition of done
 
@@ -199,6 +207,8 @@ Phases 1 and 2.
 
 ## 8. Phase 4: UI Primitives
 
+**Status:** Done
+
 ### Objective
 
 The reusable component library.
@@ -209,12 +219,12 @@ The reusable component library.
 
 ### Tasks
 
-- [ ] Button with all variants from `color-palette.md` (primary, secondary, outline, outline-light, whatsapp) and sizes from `design.md`.
-- [ ] Cards matching `design.md` section 5.2 (service, testimonial, pricing, blog).
-- [ ] FAQItem single-open accordion per `page-designs.md` service template.
-- [ ] Input component with focus and error states per `color-palette.md`.
-- [ ] Skeleton primitives per `404-and-skeletons.md` Part 3.
-- [ ] Component tests for Button and ServiceCard.
+- [x] Button with all variants from `color-palette.md` (primary, secondary, outline, outline-light, whatsapp) and sizes from `design.md`.
+- [x] Cards matching `design.md` section 5.2 (service, testimonial, pricing, blog).
+- [x] FAQItem single-open accordion per `page-designs.md` service template.
+- [x] Input component with focus and error states per `color-palette.md`.
+- [x] Skeleton primitives per `404-and-skeletons.md` Part 3.
+- [x] Component tests for Button and ServiceCard.
 
 ### Definition of done
 
@@ -234,6 +244,8 @@ Phases 2 and 3.
 
 ## 9. Phase 5: Home Page
 
+**Status:** Done
+
 ### Objective
 
 The conversion engine.
@@ -244,12 +256,12 @@ The conversion engine.
 
 ### Tasks
 
-- [ ] All 9 sections per `page-designs.md` Page 1.
-- [ ] Hero with navy background, radial glow, overline, headline, CTAs, trust bar.
-- [ ] Services preview grid reading from `services.ts`.
-- [ ] Why Choose Us, process steps, testimonials (placeholders), location strip, CTA banner.
-- [ ] Global skeleton matching the home layout per `404-and-skeletons.md`.
-- [ ] Page metadata via `seo.ts`.
+- [x] All 9 sections per `page-designs.md` Page 1.
+- [x] Hero with navy background, radial glow, overline, headline, CTAs, trust bar.
+- [x] Services preview grid reading from `services.ts`.
+- [x] Why Choose Us, process steps, testimonials (placeholders), location strip, CTA banner.
+- [x] Global skeleton matching the home layout per `404-and-skeletons.md`.
+- [x] Page metadata via `seo.ts`.
 
 ### Definition of done
 
@@ -269,6 +281,8 @@ Phases 2-4.
 
 ## 10. Phase 6: Services Hub and Category Pages
 
+**Status:** Done
+
 ### Objective
 
 All 7 service sales pages from one template.
@@ -279,10 +293,10 @@ All 7 service sales pages from one template.
 
 ### Tasks
 
-- [ ] Hub: header, quick find search, 7-card grid, can't find it banner per `page-designs.md` Page 3.
-- [ ] Template: page header, service breakdown, process steps, FAQ, pricing note, related services, sticky mobile CTA per `page-designs.md` Pages 4-10.
-- [ ] Seven category pages render from `services.ts` with category-specific metadata and JSON-LD.
-- [ ] Related services cross-link per category data.
+- [x] Hub: header, quick find search, 7-card grid, can't find it banner per `page-designs.md` Page 3.
+- [x] Template: page header, service breakdown, process steps, FAQ, pricing note, related services, sticky mobile CTA per `page-designs.md` Pages 4-10.
+- [x] Seven category pages render from `services.ts` with category-specific metadata and JSON-LD.
+- [x] Related services cross-link per category data.
 
 ### Definition of done
 
@@ -302,6 +316,8 @@ Phases 2-5.
 
 ## 11. Phase 7: About, Pricing, Contact
 
+**Status:** Done
+
 ### Objective
 
 Remaining static pages.
@@ -312,11 +328,11 @@ Remaining static pages.
 
 ### Tasks
 
-- [ ] About per `page-designs.md` Page 2 (photo placeholders per asset map).
-- [ ] Pricing per Page 11: philosophy, cards with `from KSh` or `ask for quote`, discounts, payment methods, FAQ.
-- [ ] Contact per Page 12: WhatsApp card, community links, details, map embed from `NEXT_PUBLIC_MAPS_EMBED_URL`, form.
-- [ ] Contact form validates with the Zod schema and composes a pre-filled WhatsApp message on submit.
-- [ ] Per-page metadata and JSON-LD (Service for pricing categories, ContactPage for contact).
+- [x] About per `page-designs.md` Page 2 (photo placeholders per asset map).
+- [x] Pricing per Page 11: philosophy, cards with `from KSh` or `ask for quote`, discounts, payment methods, FAQ.
+- [x] Contact per Page 12: WhatsApp card, community links, details, map embed from `NEXT_PUBLIC_MAPS_EMBED_URL`, form.
+- [x] Contact form validates with the Zod schema and composes a pre-filled WhatsApp message on submit.
+- [x] Per-page metadata and JSON-LD (Service for pricing categories, ContactPage for contact).
 
 ### Definition of done
 
@@ -336,6 +352,8 @@ Phases 2-6.
 
 ## 12. Phase 8: Blog
 
+**Status:** Done
+
 ### Objective
 
 The SEO content hub.
@@ -346,11 +364,11 @@ The SEO content hub.
 
 ### Tasks
 
-- [ ] Listing: featured post, category filter tabs, grid, load more per `page-designs.md` Page 13.
-- [ ] Post page: article header, featured image, content, inline CTAs, author box, share per Page 14.
-- [ ] `generateStaticParams` enumerates posts from `blog.ts`.
-- [ ] BlogPosting JSON-LD per post; share uses WhatsApp share and copy link.
-- [ ] Skeleton files per `404-and-skeletons.md` Part 2.
+- [x] Listing: featured post, category filter tabs, grid, load more per `page-designs.md` Page 13.
+- [x] Post page: article header, featured image, content, inline CTAs, author box, share per Page 14.
+- [x] `generateStaticParams` enumerates posts from `blog.ts`.
+- [x] BlogPosting JSON-LD per post; share uses WhatsApp share and copy link.
+- [x] Skeleton files per `404-and-skeletons.md` Part 2.
 
 ### Definition of done
 
@@ -370,6 +388,8 @@ Phases 2-5.
 
 ## 13. Phase 9: 404, SEO, Sitemap, Assets
 
+**Status:** Done
+
 ### Objective
 
 Error handling and search infrastructure.
@@ -380,11 +400,11 @@ Error handling and search infrastructure.
 
 ### Tasks
 
-- [ ] 404 page per `404-and-skeletons.md` Part 1: hero, quick links, CTA banner, metadata.
-- [ ] Robots file pointing to the sitemap.
-- [ ] Sitemap generated after build listing all routes (decision D6).
-- [ ] Wire logo, favicon set, apple touch icon, and OG image from `project-structure.md` locations.
-- [ ] JSON-LD builders: LocalBusiness (root), Service (service pages), FAQPage (FAQ sections), BlogPosting (posts).
+- [x] 404 page per `404-and-skeletons.md` Part 1: hero, quick links, CTA banner, metadata.
+- [x] Robots file pointing to the sitemap.
+- [x] Sitemap generated after build listing all routes (decision D6).
+- [x] Wire logo, favicon set, apple touch icon, and OG image from `project-structure.md` locations.
+- [x] JSON-LD builders: LocalBusiness (root), Service (service pages), FAQPage (FAQ sections), BlogPosting (posts).
 
 ### Definition of done
 
@@ -403,6 +423,8 @@ Phases 0-8; user assets for logo, favicon, OG image, and photos.
 ---
 
 ## 14. Phase 10: Content, Quality, Deploy
+
+**Status:** In progress: awaiting owner verification and launch actions
 
 ### Objective
 
@@ -464,3 +486,12 @@ Copy this block into the handoff of every phase.
 - Design quality checklist from `design.md` section 16 passes.
 - Lighthouse >= 90 on performance, accessibility, SEO, best practices.
 - PRD launch checklist complete.
+
+---
+
+## 17. Change Log
+
+| Version | Date | Change |
+|---|---|---|
+| 1.0 | August 2026 | Baseline phase plan created with Phases 0-10 and verification strategy. |
+| 1.1 | August 2026 | Marked Phases 0-9 complete after implementation; Phase 10 in progress with owner verification and launch actions pending. |
