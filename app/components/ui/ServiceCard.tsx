@@ -1,38 +1,23 @@
 import Link from 'next/link';
-
-import {
-  ArrowRight,
-  Briefcase,
-  FileText,
-  GraduationCap,
-  HeartPulse,
-  Landmark,
-  Laptop,
-  type LucideIcon,
-  Palette,
-} from 'lucide-react';
-
+import { ArrowRight } from 'lucide-react';
 import type { ServiceCategory } from '@/app/lib/data/services';
 import { cn } from '@/app/lib/utils/cn';
-
-const CATEGORY_ICONS: Record<string, LucideIcon> = {
-  Landmark,
-  GraduationCap,
-  HeartPulse,
-  FileText,
-  Palette,
-  Laptop,
-  Briefcase,
-};
+import { getCategoryIcon } from '@/app/lib/utils/category-icons';
 
 interface ServiceCardProps {
   category: ServiceCategory;
   itemCount?: number;
+  iconSize?: string;
   className?: string;
 }
 
-export default function ServiceCard({ category, itemCount = 3, className }: ServiceCardProps) {
-  const Icon = CATEGORY_ICONS[category.icon] ?? FileText;
+export default function ServiceCard({
+  category,
+  itemCount = 3,
+  iconSize = 'h-6 w-6',
+  className,
+}: ServiceCardProps) {
+  const Icon = getCategoryIcon(category.icon);
   return (
     <article
       className={cn(
@@ -41,16 +26,13 @@ export default function ServiceCard({ category, itemCount = 3, className }: Serv
       )}
     >
       <div className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-navy-50">
-        <Icon className="h-6 w-6 text-navy-900" aria-hidden="true" />
+        <Icon className={cn('text-navy-900', iconSize)} aria-hidden="true" />
       </div>
       <h3 className="mt-4 text-xl font-semibold text-navy-900">{category.name}</h3>
       <ul className="mt-3 space-y-1">
         {category.services.slice(0, itemCount).map((service) => (
           <li key={service.name} className="flex items-start gap-2 text-sm text-gray-600">
-            <span
-              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500"
-              aria-hidden="true"
-            />
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" aria-hidden="true" />
             {service.name}
           </li>
         ))}

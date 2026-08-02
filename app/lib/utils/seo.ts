@@ -19,7 +19,7 @@ function withTrailingSlash(path: string): string {
   return path.endsWith('/') ? path : `${path}/`;
 }
 
-function absoluteUrl(path: string): string {
+export function absolutePageUrl(path: string): string {
   return `${ORIGIN}${withTrailingSlash(path)}`;
 }
 
@@ -29,7 +29,7 @@ export function buildMetadata({
   path,
   ogImage = DEFAULT_OG_IMAGE,
 }: PageMeta): Metadata {
-  const url = absoluteUrl(path);
+  const url = absolutePageUrl(path);
   const imageUrl = `${ORIGIN}${ogImage}`;
   return {
     title,
