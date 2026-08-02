@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update to the live domain before launch
+Sitemap: https://tujuoutspan.co.ke/sitemap.xml
