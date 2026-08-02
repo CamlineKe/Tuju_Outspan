@@ -1,0 +1,62 @@
+{
+  "name": "tuju-outspan-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tuju Outspan Cyber Center - Official Website",
+  "author": "Tuju Outspan",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "framer-motion": "12.9.0",
+    "lucide-react": "0.487.0",
+    "next": "15.3.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "7.56.0",
+    "tailwind-merge": "3.2.0",
+    "zod": "3.25.0",
+    "@hookform/resolvers": "5.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
+    "@eslint/js": "9.25.0",
+    "@tailwindcss/postcss": "4.1.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.0",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "@types/node": "22.15.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "@vitejs/plugin-react": "4.4.0",
+    "eslint": "9.25.0",
+    "eslint-config-next": "15.3.4",
+    "jsdom": "26.1.0",
+    "postcss": "8.5.3",
+    "prettier": "3.5.3",
+    "prettier-plugin-tailwindcss": "0.6.11",
+    "tailwindcss": "4.1.0",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.31.0",
+    "vitest": "3.2.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.10.0"
+}

@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+dist/
+
+# environment
+.env*.local
+
+# testing
+coverage/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# misc
+.DS_Store
+*.pem
+
+# editor
+.vscode/*
+!.vscode/settings.json
