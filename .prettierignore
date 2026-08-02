@@ -1,0 +1,7 @@
+# generated and third-party files, not subject to Prettier
+.next/
+dist/
+out/
+next-env.d.ts
+pnpm-lock.yaml
+docs/

@@ -75,7 +75,7 @@ Source: `tech-stack.md`. All versions are pinned exactly.
 | Styling | Tailwind CSS 4.1.0 (CSS-first `@theme` configuration) |
 | Icons | lucide-react 0.487.0 |
 | Animation | framer-motion 12.9.0 (scroll reveals, mobile menu, FAQ, page transitions) |
-| Forms | react-hook-form 7.56.0 + zod 3.25.0 + @hookform/resolvers 5.0.1 |
+| Forms | react-hook-form 7.56.0 + zod 3.25.1 + @hookform/resolvers 5.0.1 |
 | Class merging | clsx 2.1.1 + tailwind-merge 3.2.0 |
 | Testing | vitest 3.2.0 + Testing Library |
 | Package manager | pnpm 10.10.0 |

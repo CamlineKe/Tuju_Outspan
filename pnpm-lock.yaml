@@ -36,8 +36,8 @@ importers:
         specifier: 3.2.0
         version: 3.2.0
       zod:
-        specifier: 3.25.0
-        version: 3.25.0
+        specifier: 3.25.1
+        version: 3.25.1
     devDependencies:
       '@eslint/eslintrc':
         specifier: 3.3.1
@@ -2952,8 +2952,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod@3.25.0:
-    resolution: {integrity: sha512-ficnZKUW0mlNivqeJkosTEkGbJ6NKCtSaOHGx5aXbtfeWMdRyzXLbAIn19my4C/KB7WPY/p9vlGPt+qpOp6c4Q==}
+  zod@3.25.1:
+    resolution: {integrity: sha512-bkxUGQiqWDTXHSgqtevYDri5ee2GPC9szPct4pqpzLEpswgDQmuseDz81ZF0AnNu1xsmnBVmbtv/t/WeUIHlpg==}
 
 snapshots:
 
@@ -5925,4 +5925,4 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod@3.25.0: {}
+  zod@3.25.1: {}

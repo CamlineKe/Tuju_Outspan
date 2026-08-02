@@ -126,7 +126,7 @@ import { CheckCircle, Phone, MapPin, Clock } from 'lucide-react';
 | Package | Version | Purpose | Why This Version |
 |---------|---------|---------|------------------|
 | `react-hook-form` | `7.56.0` | Performant form validation and handling | Minimal re-renders, excellent TypeScript, minimal bundle size |
-| `zod` | `3.25.0` | Schema validation for forms and data | TypeScript-first, declarative, works seamlessly with react-hook-form |
+| `zod` | `3.25.1` | Schema validation for forms and data | TypeScript-first, declarative, works seamlessly with react-hook-form |
 | `@hookform/resolvers` | `5.0.1` | Connect react-hook-form to Zod resolver | Official bridge, maintained by react-hook-form team |
 
 **Why these over alternatives:**
@@ -359,7 +359,7 @@ afterEach(() => {
     "react-dom": "19.1.0",
     "react-hook-form": "7.56.0",
     "tailwind-merge": "3.2.0",
-    "zod": "3.25.0",
+    "zod": "3.25.1",
     "@hookform/resolvers": "5.0.1"
   },
   "devDependencies": {
@@ -627,7 +627,7 @@ pnpm add lucide-react@0.487.0
 pnpm add framer-motion@12.9.0
 
 # 7. Install form handling
-pnpm add react-hook-form@7.56.0 zod@3.25.0 @hookform/resolvers@5.0.1
+pnpm add react-hook-form@7.56.0 zod@3.25.1 @hookform/resolvers@5.0.1
 
 # 8. Install dev dependencies
 pnpm add -D typescript@5.8.3 @types/node@22.15.0 @types/react@19.1.0 @types/react-dom@19.1.0
@@ -687,7 +687,7 @@ vercel --prod         # Production deployment
 | framer-motion | 12.9.0 | ~40 KB | Animations |
 | lucide-react | 0.487.0 | ~20 KB (tree-shaken) | Icons |
 | react-hook-form | 7.56.0 | ~10 KB | Form handling |
-| zod | 3.25.0 | ~12 KB | Validation |
+| zod | 3.25.1 | ~12 KB | Validation |
 | @hookform/resolvers | 5.0.1 | ~5 KB | Form resolver bridge |
 | clsx | 2.1.1 | ~1 KB | Class merging |
 | tailwind-merge | 3.2.0 | ~5 KB | Tailwind class dedupe |
