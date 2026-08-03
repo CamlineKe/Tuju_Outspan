@@ -146,6 +146,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Education Services',
     subheadline: 'KUCCPS, HELB, and academic support made simple.',
     icon: 'GraduationCap',
+    imagePath: '/images/services/education.webp',
     services: [
       {
         name: 'KUCCPS Applications',
@@ -218,6 +219,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Health and Social Services',
     subheadline: 'SHA, NSSF, NHIF, and health account support.',
     icon: 'HeartPulse',
+    imagePath: '/images/services/health.webp',
     services: [
       {
         name: 'SHA Registration',
@@ -275,6 +277,7 @@ export const serviceCategories: ServiceCategory[] = [
     subheadline:
       'Printing, scanning, typing, binding, and more, with professional quality and fast turnaround.',
     icon: 'FileText',
+    imagePath: '/images/services/documents.webp',
     services: [
       { name: 'Printing', description: 'Black and white, color, and large format printing.' },
       { name: 'Photocopying', description: 'Fast, clean photocopies at competitive rates.' },
@@ -339,6 +342,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Design and Branding',
     subheadline: 'Professional graphics, branding, and print-ready designs.',
     icon: 'Palette',
+    imagePath: '/images/services/design-branding.webp',
     services: [
       {
         name: 'Graphic Design and Logo Creation',
@@ -397,6 +401,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Computer and IT Services',
     subheadline: 'From software installation to troubleshooting, we have your tech covered.',
     icon: 'Laptop',
+    imagePath: '/images/services/computer-it.webp',
     services: [
       { name: 'Computer Package Classes', description: 'Basic to advanced computer training.' },
       { name: 'Software Installation', description: 'Office, design tools, and more.' },
@@ -456,6 +461,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Online and Career Services',
     subheadline: 'Email setup, CV writing, job applications, and online research, done right.',
     icon: 'Briefcase',
+    imagePath: '/images/services/online-career.webp',
     services: [
       {
         name: 'Email Creation and Setup',
