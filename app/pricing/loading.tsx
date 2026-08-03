@@ -5,7 +5,7 @@ export default function PricingLoading() {
   return (
     <div aria-busy="true">
       <span className="sr-only">Loading content...</span>
-      <section className="bg-navy-900 px-6 pb-15 pt-20">
+      <section className="bg-navy-900 px-6 pb-15 pt-24 lg:pt-28">
         <div className="mx-auto max-w-[1200px] space-y-4">
           <Skeleton width={160} />
           <Skeleton width={260} height={36} />

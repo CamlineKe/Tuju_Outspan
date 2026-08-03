@@ -395,15 +395,19 @@ Focus:
 Position: Fixed, top 0
 Background: White (default) / White with blur (scrolled)
 Border-bottom: 1px solid Gray-200
-Height: 64px
+Height: 80px (mobile) / 96px (desktop)
 Padding: 0 24px
 Z-index: 100
 
 Logo:
-  Height: 32px
-  Text: 18px, weight 700, Navy-900
+  Image: /images/logo/logo-white.png
+  Height: 56px (mobile) / 64px (small) / 80px (desktop)
+  Aspect: 3.96:1, margins trimmed
+  Alt: 'Tuju Outspan Cyber Center'
+  Links to: Home
 
 Nav links:
+  Home, Services, Pricing, About, Blog, Contact
   Font: 14px, weight 500
   Color: Gray-600
   Gap: 28px
@@ -426,6 +430,7 @@ Hamburger icon: 24px, Navy-900
 Menu overlay: White, full-screen
 Menu items: H3 size, stacked vertically
 Close button: Top right, 24px
+Menu header: Logo image (about 80px tall)
 Animation: Slide from right, 300ms ease-out
 ```
 

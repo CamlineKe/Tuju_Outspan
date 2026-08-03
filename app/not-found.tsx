@@ -36,7 +36,7 @@ const QUICK_LINKS: QuickLink[] = [
 export default function NotFound() {
   return (
     <>
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 py-20 text-center text-white lg:py-30">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-20 pt-24 text-center text-white lg:py-30">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] font-bold text-navy-800 opacity-10 lg:text-[280px]"

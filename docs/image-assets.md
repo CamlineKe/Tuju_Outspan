@@ -28,7 +28,7 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 | App icon | `public/icon-192.png` | 192x192, PNG | `layout.tsx` icons |
 | App icon | `public/icon-512.png` | 512x512, PNG | `layout.tsx` icons |
 | Apple touch icon | `public/apple-touch-icon.png` | 180x180, PNG | `layout.tsx` icons |
-| Logo masters | `public/images/logo/logo.svg`, `logo-white.svg` | Vector SVG, viewBox set | Future navbar and footer logos |
+| Navbar logo | `public/images/logo/logo-white.png` | 400x160, navy on white | Navbar logo, in use |
 | Founder photo | `public/images/about/about-founder.webp` | Portrait 3:4, 800-1200px long edge, WebP | About origin story and "Face Behind the Brand" |
 | Space photos | `public/images/about/about-space-01.webp` (numbered set) | 16:9 or 4:3, 800-1200px long edge, WebP | About page community and story sections |
 | Portfolio work | `public/images/portfolio/portfolio-poster-01.webp` (numbered set) | 16:9 or 4:3, 1200px long edge, WebP | Design and Branding service page |
@@ -40,7 +40,7 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 - Assets live only under `public/`. Referenced by path, never hotlinked.
 - Every image gets descriptive alt text.
 - Below-fold images use `loading="lazy"` (already implemented for blog covers).
-- WebP for photos, JPG for the OG image, ICO/PNG for icons, SVG for logo masters.
+- PNG for the navbar logo, WebP for photos, JPG for the OG image, ICO/PNG for icons.
 - One asset, one purpose. Do not reuse a single photo for multiple distinct sections.
 - Remove unused assets before committing; the repo must not accumulate orphan files.
 - There is no hero background image. The approved hero is solid navy-900 with the radial glow; do not add `hero-bg.jpg`.

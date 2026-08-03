@@ -4,7 +4,7 @@ export default function BlogPostLoading() {
   return (
     <div aria-busy="true">
       <span className="sr-only">Loading content...</span>
-      <section className="bg-navy-900 px-6 pb-15 pt-20 text-center">
+      <section className="bg-navy-900 px-6 pb-15 pt-24 text-center lg:pt-28">
         <div className="mx-auto max-w-[720px] space-y-4">
           <Skeleton className="mx-auto" width={100} />
           <Skeleton className="mx-auto" width={560} height={36} />

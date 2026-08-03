@@ -15,7 +15,7 @@ interface ServiceCategoryTemplateProps {
 export default function ServiceCategoryTemplate({ category }: ServiceCategoryTemplateProps) {
   return (
     <>
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-20 text-white">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb
             items={[

@@ -132,8 +132,7 @@ tuju-outspan-website/
 │       ├── about/
 │       ├── blog/
 │       ├── logo/
-│       │   ├── logo.svg
-│       │   └── logo-white.svg
+│       │   └── logo-white.png
 │       ├── og/
 │       │   └── og-default.jpg
 │       └── portfolio/
@@ -268,8 +267,7 @@ public/
 ├── sitemap.xml               # generated post-build
 └── images/
     ├── logo/
-    │   ├── logo.svg          # master, light backgrounds
-    │   └── logo-white.svg    # master, dark backgrounds
+    │   └── logo-white.png    # navbar logo, navy on white, 400px wide
     ├── about/                # founder and space photos
     ├── portfolio/            # design and branding work
     ├── blog/                 # blog post covers
@@ -280,7 +278,7 @@ public/
 
 | Asset type | Format | Notes |
 |---|---|---|
-| Logo masters | SVG | Vector, crisp at any size, single source of truth |
+| Logo (navbar) | PNG | Navy on white, optimized at 400px wide, 2.5:1 aspect |
 | Logo-derived icons | PNG | `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` |
 | Favicon | ICO | `favicon.ico` with 16x16 and 32x32 |
 | Photos (about, portfolio, blog) | WebP | Best quality-to-size ratio, supported by all modern browsers |
@@ -303,7 +301,7 @@ Images are user-generated and pre-optimized; static export disables the Next.js 
 | Card covers (blog, portfolio) | 1200px long edge, 16:9 or 4:3 | under 200 KB |
 | About photos | 800-1200px long edge, portrait 3:4 | under 300 KB |
 | OG image | exactly 1200x630 | under 300 KB |
-| Logo SVG | vector, viewBox set | under 20 KB |
+| Navbar logo | 400px wide, 2.5:1 aspect | under 100 KB |
 
 ### 4.5 Asset rules
 

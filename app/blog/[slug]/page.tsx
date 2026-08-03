@@ -130,7 +130,7 @@ export default async function BlogPostPage({
         }}
       />
 
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-20 text-center text-white">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-center text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[720px]">
           <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
             {post.category}

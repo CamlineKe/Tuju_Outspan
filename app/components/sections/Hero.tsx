@@ -8,7 +8,7 @@ const TRUST_ITEMS = ['Fast Turnaround', 'Trusted by Locals', 'Open Daily Until L
 
 export default function Hero() {
   return (
-    <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 py-20 text-center text-white lg:py-30">
+    <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-20 pt-24 text-center text-white lg:py-30">
       <Reveal className="relative z-10 mx-auto max-w-[1200px]">
         <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
           Your Hustle. Our Tech. Made Easy.

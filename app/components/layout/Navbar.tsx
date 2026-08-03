@@ -12,6 +12,7 @@ import { cn } from '@/app/lib/utils/cn';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const NAV_LINKS = [
+  { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
@@ -40,7 +41,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-[100] h-16 border-b border-gray-200 bg-white transition-all duration-300',
+        'fixed inset-x-0 top-0 z-[100] h-20 border-b border-gray-200 bg-white transition-all duration-300 lg:h-24',
         scrolled && 'bg-white/95 shadow-navy-sm backdrop-blur-md'
       )}
     >
@@ -48,11 +49,12 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6"
       >
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-navy-900 text-sm font-bold text-white">
-            TO
-          </span>
-          <span className="text-lg font-bold tracking-tight text-navy-900">TUJU OUTSPAN</span>
+        <Link href="/" aria-label="Tuju Outspan Cyber Center home">
+          <img
+            src="/images/logo/logo-white.png"
+            alt="Tuju Outspan Cyber Center"
+            className="h-14 w-auto sm:h-16 lg:h-20"
+          />
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
@@ -102,8 +104,12 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: 'easeOut' }}
             className="fixed inset-0 z-[110] flex flex-col bg-white lg:hidden"
           >
-            <div className="flex h-16 items-center justify-between px-6">
-              <span className="text-lg font-bold text-navy-900">TUJU OUTSPAN</span>
+            <div className="flex h-24 items-center justify-between px-6">
+              <img
+                src="/images/logo/logo-white.png"
+                alt="Tuju Outspan Cyber Center"
+                className="h-20 w-auto"
+              />
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}

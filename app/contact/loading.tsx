@@ -4,7 +4,7 @@ export default function ContactLoading() {
   return (
     <div aria-busy="true">
       <span className="sr-only">Loading content...</span>
-      <section className="bg-navy-900 px-6 pb-15 pt-20">
+      <section className="bg-navy-900 px-6 pb-15 pt-24 lg:pt-28">
         <div className="mx-auto max-w-[1200px] space-y-4">
           <Skeleton width={180} />
           <Skeleton width={280} height={36} />

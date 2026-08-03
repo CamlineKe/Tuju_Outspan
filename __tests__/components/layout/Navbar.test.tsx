@@ -12,6 +12,7 @@ describe('Navbar', () => {
   it('renders the main navigation links and logo', () => {
     render(<Navbar />);
     expect(screen.getByRole('link', { name: /tuju outspan/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Services' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Pricing' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
