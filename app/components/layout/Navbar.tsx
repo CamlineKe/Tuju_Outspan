@@ -37,6 +37,23 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Lock page scroll while the mobile menu is open so the page behind the
+  // overlay cannot be swiped or scrolled. Locking both body and html covers
+  // iOS Safari, which ignores overflow on the body alone.
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, [menuOpen]);
+
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
