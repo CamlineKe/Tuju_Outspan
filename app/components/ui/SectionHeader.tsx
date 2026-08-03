@@ -24,7 +24,7 @@ export default function SectionHeader({
       )}
       <h2
         className={cn(
-          'text-3xl font-bold text-navy-900',
+          'text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]',
           align === 'center' && 'mx-auto max-w-[600px]'
         )}
       >

@@ -53,7 +53,9 @@ export default function AboutPage() {
               { label: 'About' },
             ]}
           />
-          <h1 className="mt-4 text-4xl font-bold">About Tuju Outspan</h1>
+          <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
+            About Tuju Outspan
+          </h1>
           <p className="mt-3 max-w-[560px] text-lg text-gray-400">
             The story, mission, and people behind your trusted cyber center.
           </p>
@@ -66,7 +68,9 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
               OUR STORY
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-navy-900">Why We Started</h2>
+            <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+              Why We Started
+            </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-gray-600">
               <p>
                 Tuju Outspan Cyber Center started from a simple observation: around Chuka
@@ -98,7 +102,9 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
               WHAT WE STAND FOR
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-navy-900">Our Mission and Values</h2>
+            <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+              Our Mission and Values
+            </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {VALUES.map((value) => (
@@ -135,7 +141,9 @@ export default function AboutPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
             OUR IMPACT
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-navy-900">Rooted in Chuka. Serving Kenya.</h2>
+          <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+            Rooted in Chuka. Serving Kenya.
+          </h2>
           <p className="mt-4 leading-relaxed text-gray-600">
             We serve Chuka University students, local businesses, and clients across Kenya
             through our online services. Every completed application, print, and design is a

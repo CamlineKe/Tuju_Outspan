@@ -18,7 +18,13 @@ export default function RelatedServices({ category }: RelatedServicesProps) {
         <SectionHeader align="left" title="You Might Also Need" />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {related.map((item) => (
-            <ServiceCard key={item.slug} category={item} itemCount={3} />
+            <ServiceCard
+              key={item.slug}
+              category={item}
+              itemCount={2}
+              iconSize="h-5 w-5"
+              className="p-5"
+            />
           ))}
         </div>
       </div>

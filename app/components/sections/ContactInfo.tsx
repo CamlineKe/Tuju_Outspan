@@ -30,7 +30,9 @@ export default function ContactInfo() {
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
             GET IN TOUCH
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-navy-900">Other Ways to Reach Us</h2>
+          <h2 className="mt-3 text-2xl font-semibold leading-[1.3] text-navy-900">
+            Other Ways to Reach Us
+          </h2>
           <ul className="mt-6 space-y-5">
             {DETAILS.map((detail) => (
               <li key={detail.label} className="flex items-start gap-3">

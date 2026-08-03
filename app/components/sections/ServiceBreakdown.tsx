@@ -15,7 +15,9 @@ export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
             WHAT WE OFFER
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-navy-900">{category.name}</h2>
+          <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+            {category.name}
+          </h2>
           <ul className="mt-6 divide-y divide-gray-100">
             {category.services.map((service) => (
               <li key={service.name} className="flex gap-3 py-4">

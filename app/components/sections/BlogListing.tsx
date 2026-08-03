@@ -2,6 +2,10 @@
 
 import { useMemo, useState } from 'react';
 
+import Link from 'next/link';
+
+import { ArrowRight } from 'lucide-react';
+
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import BlogCard from '@/app/components/ui/BlogCard';
 import Button from '@/app/components/ui/Button';
@@ -43,6 +47,13 @@ export default function BlogListing() {
   };
 
   const channelLink = process.env.NEXT_PUBLIC_WHATSAPP_CHANNEL;
+  const formattedFeaturedDate = featured
+    ? new Date(featured.date).toLocaleDateString('en-KE', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      })
+    : '';
 
   return (
     <>
@@ -54,7 +65,9 @@ export default function BlogListing() {
               { label: 'Blog' },
             ]}
           />
-          <h1 className="mt-4 text-4xl font-bold">Blog and Guides</h1>
+          <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
+            Blog and Guides
+          </h1>
           <p className="mt-3 max-w-[560px] text-lg text-gray-400">
             Tips, how-tos, and updates to make your digital life easier.
           </p>
@@ -65,9 +78,18 @@ export default function BlogListing() {
         <div className="mx-auto max-w-[1100px]">
           {featured && (
             <article className="group grid grid-cols-1 overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:border-navy-800 hover:shadow-navy-md md:grid-cols-2">
-              <div className="flex h-52 items-center justify-center bg-navy-50 md:h-full">
-                <span className="text-sm text-gray-400">Cover image coming soon</span>
-              </div>
+              {featured.coverImage ? (
+                <img
+                  src={featured.coverImage}
+                  alt=""
+                  loading="lazy"
+                  className="h-52 w-full object-cover md:h-full"
+                />
+              ) : (
+                <div className="flex h-52 items-center justify-center bg-navy-50 md:h-full">
+                  <span className="text-sm text-gray-400">Cover image coming soon</span>
+                </div>
+              )}
               <div className="flex flex-col justify-center p-6 md:p-8">
                 <span className="w-fit rounded-md bg-orange-50 px-2.5 py-1 text-xs font-semibold text-orange-500">
                   {featured.category}
@@ -75,13 +97,19 @@ export default function BlogListing() {
                 <h2 className="mt-3 text-2xl font-bold text-navy-900">{featured.title}</h2>
                 <p className="mt-3 line-clamp-2 text-gray-600">{featured.excerpt}</p>
                 <p className="mt-4 text-[13px] text-gray-400">
-                  {featured.date} • {featured.readTimeMinutes} min read
+                  <time dateTime={featured.date}>{formattedFeaturedDate}</time> •{' '}
+                  {featured.readTimeMinutes} min read
                 </p>
-                <div className="mt-5">
-                  <Button href={`/blog/${featured.slug}`} variant="outline" size="small">
-                    Read More
-                  </Button>
-                </div>
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-700 transition-colors hover:text-navy-900"
+                >
+                  Read More
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
               </div>
             </article>
           )}

@@ -33,7 +33,9 @@ export default function ContactPage() {
               { label: 'Contact' },
             ]}
           />
-          <h1 className="mt-4 text-4xl font-bold">Contact Us</h1>
+          <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
+            Contact Us
+          </h1>
           <p className="mt-3 max-w-[560px] text-lg text-gray-400">
             We are one message away. Reach out however works best for you.
           </p>

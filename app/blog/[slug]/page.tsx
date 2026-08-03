@@ -135,7 +135,9 @@ export default async function BlogPostPage({
           <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
             {post.category}
           </p>
-          <h1 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">{post.title}</h1>
+          <h1 className="mt-4 text-[28px] font-bold leading-[1.2] md:text-[32px] lg:text-4xl">
+            {post.title}
+          </h1>
           <p className="mt-4 text-[13px] text-gray-400">
             {formattedDate} • {post.readTimeMinutes} min read • {post.author}
           </p>

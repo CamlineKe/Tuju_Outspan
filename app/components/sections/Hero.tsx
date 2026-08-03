@@ -12,7 +12,7 @@ export default function Hero() {
         <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
           Your Hustle. Our Tech. Made Easy.
         </p>
-        <h1 className="mx-auto mt-4 max-w-[700px] text-4xl font-bold leading-tight lg:text-5xl">
+        <h1 className="mx-auto mt-4 max-w-[700px] text-[32px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[40px] lg:text-[48px]">
           All Your Digital &amp; Government Services, Handled Professionally
         </h1>
         <p className="mx-auto mt-4 max-w-[560px] text-lg text-gray-400">

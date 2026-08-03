@@ -36,7 +36,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline disabled:cursor-not-allowed disabled:opacity-60',
+    'inline-flex items-center justify-center gap-2 rounded-[10px] font-semibold transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline disabled:cursor-not-allowed disabled:opacity-60',
     variantClasses[variant],
     sizeClasses[size],
     className

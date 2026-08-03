@@ -45,7 +45,9 @@ export default function NotFound() {
         </span>
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <p className="text-[80px] font-bold leading-none opacity-15 lg:text-[120px]">404</p>
-          <h1 className="mt-2 text-3xl font-bold">Page Not Found</h1>
+          <h1 className="mt-2 text-[28px] font-bold leading-[1.2] md:text-[32px] lg:text-4xl">
+            Page Not Found
+          </h1>
           <p className="mx-auto mt-4 max-w-[480px] text-lg text-gray-400">
             Looks like this page took a wrong turn. But do not worry, we are still here to help.
           </p>
@@ -60,7 +62,9 @@ export default function NotFound() {
 
       <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="text-3xl font-bold text-navy-900">Where to Next?</h2>
+          <h2 className="text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+            Where to Next?
+          </h2>
           <p className="mt-2 text-gray-600">Here are some pages you might be looking for.</p>
         </div>
         <div className="mx-auto mt-10 grid max-w-[900px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

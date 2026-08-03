@@ -6,7 +6,9 @@ import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 export default function CTABanner() {
   return (
     <section className="bg-orange-500 px-6 py-[72px] text-center text-white">
-      <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
+      <h2 className="text-[28px] font-bold leading-[1.2] md:text-[32px] lg:text-4xl">
+        Ready to Get Started?
+      </h2>
       <p className="mx-auto mt-3 max-w-[480px] text-[17px] text-white/85">
         One WhatsApp message is all it takes.
       </p>

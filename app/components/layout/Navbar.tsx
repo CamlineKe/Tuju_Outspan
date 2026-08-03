@@ -77,7 +77,7 @@ export default function Navbar() {
             href={buildGeneralWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-[10px] bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:inline-flex"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             WhatsApp
@@ -119,7 +119,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      'text-3xl font-semibold text-navy-900',
+                      'text-2xl font-semibold text-navy-900',
                       isActive(link.href) && 'text-orange-500'
                     )}
                   >
@@ -133,7 +133,7 @@ export default function Navbar() {
                 href={buildGeneralWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3.5 font-semibold text-white transition-colors hover:bg-orange-600"
+                className="flex w-full items-center justify-center gap-2 rounded-[10px] bg-orange-500 px-5 py-3.5 font-semibold text-white transition-colors hover:bg-orange-600"
               >
                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 Chat on WhatsApp

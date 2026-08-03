@@ -24,7 +24,9 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
               { label: category.name },
             ]}
           />
-          <h1 className="mt-4 text-4xl font-bold">{category.name}</h1>
+          <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
+            {category.name}
+          </h1>
           <p className="mt-3 max-w-[560px] text-lg text-gray-400">{category.subheadline}</p>
         </div>
       </section>
