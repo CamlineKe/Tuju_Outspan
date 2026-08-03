@@ -26,7 +26,11 @@ export default function Footer() {
     <footer className="bg-navy-900 px-6 pb-6 pt-16 text-white">
       <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
         <div>
-          <p className="text-lg font-bold">TUJU OUTSPAN</p>
+          <img
+            src="/images/logo/logo-footer.png"
+            alt="Tuju Outspan Cyber Center"
+            className="h-12 w-auto"
+          />
           <p className="mt-3 text-sm text-gray-400">
             Your trusted cyber center at Ikonge-Ekerenyo Stage, Chuka University. Online services
             available countrywide.

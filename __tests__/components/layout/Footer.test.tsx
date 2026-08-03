@@ -17,4 +17,9 @@ describe('Footer', () => {
     expect(screen.getByText('0715 616 633')).toBeInTheDocument();
     expect(screen.getByText('Open daily until late')).toBeInTheDocument();
   });
+
+  it('renders the brand logo in the footer', () => {
+    render(<Footer />);
+    expect(screen.getByAltText('Tuju Outspan Cyber Center')).toBeInTheDocument();
+  });
 });

@@ -454,6 +454,12 @@ Padding: 64px 24px 24px
 Grid: 4 columns (desktop), 2 columns (tablet), 1 column (mobile)
 Gap: 40px
 
+Brand column:
+  Logo: White version (logo-footer.png), 48px tall
+  Alt: 'Tuju Outspan Cyber Center'
+  Description: Gray-400, 14px
+  Tagline: Orange-400, 13px, weight 600
+
 Column headers:
   Font: 14px, weight 700, White
   Letter-spacing: 0.5px

@@ -132,6 +132,7 @@ tuju-outspan-website/
 │       ├── about/
 │       ├── blog/
 │       ├── logo/
+│       │   ├── logo-footer.png
 │       │   └── logo-white.png
 │       ├── og/
 │       │   └── og-default.jpg
@@ -267,7 +268,8 @@ public/
 ├── sitemap.xml               # generated post-build
 └── images/
     ├── logo/
-    │   └── logo-white.png    # navbar logo, navy on white, 400px wide
+    │   ├── logo-footer.png   # white on transparent, footer
+    │   └── logo-white.png    # navbar logo, navy on white, 356x90
     ├── about/                # founder and space photos
     ├── portfolio/            # design and branding work
     ├── blog/                 # blog post covers
