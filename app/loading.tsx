@@ -6,7 +6,7 @@ export default function Loading() {
     <div aria-busy="true">
       <span className="sr-only">Loading content...</span>
 
-      <section className="bg-navy-900 px-6 pb-20 pt-24 lg:pt-28">
+      <section className="bg-navy-900 px-6 pb-20 pt-28 lg:pt-32">
         <div className="mx-auto max-w-[700px] space-y-5 text-center">
           <Skeleton className="mx-auto" width={240} />
           <Skeleton className="mx-auto" width={480} height={40} />

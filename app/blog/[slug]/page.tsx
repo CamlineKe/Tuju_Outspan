@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }}
       />
 
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-center text-white lg:pt-28">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-center text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[720px]">
           <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
             {post.category}

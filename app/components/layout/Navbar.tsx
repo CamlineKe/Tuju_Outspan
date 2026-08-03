@@ -59,7 +59,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-[100] h-20 border-b border-navy-800 bg-navy-900 transition-all duration-300 lg:h-24',
+        'fixed inset-x-0 top-0 z-[100] h-24 border-b border-navy-800 bg-navy-900 transition-all duration-300 lg:h-28',
         scrolled && 'bg-navy-900/95 shadow-navy-sm backdrop-blur-md'
       )}
     >
@@ -73,11 +73,11 @@ export default function Navbar() {
             alt="Tuju Outspan Cyber Center"
             width={636}
             height={160}
-            className="h-16 w-auto lg:h-20"
+            className="h-18 w-auto lg:h-24"
           />
         </Link>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-7">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link

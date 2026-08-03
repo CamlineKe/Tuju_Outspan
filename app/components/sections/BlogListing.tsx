@@ -57,7 +57,7 @@ export default function BlogListing() {
 
   return (
     <>
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">

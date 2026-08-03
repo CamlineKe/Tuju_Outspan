@@ -397,13 +397,13 @@ Focus:
 Position: Fixed, top 0
 Background: Navy-900 (default) / Navy-900 with blur (scrolled)
 Border-bottom: 1px solid Navy-800
-Height: 80px (mobile) / 96px (desktop)
+Height: 96px (mobile) / 112px (desktop)
 Padding: 0 24px
 Z-index: 100
 
 Logo:
   Image: /images/logo/logo-footer.png (white version)
-  Height: 64px (mobile) / 80px (desktop)
+  Height: 72px (mobile) / 96px (desktop)
   Aspect: 3.97:1, margins trimmed
   Alt: 'Tuju Outspan Cyber Center'
   Links to: Home
