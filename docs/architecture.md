@@ -130,7 +130,7 @@ Source: `tech-stack.md` section 14. Values live in `.env.local` (gitignored); na
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | `254715616633` |
 | `NEXT_PUBLIC_BUSINESS_EMAIL` | `rafaeeltuju902@gmail.com` |
 | `NEXT_PUBLIC_BUSINESS_LOCATION` | `Ikonge-Ekerenyo Stage, Chuka University` |
-| `NEXT_PUBLIC_MAPS_EMBED_URL` | Google Maps embed URL (placeholder until chosen) |
+| `NEXT_PUBLIC_MAPS_EMBED_URL` | Google Maps embed URL for the contact page map: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5376.553622463109!2d36.894845605155844!3d-1.2830162448364926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1785769387606!5m2!1sen!2sus` |
 | `NEXT_PUBLIC_WHATSAPP_GROUP` | WhatsApp group link (pending creation) |
 | `NEXT_PUBLIC_WHATSAPP_CHANNEL` | WhatsApp channel link (pending creation) |
 | `NEXT_PUBLIC_SITE_URL` | `https://tujuoutspan.co.ke` (pending domain decision) |

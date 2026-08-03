@@ -30,8 +30,8 @@ export default function Footer() {
           <Image
             src="/images/logo/logo-footer.png"
             alt="Tuju Outspan Cyber Center"
-            width={356}
-            height={90}
+            width={636}
+            height={160}
             className="h-12 w-auto"
           />
           <p className="mt-3 text-sm text-gray-400">

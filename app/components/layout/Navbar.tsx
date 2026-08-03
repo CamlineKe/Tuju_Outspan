@@ -59,8 +59,8 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-[100] h-20 border-b border-gray-200 bg-white transition-all duration-300 lg:h-24',
-        scrolled && 'bg-white/95 shadow-navy-sm backdrop-blur-md'
+        'fixed inset-x-0 top-0 z-[100] h-20 border-b border-navy-800 bg-navy-900 transition-all duration-300 lg:h-24',
+        scrolled && 'bg-navy-900/95 shadow-navy-sm backdrop-blur-md'
       )}
     >
       <nav
@@ -69,11 +69,11 @@ export default function Navbar() {
       >
         <Link href="/" aria-label="Tuju Outspan Cyber Center home">
           <Image
-            src="/images/logo/logo-white.png"
+            src="/images/logo/logo-footer.png"
             alt="Tuju Outspan Cyber Center"
-            width={356}
-            height={90}
-            className="h-14 w-auto sm:h-16 lg:h-20"
+            width={636}
+            height={160}
+            className="h-16 w-auto lg:h-20"
           />
         </Link>
 
@@ -83,9 +83,9 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={cn(
-                  'relative py-1 text-sm font-medium text-gray-600 transition-colors hover:text-navy-900',
+                  'relative py-1 text-sm font-medium text-gray-400 transition-colors hover:text-white',
                   isActive(link.href) &&
-                    'text-navy-900 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-orange-500'
+                    'text-white after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-orange-500'
                 )}
               >
                 {link.label}
@@ -108,7 +108,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="inline-flex h-11 w-11 items-center justify-center text-navy-900 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center text-white lg:hidden"
           >
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
@@ -122,21 +122,21 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-0 z-[110] flex flex-col bg-white lg:hidden"
+            className="fixed inset-0 z-[110] flex flex-col bg-navy-900 lg:hidden"
           >
             <div className="flex h-24 items-center justify-between px-6">
               <Image
-                src="/images/logo/logo-white.png"
+                src="/images/logo/logo-footer.png"
                 alt="Tuju Outspan Cyber Center"
-                width={356}
-                height={90}
+                width={636}
+                height={160}
                 className="h-20 w-auto"
               />
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
-                className="inline-flex h-11 w-11 items-center justify-center text-navy-900"
+                className="inline-flex h-11 w-11 items-center justify-center text-white"
               >
                 <X className="h-6 w-6" aria-hidden="true" />
               </button>
@@ -147,7 +147,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      'text-2xl font-semibold text-navy-900',
+                      'text-2xl font-semibold text-white',
                       isActive(link.href) && 'text-orange-500'
                     )}
                   >

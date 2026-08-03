@@ -249,7 +249,7 @@ Shadow: none (default)
 Hover:
   Border-color: Navy-800
   Transform: translateY(-4px)
-  Shadow: 0 8px 24px rgba(10,31,68,0.1)
+  Shadow: 0 8px 24px rgba(4,29,70,0.1)
   Transition: all 0.3s ease
 
 Icon area:
@@ -395,30 +395,30 @@ Focus:
 
 ```
 Position: Fixed, top 0
-Background: White (default) / White with blur (scrolled)
-Border-bottom: 1px solid Gray-200
+Background: Navy-900 (default) / Navy-900 with blur (scrolled)
+Border-bottom: 1px solid Navy-800
 Height: 80px (mobile) / 96px (desktop)
 Padding: 0 24px
 Z-index: 100
 
 Logo:
-  Image: /images/logo/logo-white.png
-  Height: 56px (mobile) / 64px (small) / 80px (desktop)
-  Aspect: 3.96:1, margins trimmed
+  Image: /images/logo/logo-footer.png (white version)
+  Height: 64px (mobile) / 80px (desktop)
+  Aspect: 3.97:1, margins trimmed
   Alt: 'Tuju Outspan Cyber Center'
   Links to: Home
 
 Nav links:
   Home, Services, Pricing, About, Blog, Contact
   Font: 14px, weight 500
-  Color: Gray-600
+  Color: Gray-400
   Gap: 28px
 
 Nav link hover:
-  Color: Navy-900
+  Color: White
 
 Active link:
-  Color: Navy-900
+  Color: White
   Underline: 2px Orange-500, offset 4px
 
 CTA button:
@@ -428,10 +428,10 @@ CTA button:
 #### Mobile Navbar
 
 ```
-Hamburger icon: 24px, Navy-900
-Menu overlay: White, full-screen
+Hamburger icon: 24px, White
+Menu overlay: Navy-900, full-screen
 Menu items: H3 size, stacked vertically
-Close button: Top right, 24px
+Close button: Top right, 24px, White
 Menu header: Logo image (about 80px tall)
 Animation: Slide from right, 300ms ease-out
 ```
@@ -440,8 +440,8 @@ Animation: Slide from right, 300ms ease-out
 
 ```
 On scroll > 50px:
-  Background: White with backdrop-filter: blur(12px)
-  Shadow: 0 1px 3px rgba(10,31,68,0.08)
+  Background: Navy-900 with backdrop-filter: blur(12px)
+  Shadow: 0 1px 3px rgba(4,29,70,0.08)
   Transition: all 0.3s ease
 ```
 
@@ -623,7 +623,7 @@ Motion communicates, not decorates. Every animation has a purpose:
 }
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(10,31,68,0.1);
+  box-shadow: 0 8px 24px rgba(4,29,70,0.1);
   border-color: var(--navy-800);
 }
 ```
@@ -669,7 +669,7 @@ Motion communicates, not decorates. Every animation has a purpose:
 .navbar.scrolled {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 3px rgba(10,31,68,0.08);
+  box-shadow: 0 1px 3px rgba(4,29,70,0.08);
 }
 ```
 
@@ -718,7 +718,7 @@ Every background is **intentional and functional**. No textures, no patterns, no
 | **Solid Gray-50** | `#F8F9FA` | Section alternation, subtle differentiation |
 | **Solid Navy-50** | `#E8EEF7` | Feature sections, highlighted content blocks |
 | **Solid Orange-50** | `#FEF0E8` | Special announcements, limited offers, warm accents |
-| **Solid Navy-900** | `#0A1F44` | Hero sections, footer, dark CTA banners |
+| **Solid Navy-900** | `#041D46` | Hero sections, footer, dark CTA banners |
 | **Subtle Radial Glow** | `radial-gradient(circle, rgba(242,101,34,0.06) 0%, transparent 70%)` | Hero depth only. Single, positioned, low opacity. |
 
 ### Forbidden Backgrounds

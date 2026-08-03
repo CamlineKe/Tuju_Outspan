@@ -74,7 +74,7 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
 
       <RelatedServices category={category} />
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white px-6 py-3 shadow-[0_-4px_12px_rgba(10,31,68,0.08)] md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white px-6 py-3 shadow-[0_-4px_12px_rgba(4,29,70,0.08)] md:hidden">
         <Button href={buildServiceWhatsAppLink(category.name)} className="w-full">
           Get Help on WhatsApp
         </Button>

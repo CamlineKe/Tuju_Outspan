@@ -40,7 +40,7 @@ Tailwind v4 uses CSS-based configuration (`@theme` directive in CSS) instead of 
 @import "tailwindcss";
 
 @theme {
-  --color-navy-900: #0A1F44;
+  --color-navy-900: #041D46;
   --color-navy-800: #0F2B5E;
   --color-navy-700: #143874;
   --color-navy-600: #1A4894;
@@ -78,9 +78,9 @@ Tailwind v4 uses CSS-based configuration (`@theme` directive in CSS) instead of 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
 
-  --shadow-navy-sm: 0 1px 3px rgba(10, 31, 68, 0.08);
-  --shadow-navy-md: 0 4px 12px rgba(10, 31, 68, 0.1);
-  --shadow-navy-lg: 0 10px 24px rgba(10, 31, 68, 0.12);
+  --shadow-navy-sm: 0 1px 3px rgba(4, 29, 70, 0.08);
+  --shadow-navy-md: 0 4px 12px rgba(4, 29, 70, 0.1);
+  --shadow-navy-lg: 0 10px 24px rgba(4, 29, 70, 0.12);
   --shadow-orange: 0 4px 16px rgba(242, 101, 34, 0.2);
 }
 ```
@@ -489,8 +489,7 @@ tuju-outspan-website/
 │           └── contact.ts          # Zod schemas for forms
 ├── public/
 │   ├── images/
-│   │   ├── logo.png
-│   │   ├── logo-white.png
+│   │   ├── logo-footer.png
 │   │   ├── og-default.jpg          # 1200×630 Open Graph image
 │   │   ├── about/
 │   │   ├── portfolio/
@@ -600,7 +599,7 @@ NEXT_PUBLIC_BUSINESS_EMAIL=rafaeeltuju902@gmail.com
 NEXT_PUBLIC_BUSINESS_LOCATION=Ikonge–Ekerenyo Stage, Chuka University
 
 # Google Maps Embed URL (place ID or coordinates)
-NEXT_PUBLIC_MAPS_EMBED_URL=https://www.google.com/maps/embed?pb=...
+NEXT_PUBLIC_MAPS_EMBED_URL=https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5376.553622463109!2d36.894845605155844!3d-1.2830162448364926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1785769387606!5m2!1sen!2sus
 
 # WhatsApp Group Link (when created)
 NEXT_PUBLIC_WHATSAPP_GROUP=https://chat.whatsapp.com/...

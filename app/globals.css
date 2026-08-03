@@ -5,7 +5,7 @@
      machine-facing rendering documented in tech-stack.md section 2. */
 
   /* Navy */
-  --color-navy-900: #0a1f44;
+  --color-navy-900: #041d46;
   --color-navy-800: #0f2b5e;
   --color-navy-700: #143874;
   --color-navy-600: #1a4894;
@@ -48,9 +48,9 @@
   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
 
   /* Shadows (navy-* naming, per decision D2) */
-  --shadow-navy-sm: 0 1px 3px rgba(10, 31, 68, 0.08);
-  --shadow-navy-md: 0 4px 12px rgba(10, 31, 68, 0.1);
-  --shadow-navy-lg: 0 10px 24px rgba(10, 31, 68, 0.12);
+  --shadow-navy-sm: 0 1px 3px rgba(4, 29, 70, 0.08);
+  --shadow-navy-md: 0 4px 12px rgba(4, 29, 70, 0.1);
+  --shadow-navy-lg: 0 10px 24px rgba(4, 29, 70, 0.12);
   --shadow-orange: 0 4px 16px rgba(242, 101, 34, 0.2);
 }
 

@@ -28,8 +28,8 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 | App icon | `public/icon-192.png` | 192x192, PNG | `layout.tsx` icons (in use) |
 | App icon | `public/icon-512.png` | 512x512, PNG | `layout.tsx` icons (in use) |
 | Apple touch icon | `public/apple-touch-icon.png` | 180x180, PNG | `layout.tsx` icons (in use) |
-| Navbar logo | `public/images/logo/logo-white.png` | 356x90, navy on white | Navbar logo, in use |
-| Footer logo | `public/images/logo/logo-footer.png` | White on transparent, derived from the navbar logo | Footer brand column, in use |
+| Navbar logo | `public/images/logo/logo-footer.png` | 636x160, white on transparent | Navbar logo, in use |
+| Footer logo | `public/images/logo/logo-footer.png` | 636x160, white on transparent | Footer brand column, in use |
 | Founder photo | `public/images/about/about-founder.webp` | Portrait 2:3, 682x1024, WebP | About origin story and "Face Behind the Brand" (in use) |
 | Space photos | `public/images/about/about-space-01.webp` (numbered set) | 16:9 or 4:3, 1200px long edge, WebP | About page community section (01 in use) |
 | Service category images | `public/images/services/<slug>.webp` | 4:3, 1200px long edge, WebP | Service Breakdown visual column (government in use) |

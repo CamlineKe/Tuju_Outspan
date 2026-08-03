@@ -25,7 +25,7 @@ The WhatsApp green is treated as a **functional color**, not a brand color. It a
 
 | Token | Hex | RGB | Usage |
 |-------|-----|-----|-------|
-| `navy-900` | `#0A1F44` | `rgb(10, 31, 68)` | Primary headlines, navbar background, footer background, hero dark sections, primary dark surfaces |
+| `navy-900` | `#041D46` | `rgb(4, 29, 70)` | Primary headlines, navbar background, footer background, hero dark sections, primary dark surfaces |
 | `navy-800` | `#0F2B5E` | `rgb(15, 43, 94)` | Hover states on navy buttons, card borders on dark bg, secondary dark elements |
 | `navy-700` | `#143874` | `rgb(20, 56, 116)` | Active states, focus rings, subtle navy accents |
 | `navy-600` | `#1A4894` | `rgb(26, 72, 148)` | Links on light backgrounds, icons |
@@ -136,9 +136,9 @@ Every page and section must follow this ratio:
 
 | Card Type | Background | Border | Shadow | Hover Effect |
 |-----------|------------|--------|--------|--------------|
-| **Standard Card** | `white` | `1px gray-200` | `0 1px 3px rgba(10,31,68,0.08)` | Border → `navy-800`, shadow deepens, translateY(-2px) |
+| **Standard Card** | `white` | `1px gray-200` | `0 1px 3px rgba(4,29,70,0.08)` | Border → `navy-800`, shadow deepens, translateY(-2px) |
 | **Featured Card** | `white` | `2px orange-500` | `0 4px 12px rgba(242,101,34,0.15)` | Same, with subtle orange glow |
-| **Dark Card** | `navy-900` | `1px navy-800` | `0 2px 8px rgba(10,31,68,0.3)` | Background → `navy-800`, border → `navy-700` |
+| **Dark Card** | `navy-900` | `1px navy-800` | `0 2px 8px rgba(4,29,70,0.3)` | Background → `navy-800`, border → `navy-700` |
 | **Accent Card** | `orange-50` | `1px orange-100` | none | Background → `orange-100` |
 | **Info Card** | `navy-50` | `1px navy-100` | none | Background → `navy-100` |
 
@@ -161,7 +161,7 @@ Every page and section must follow this ratio:
 ```css
 :root {
   /* Navy Blue */
-  --navy-900: #0A1F44;
+  --navy-900: #041D46;
   --navy-800: #0F2B5E;
   --navy-700: #143874;
   --navy-600: #1A4894;
@@ -201,9 +201,9 @@ Every page and section must follow this ratio:
   --info-light: #DBEAFE;
 
   /* Shadows (derived from navy-900) */
-  --shadow-navy-sm: 0 1px 3px rgba(10, 31, 68, 0.08);
-  --shadow-navy-md: 0 4px 12px rgba(10, 31, 68, 0.1);
-  --shadow-navy-lg: 0 10px 24px rgba(10, 31, 68, 0.12);
+  --shadow-navy-sm: 0 1px 3px rgba(4, 29, 70, 0.08);
+  --shadow-navy-md: 0 4px 12px rgba(4, 29, 70, 0.1);
+  --shadow-navy-lg: 0 10px 24px rgba(4, 29, 70, 0.12);
   --shadow-orange: 0 4px 16px rgba(242, 101, 34, 0.2);
 
   /* Transitions */
@@ -225,9 +225,9 @@ The machine-facing Tailwind v4 theme is defined in `tech-stack.md` (section 2) a
 
 | Combination | Ratio | WCAG AA | WCAG AAA |
 |-------------|-------|---------|----------|
-| Navy-900 on White | 15.2:1 | ✅ Pass | ✅ Pass |
+| Navy-900 on White | 16.5:1 | ✅ Pass | ✅ Pass |
 | Orange-500 on White | 3.1:1 | ✅ Pass (large text) | ❌ Fail |
-| Orange-500 on Navy-900 | 4.8:1 | ✅ Pass | ✅ Pass |
+| Orange-500 on Navy-900 | 5.2:1 | ✅ Pass | ✅ Pass |
 | White on Navy-900 | 15.2:1 | ✅ Pass | ✅ Pass |
 | Gray-600 on White | 6.3:1 | ✅ Pass | ✅ Pass |
 | Gray-400 on White | 3.1:1 | ✅ Pass (large text) | ❌ Fail |
