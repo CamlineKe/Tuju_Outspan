@@ -1,3 +1,4 @@
+import PortfolioGallery from '@/app/components/sections/PortfolioGallery';
 import ServiceCategoryTemplate from '@/app/components/templates/ServiceCategoryTemplate';
 import { getServiceCategory } from '@/app/lib/data/services';
 import { absolutePageUrl, buildMetadata, faqJsonLd, serviceJsonLd } from '@/app/lib/utils/seo';
@@ -19,6 +20,7 @@ export default function DesignBrandingServicesPage() {
   return (
     <>
       <ServiceCategoryTemplate category={category} />
+      <PortfolioGallery />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

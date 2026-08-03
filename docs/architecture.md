@@ -190,7 +190,7 @@ All 14 pages from the PRD plus 404 and loading states are listed below. The Sect
 | 1 | `/` | Home | Navbar; Hero; Services preview; Why Choose Us; How It Works; Testimonials; Location strip; CTA banner; Footer | 9-section conversion engine |
 | 2 | `/about` | About | Page header; Origin story; Mission and values; Face behind the brand; Community impact; CTA | Trust building, photo placeholders |
 | 3 | `/services` | Services Hub | Page header; Quick find search; Services grid; Can't find it banner | 7-card grid |
-| 4-10 | `/services/{category}` | 7 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate` |
+| 4-10 | `/services/{category}` | 7 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate`; design-branding also renders `PortfolioGallery` |
 | 11 | `/pricing` | Pricing | Page header; Pricing philosophy; Pricing cards; Bulk and student discounts; Payment methods; FAQ | Framework pricing, ask for quote |
 | 12 | `/contact` | Contact | Page header; WhatsApp card; Community links; Details and map; Inquiry form | WhatsApp-first, map embed, form |
 | 13 | `/blog` | Blog | Page header; Featured post; Category filter; Blog grid; Load more; WhatsApp channel CTA | Client-side filters and load more |
@@ -343,10 +343,10 @@ Full details in `deliverables-checklist.md`.
 | WhatsApp Group and Channel links | Contact page, footer, blog | No, placeholders in `.env` |
 | Real testimonials (2-3) | Home testimonials section | No, placeholders allowed |
 | Founder and space photos | About page | No, labeled placeholders |
-| Design portfolio images | Design and Branding page | No, labeled placeholder |
+| Design portfolio images | Design and Branding page | No; gallery section in place, images pending |
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |
 | Exact service prices | Pricing page | No, use `from KSh` or `ask for quote` |
-| OG image and favicon set | Launch assets | No; contract in `image-assets.md`, placed at the end of the phases |
+| OG image and favicon set | Launch assets | Done; generated from the TO mark |
 | Git repo | Version control | Done, initialized on `main` with docs committed |
 | Vercel project and domain DNS | Deploy | No, later phase |
 

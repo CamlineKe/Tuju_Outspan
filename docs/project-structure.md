@@ -73,6 +73,7 @@ tuju-outspan-website/
 │   │   ├── PostShare.tsx
 │   │   │   ├── PricingTable.tsx
 │   │   │   ├── ProcessSteps.tsx
+│   │   │   ├── PortfolioGallery.tsx
 │   │   │   ├── RelatedServices.tsx
 │   │   │   ├── ServiceBreakdown.tsx
 │   │   │   ├── ServicesGrid.tsx
@@ -99,6 +100,7 @@ tuju-outspan-website/
 │       ├── data/
 │       │   ├── blog.ts
 │       │   ├── pricing.ts
+│       │   ├── portfolio.ts
 │       │   ├── services.ts
 │       │   └── testimonials.ts
 │       ├── schemas/
@@ -168,7 +170,7 @@ tuju-outspan-website/
 | Folder | Purpose | Contents |
 |---|---|---|
 | `layout/` | Persistent chrome | Container, Navbar, Footer, WhatsAppFloat |
-| `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare |
+| `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare, PortfolioGallery |
 | `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 7 service pages) |
 | `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
 
