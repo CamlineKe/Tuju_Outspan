@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { Image as ImageIcon } from 'lucide-react';
@@ -148,7 +149,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section className="bg-white">
         {post.coverImage ? (
-          <img src={post.coverImage} alt="" className="max-h-[500px] w-full object-cover" />
+          <div className="relative aspect-[16/9] w-full max-h-[500px]">
+            <Image src={post.coverImage} alt="" fill sizes="100vw" className="object-cover" />
+          </div>
         ) : (
           <div className="flex h-64 items-center justify-center bg-navy-50">
             <ImageIcon className="h-12 w-12 text-navy-100" aria-hidden="true" />

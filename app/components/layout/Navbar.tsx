@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -50,9 +51,11 @@ export default function Navbar() {
         className="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6"
       >
         <Link href="/" aria-label="Tuju Outspan Cyber Center home">
-          <img
+          <Image
             src="/images/logo/logo-white.png"
             alt="Tuju Outspan Cyber Center"
+            width={356}
+            height={90}
             className="h-14 w-auto sm:h-16 lg:h-20"
           />
         </Link>
@@ -105,9 +108,11 @@ export default function Navbar() {
             className="fixed inset-0 z-[110] flex flex-col bg-white lg:hidden"
           >
             <div className="flex h-24 items-center justify-between px-6">
-              <img
+              <Image
                 src="/images/logo/logo-white.png"
                 alt="Tuju Outspan Cyber Center"
+                width={356}
+                height={90}
                 className="h-20 w-auto"
               />
               <button

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
@@ -74,12 +75,15 @@ export default function BlogListing() {
             <Reveal>
               <article className="group grid grid-cols-1 overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:border-navy-800 hover:shadow-navy-md md:grid-cols-2">
                 {featured.coverImage ? (
-                  <img
-                    src={featured.coverImage}
-                    alt=""
-                    loading="lazy"
-                    className="h-52 w-full object-cover md:h-full"
-                  />
+                  <div className="relative h-52 w-full md:h-full">
+                    <Image
+                      src={featured.coverImage}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                 ) : (
                   <div className="flex h-52 items-center justify-center bg-navy-50 md:h-full">
                     <span className="text-sm text-gray-400">Cover image coming soon</span>

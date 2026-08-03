@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Accessibility, type LucideIcon, ShieldCheck, Users, Zap } from 'lucide-react';
 
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
@@ -76,12 +78,15 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <img
-              src="/images/about/about-founder.webp"
-              alt="The Tuju Outspan founder at the cyber center workstation"
-              loading="lazy"
-              className="aspect-[3/4] w-full rounded-xl object-cover shadow-navy-md"
-            />
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl shadow-navy-md">
+              <Image
+                src="/images/about/about-founder.webp"
+                alt="The Tuju Outspan founder at the cyber center workstation"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <p className="mt-4 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-600">
               The founder at work, Ikonge-Ekerenyo Stage
             </p>
@@ -118,12 +123,13 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
             The Face Behind the Brand
           </h2>
-          <div className="mx-auto mt-8 h-50 w-50 overflow-hidden rounded-full border-4 border-white shadow-navy-md">
-            <img
+          <div className="relative mx-auto mt-8 h-50 w-50 overflow-hidden rounded-full border-4 border-white shadow-navy-md">
+            <Image
               src="/images/about/about-founder.webp"
               alt="Portrait of Rafael Tuju, founder of Tuju Outspan Cyber Center"
-              loading="lazy"
-              className="h-full w-full object-cover"
+              fill
+              sizes="200px"
+              className="object-cover"
             />
           </div>
           <h3 className="mt-6 text-2xl font-bold text-navy-900">Rafael Tuju</h3>
@@ -153,12 +159,15 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="md:order-1">
-            <img
-              src="/images/about/about-space-01.webp"
-              alt="The interior of the Tuju Outspan Cyber Center at Ikonge-Ekerenyo Stage"
-              loading="lazy"
-              className="aspect-[4/3] w-full rounded-xl object-cover shadow-navy-md"
-            />
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-navy-md">
+              <Image
+                src="/images/about/about-space-01.webp"
+                alt="The interior of the Tuju Outspan Cyber Center at Ikonge-Ekerenyo Stage"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <p className="mt-4 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-600">
               The shop at Ikonge-Ekerenyo Stage
             </p>

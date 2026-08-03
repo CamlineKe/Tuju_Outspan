@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Image as ImageIcon } from 'lucide-react';
 
 import Reveal from '@/app/components/ui/Reveal';
@@ -34,12 +36,15 @@ export default function PortfolioGallery() {
               <Reveal key={item.title} delay={index * 100}>
                 {item.imagePath ? (
                   <figure className="overflow-hidden rounded-xl border border-gray-200 bg-white">
-                    <img
-                      src={item.imagePath}
-                      alt={item.alt ?? item.title}
-                      loading="lazy"
-                      className="aspect-[4/3] w-full object-cover"
-                    />
+                    <div className="relative aspect-[4/3] w-full">
+                      <Image
+                        src={item.imagePath}
+                        alt={item.alt ?? item.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
                     <figcaption className="p-4 text-sm font-semibold text-navy-900">
                       {item.title}
                     </figcaption>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Clock, Mail, MapPin, Megaphone, MessageCircle, Phone } from 'lucide-react';
@@ -26,9 +27,11 @@ export default function Footer() {
     <footer className="bg-navy-900 px-6 pb-6 pt-16 text-white">
       <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
         <div>
-          <img
+          <Image
             src="/images/logo/logo-footer.png"
             alt="Tuju Outspan Cyber Center"
+            width={356}
+            height={90}
             className="h-12 w-auto"
           />
           <p className="mt-3 text-sm text-gray-400">

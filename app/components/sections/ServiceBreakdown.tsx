@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Check } from 'lucide-react';
 
 import type { ServiceCategory } from '@/app/lib/data/services';
@@ -26,12 +28,15 @@ export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
           </div>
           <div>
             {category.imagePath ? (
-              <img
-                src={category.imagePath}
-                alt={`${category.name} at Tuju Outspan Cyber Center`}
-                loading="lazy"
-                className="aspect-[4/3] w-full rounded-xl object-cover shadow-navy-md"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-navy-md">
+                <Image
+                  src={category.imagePath}
+                  alt={`${category.name} at Tuju Outspan Cyber Center`}
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             ) : (
               <div className="flex items-center justify-center">
                 <div className="flex h-30 w-30 items-center justify-center rounded-[20px] bg-navy-50">

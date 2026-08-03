@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Image as ImageIcon } from 'lucide-react';
@@ -21,7 +22,15 @@ export default function BlogCard({ post }: BlogCardProps) {
       className="group block overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md"
     >
       {post.coverImage ? (
-        <img src={post.coverImage} alt="" loading="lazy" className="h-40 w-full object-cover" />
+        <div className="relative h-40 w-full">
+          <Image
+            src={post.coverImage}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       ) : (
         <div className="flex h-40 items-center justify-center bg-navy-50">
           <ImageIcon className="h-10 w-10 text-navy-100" aria-hidden="true" />
