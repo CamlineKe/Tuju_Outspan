@@ -40,7 +40,7 @@ export function collectRoutePaths(distDir) {
     }
   };
 
-  visit(distDir, '');
+  visit(distDir, '/');
   return routes.sort();
 }
 

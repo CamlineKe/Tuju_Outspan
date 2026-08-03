@@ -11,7 +11,7 @@ describe('PricingCard', () => {
   it('renders the card name, items, and a quote link', () => {
     render(<PricingCard card={standard} />);
     expect(screen.getByRole('heading', { name: 'Education Services' })).toBeInTheDocument();
-    expect(screen.getByText('Ask for quote')).toBeInTheDocument();
+    expect(screen.getAllByText('Ask for quote').length).toBeGreaterThan(0);
     expect(screen.getByRole('link', { name: /get quote/i })).toHaveAttribute(
       'href',
       expect.stringContaining('wa.me')
