@@ -175,11 +175,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-orange-50 px-6 py-16 text-center">
-        <h2 className="text-2xl font-bold text-navy-900">Want to Work with Us?</h2>
-        <p className="mt-2 text-gray-600">We are one message away.</p>
+      <section className="bg-orange-500 px-6 py-16 text-center">
+        <h2 className="text-2xl font-bold text-white">Want to Work with Us?</h2>
+        <p className="mt-2 text-white/85">We are one message away.</p>
         <div className="mt-6 flex justify-center">
-          <Button href={buildGeneralWhatsAppLink()}>Chat on WhatsApp</Button>
+          <Button
+            href={buildGeneralWhatsAppLink()}
+            className="bg-white text-navy-900 hover:bg-white/90"
+          >
+            Chat on WhatsApp
+          </Button>
         </div>
       </section>
     </>

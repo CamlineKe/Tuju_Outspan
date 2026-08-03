@@ -61,7 +61,7 @@ export default function ServicesHub() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-12 lg:pb-20">
+      <section className="bg-gray-50 px-6 py-12 lg:pb-20">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((category) => (
             <ServiceCard key={category.slug} category={category} itemCount={4} iconSize="h-7 w-7" />

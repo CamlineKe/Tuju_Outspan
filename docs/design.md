@@ -55,6 +55,8 @@ Sections alternate backgrounds to create visual rhythm without adding decoration
 
 **Rule:** Never place two identical backgrounds next to each other. Every section must contrast with its neighbors.
 
+**Adopted page rhythm:** Every page opens with the navy-900 header and closes with the navy-900 footer. Interior sections alternate between white, gray-50, navy-50, and orange-50 with no two identical backgrounds adjacent. Bold orange-500 CTA banners close the Home and About pages with an inverted white button; softer orange-50 accents are used for pricing notes and the blog channel CTA. The blog grid and services hub grid use gray-50 so their white cards stand out. No decorative patterns, textures, or gradients are used anywhere; visual interest comes from photos, cards, and motion.
+
 ---
 
 ## 3. Typography System

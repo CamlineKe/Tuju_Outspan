@@ -199,6 +199,8 @@ All 14 pages from the PRD plus 404 and loading states are listed below. The Sect
 
 Loading states: `app/loading.tsx` (global, mirrors Home), `app/services/loading.tsx`, `app/pricing/loading.tsx`, `app/contact/loading.tsx`, `app/blog/loading.tsx`, `app/blog/[slug]/loading.tsx`. Requirements: each skeleton mirrors its page structure; containers are `aria-busy="true"` with a visually hidden "Loading content..." label; skeletons contain no focusable elements; the shimmer animation respects `prefers-reduced-motion`.
 
+Background rhythm: every page opens with the navy-900 header and closes with the navy-900 footer. Interior sections alternate white, gray-50, navy-50, and orange-50 with no two identical backgrounds adjacent. Bold orange-500 CTA banners close the Home and About pages; other pages close on their content sections or use orange-50 accents. No decorative patterns are used anywhere (design.md section 8).
+
 ---
 
 ## 7. Data Model and Content

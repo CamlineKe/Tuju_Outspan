@@ -100,12 +100,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <section className="bg-orange-50 px-6 py-12 text-center">
-        <p className="text-lg font-medium text-navy-900">
-          Prefer to visit? Walk in anytime, we are open daily until late.
-        </p>
-      </section>
     </>
   );
 }

@@ -136,7 +136,7 @@ export default function BlogListing() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pb-20">
+      <section className="bg-gray-50 px-6 pb-20">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {gridPosts.map((post, index) => (
             <Reveal key={post.slug} delay={index * 100}>
