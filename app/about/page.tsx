@@ -1,4 +1,4 @@
-import { Accessibility, Camera, type LucideIcon, ShieldCheck, Users, Zap } from 'lucide-react';
+import { Accessibility, type LucideIcon, ShieldCheck, Users, Zap } from 'lucide-react';
 
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
@@ -75,11 +75,16 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="flex aspect-[3/4] items-center justify-center rounded-xl bg-navy-50">
-            <div className="text-center">
-              <Camera className="mx-auto h-12 w-12 text-navy-100" aria-hidden="true" />
-              <p className="mt-3 text-sm text-gray-400">Founder photo coming soon</p>
-            </div>
+          <div>
+            <img
+              src="/images/about/about-founder.webp"
+              alt="The Tuju Outspan founder at the cyber center workstation"
+              loading="lazy"
+              className="aspect-[3/4] w-full rounded-xl object-cover shadow-navy-md"
+            />
+            <p className="mt-4 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-600">
+              The founder at work, Ikonge-Ekerenyo Stage
+            </p>
           </div>
         </div>
       </section>
@@ -110,10 +115,18 @@ export default function AboutPage() {
 
       <section className="bg-navy-50 px-6 py-20">
         <div className="mx-auto max-w-[800px] text-center">
-          <div className="mx-auto flex h-50 w-50 items-center justify-center rounded-full border-4 border-white bg-navy-50 shadow-navy-md">
-            <Camera className="h-12 w-12 text-navy-100" aria-hidden="true" />
+          <h2 className="text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+            The Face Behind the Brand
+          </h2>
+          <div className="mx-auto mt-8 h-50 w-50 overflow-hidden rounded-full border-4 border-white shadow-navy-md">
+            <img
+              src="/images/about/about-founder.webp"
+              alt="Portrait of Rafael Tuju, founder of Tuju Outspan Cyber Center"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
-          <h2 className="mt-6 text-2xl font-bold text-navy-900">The Face Behind the Brand</h2>
+          <h3 className="mt-6 text-2xl font-bold text-navy-900">Rafael Tuju</h3>
           <p className="mt-2 text-lg font-semibold text-gray-600">
             Founder, Tuju Outspan Cyber Center
           </p>

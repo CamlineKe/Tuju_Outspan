@@ -30,7 +30,7 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 | Apple touch icon | `public/apple-touch-icon.png` | 180x180, PNG | `layout.tsx` icons (in use) |
 | Navbar logo | `public/images/logo/logo-white.png` | 356x90, navy on white | Navbar logo, in use |
 | Footer logo | `public/images/logo/logo-footer.png` | White on transparent, derived from the navbar logo | Footer brand column, in use |
-| Founder photo | `public/images/about/about-founder.webp` | Portrait 3:4, 800-1200px long edge, WebP | About origin story and "Face Behind the Brand" |
+| Founder photo | `public/images/about/about-founder.webp` | Portrait 2:3, 682x1024, WebP | About origin story and "Face Behind the Brand" (in use) |
 | Space photos | `public/images/about/about-space-01.webp` (numbered set) | 16:9 or 4:3, 800-1200px long edge, WebP | About page community and story sections |
 | Portfolio work | `public/images/portfolio/portfolio-poster-01.webp` (numbered set) | 16:9 or 4:3, 1200px long edge, WebP | Design and Branding service page |
 | Blog covers | `public/images/blog/blog-<slug>.webp` | 16:9, 1200px long edge, WebP | Blog cards and post pages, wired per post in `blog.ts` |
