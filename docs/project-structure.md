@@ -138,7 +138,8 @@ tuju-outspan-website/
 │       │   └── logo-white.png
 │       ├── og/
 │       │   └── og-default.jpg
-│       └── portfolio/
+│       ├── portfolio/
+│       └── services/
 ├── scripts/
 │   ├── generate-sitemap.mjs
 │   └── sitemap-utils.mjs
@@ -273,9 +274,10 @@ public/
     │   ├── logo-footer.png   # white on transparent, footer
     │   └── logo-white.png    # navbar logo, navy on white, 356x90
     ├── about/                # founder and space photos
-    ├── portfolio/            # design and branding work
     ├── blog/                 # blog post covers
-    └── og/                   # social sharing images
+    ├── og/                   # social sharing images
+    ├── portfolio/            # design and branding work
+    └── services/             # service category photos
 ```
 
 ### 4.2 Image format matrix
@@ -285,7 +287,7 @@ public/
 | Logo (navbar) | PNG | Navy on white, optimized at 400px wide, 2.5:1 aspect |
 | Logo-derived icons | PNG | `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` |
 | Favicon | ICO | `favicon.ico` with 16x16 and 32x32 |
-| Photos (about, portfolio, blog) | WebP | Best quality-to-size ratio, supported by all modern browsers |
+| Photos (about, services, portfolio, blog) | WebP | Best quality-to-size ratio, supported by all modern browsers |
 | Open Graph image | JPG | `og-default.jpg` at 1200x630; consumed by external crawlers, so use the most compatible format |
 
 There is no hero background image. The approved hero is solid navy-900 with the radial glow; do not add `hero-bg.jpg`.

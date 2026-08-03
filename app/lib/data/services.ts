@@ -28,6 +28,7 @@ export interface ServiceCategory {
   headline: string;
   subheadline: string;
   icon: string; // Lucide icon name
+  imagePath?: string; // optional photo for the Service Breakdown visual column
   services: ServiceItem[];
   processSteps: ProcessStep[];
   faqs: FAQ[];
@@ -42,6 +43,7 @@ export const serviceCategories: ServiceCategory[] = [
     headline: 'Government Services',
     subheadline: 'KRA, NTSA, eCitizen, passports, and more, handled fast and accurately.',
     icon: 'Landmark',
+    imagePath: '/images/services/government.webp',
     services: [
       {
         name: 'KRA PIN Registration',
