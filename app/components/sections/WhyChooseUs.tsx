@@ -29,9 +29,7 @@ export default function WhyChooseUs() {
                   <pillar.icon className="h-6 w-6 text-navy-900" aria-hidden="true" />
                 </div>
                 <h3 className="mt-4 text-base font-bold text-navy-900">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                  {pillar.description}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{pillar.description}</p>
               </div>
             </Reveal>
           ))}

@@ -1,11 +1,14 @@
-import type { Metadata, ReactNode } from 'react';
-import { Image as ImageIcon } from 'lucide-react';
+import type { ReactNode } from 'react';
+
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import Button from '@/app/components/ui/Button';
-import BlogCard from '@/app/components/ui/BlogCard';
+import { Image as ImageIcon } from 'lucide-react';
+
 import PostShare from '@/app/components/sections/PostShare';
-import { blogPosts, getBlogPost, type BlogPost } from '@/app/lib/data/blog';
+import BlogCard from '@/app/components/ui/BlogCard';
+import Button from '@/app/components/ui/Button';
+import { type BlogPost, blogPosts, getBlogPost } from '@/app/lib/data/blog';
 import { absolutePageUrl, blogPostingJsonLd, buildMetadata } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
@@ -51,7 +54,10 @@ function renderBlock(block: BlogPost['content'][number], key: number): ReactNode
       );
     case 'list':
       return (
-        <ul key={key} className="mt-6 list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:text-orange-500">
+        <ul
+          key={key}
+          className="mt-6 list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:text-orange-500"
+        >
           {block.items.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -95,11 +101,7 @@ function renderContent(post: BlogPost): ReactNode[] {
   return blocks;
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) {
@@ -146,11 +148,7 @@ export default async function BlogPostPage({
 
       <section className="bg-white">
         {post.coverImage ? (
-          <img
-            src={post.coverImage}
-            alt=""
-            className="max-h-[500px] w-full object-cover"
-          />
+          <img src={post.coverImage} alt="" className="max-h-[500px] w-full object-cover" />
         ) : (
           <div className="flex h-64 items-center justify-center bg-navy-50">
             <ImageIcon className="h-12 w-12 text-navy-100" aria-hidden="true" />

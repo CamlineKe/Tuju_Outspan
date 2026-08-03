@@ -1,5 +1,6 @@
-import { Briefcase, FileText, House, Phone, type LucideIcon } from 'lucide-react';
 import Link from 'next/link';
+
+import { Briefcase, FileText, House, type LucideIcon, Phone } from 'lucide-react';
 
 import Button from '@/app/components/ui/Button';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -83,7 +84,7 @@ export default function NotFound() {
       </section>
 
       <section className="bg-orange-50 px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold text-navy-900">Can't Find What You Need?</h2>
+        <h2 className="text-2xl font-bold text-navy-900">Can&apos;t Find What You Need?</h2>
         <p className="mt-2 text-gray-600">Just WhatsApp us, we probably do it.</p>
         <div className="mt-6 flex justify-center">
           <Button href={buildGeneralWhatsAppLink()}>Ask on WhatsApp</Button>

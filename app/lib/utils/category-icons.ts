@@ -5,8 +5,8 @@ import {
   HeartPulse,
   Landmark,
   Laptop,
-  Palette,
   type LucideIcon,
+  Palette,
 } from 'lucide-react';
 
 export const CATEGORY_ICONS: Record<string, LucideIcon> = {

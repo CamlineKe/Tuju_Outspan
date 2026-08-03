@@ -3,7 +3,15 @@ import { join } from 'node:path';
 
 // Directories inside dist/ that are build internals or special pages, not
 // crawlable routes. Kept in sync with Next static export output.
-const SKIPPED_DIRECTORIES = new Set(['_next', 'server', 'static', 'cache', 'build', 'types', '404']);
+const SKIPPED_DIRECTORIES = new Set([
+  '_next',
+  'server',
+  'static',
+  'cache',
+  'build',
+  'types',
+  '404',
+]);
 
 /**
  * Walk a static export directory and collect crawlable routes from index.html

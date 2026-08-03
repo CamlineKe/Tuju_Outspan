@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+
 import type { ServiceCategory } from '@/app/lib/data/services';
 import { getCategoryIcon } from '@/app/lib/utils/category-icons';
 

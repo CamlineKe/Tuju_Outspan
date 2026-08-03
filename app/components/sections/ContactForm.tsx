@@ -1,13 +1,14 @@
 'use client';
 
+import { useForm } from 'react-hook-form';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { MessageCircle } from 'lucide-react';
-import { useForm } from 'react-hook-form';
 
 import Button from '@/app/components/ui/Button';
 import Input from '@/app/components/ui/Input';
 import { serviceCategories } from '@/app/lib/data/services';
-import { contactSchema, type ContactFormValues } from '@/app/lib/schemas/contact';
+import { type ContactFormValues, contactSchema } from '@/app/lib/schemas/contact';
 import { buildWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const selectClasses =

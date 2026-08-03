@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
 
-import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import BlogCard from '@/app/components/ui/BlogCard';
+import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
-import { blogPosts, type BlogCategory } from '@/app/lib/data/blog';
+import { type BlogCategory, blogPosts } from '@/app/lib/data/blog';
 
 type BlogFilter = 'All' | BlogCategory;
 
@@ -32,9 +32,7 @@ export default function BlogListing() {
 
   const filtered = useMemo(() => {
     const posts =
-      category === 'All'
-        ? blogPosts
-        : blogPosts.filter((post) => post.category === category);
+      category === 'All' ? blogPosts : blogPosts.filter((post) => post.category === category);
     return [...posts].sort((a, b) => b.date.localeCompare(a.date));
   }, [category]);
 
@@ -60,12 +58,7 @@ export default function BlogListing() {
     <>
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
-          <Breadcrumb
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Blog' },
-            ]}
-          />
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
             Blog and Guides
           </h1>

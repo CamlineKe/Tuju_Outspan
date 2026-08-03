@@ -1,10 +1,10 @@
 import { Banknote, Smartphone, Tag } from 'lucide-react';
 
+import PricingTable from '@/app/components/sections/PricingTable';
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import FAQItem from '@/app/components/ui/FAQItem';
 import SectionHeader from '@/app/components/ui/SectionHeader';
-import PricingTable from '@/app/components/sections/PricingTable';
 import { pricingCards } from '@/app/lib/data/pricing';
 import { absolutePageUrl, buildMetadata, faqJsonLd, serviceJsonLd } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -58,12 +58,7 @@ export default function PricingPage() {
 
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
-          <Breadcrumb
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Pricing' },
-            ]}
-          />
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Pricing' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
             Pricing
           </h1>

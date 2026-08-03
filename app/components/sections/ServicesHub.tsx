@@ -1,7 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+
 import { Search } from 'lucide-react';
+
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import ServiceCard from '@/app/components/ui/ServiceCard';
@@ -32,12 +34,7 @@ export default function ServicesHub() {
     <>
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
-          <Breadcrumb
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Services' },
-            ]}
-          />
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
             Our Services
           </h1>

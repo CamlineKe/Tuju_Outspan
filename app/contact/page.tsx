@@ -1,9 +1,9 @@
 import { Megaphone, MessageCircle, Users } from 'lucide-react';
 
-import Breadcrumb from '@/app/components/ui/Breadcrumb';
-import Button from '@/app/components/ui/Button';
 import ContactForm from '@/app/components/sections/ContactForm';
 import ContactInfo from '@/app/components/sections/ContactInfo';
+import Breadcrumb from '@/app/components/ui/Breadcrumb';
+import Button from '@/app/components/ui/Button';
 import { buildMetadata, contactPageJsonLd } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
@@ -27,12 +27,7 @@ export default function ContactPage() {
 
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
-          <Breadcrumb
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Contact' },
-            ]}
-          />
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
             Contact Us
           </h1>
@@ -64,9 +59,7 @@ export default function ContactPage() {
           <div className="rounded-xl border border-gray-200 bg-white p-7">
             <Users className="h-8 w-8 text-navy-900" aria-hidden="true" />
             <h3 className="mt-4 text-lg font-semibold text-navy-900">Join Our WhatsApp Group</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Community Q&amp;A, tips, and peer support.
-            </p>
+            <p className="mt-2 text-sm text-gray-600">Community Q&amp;A, tips, and peer support.</p>
             <div className="mt-4">
               {groupLink ? (
                 <Button href={groupLink} variant="outline" size="small">
@@ -80,9 +73,7 @@ export default function ContactPage() {
           <div className="rounded-xl border border-gray-200 bg-white p-7">
             <Megaphone className="h-8 w-8 text-navy-900" aria-hidden="true" />
             <h3 className="mt-4 text-lg font-semibold text-navy-900">Join Our WhatsApp Channel</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Announcements, new services, and updates.
-            </p>
+            <p className="mt-2 text-sm text-gray-600">Announcements, new services, and updates.</p>
             <div className="mt-4">
               {channelLink ? (
                 <Button href={channelLink} variant="outline" size="small">

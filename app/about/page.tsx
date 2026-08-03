@@ -1,11 +1,4 @@
-import {
-  Accessibility,
-  Camera,
-  ShieldCheck,
-  Users,
-  Zap,
-  type LucideIcon,
-} from 'lucide-react';
+import { Accessibility, Camera, type LucideIcon, ShieldCheck, Users, Zap } from 'lucide-react';
 
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
@@ -47,12 +40,7 @@ export default function AboutPage() {
     <>
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-24 text-white lg:pt-28">
         <div className="relative z-10 mx-auto max-w-[1200px]">
-          <Breadcrumb
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'About' },
-            ]}
-          />
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
             About Tuju Outspan
           </h1>
@@ -78,8 +66,8 @@ export default function AboutPage() {
                 often faced long queues, long trips, or services with no accountability.
               </p>
               <p>
-                We built the center to change that. From KRA and HELB to printing and design,
-                every request is handled with care, honesty, and speed.
+                We built the center to change that. From KRA and HELB to printing and design, every
+                request is handled with care, honesty, and speed.
               </p>
               <p>
                 Today we serve walk-in clients at Ikonge-Ekerenyo Stage and online clients across
@@ -130,8 +118,8 @@ export default function AboutPage() {
             Founder, Tuju Outspan Cyber Center
           </p>
           <p className="mx-auto mt-4 max-w-[600px] leading-relaxed text-gray-600">
-            Tuju Outspan was built on a simple belief: reliable tech and government services
-            should be accessible to everyone around Chuka University and beyond.
+            Tuju Outspan was built on a simple belief: reliable tech and government services should
+            be accessible to everyone around Chuka University and beyond.
           </p>
         </div>
       </section>
@@ -145,9 +133,9 @@ export default function AboutPage() {
             Rooted in Chuka. Serving Kenya.
           </h2>
           <p className="mt-4 leading-relaxed text-gray-600">
-            We serve Chuka University students, local businesses, and clients across Kenya
-            through our online services. Every completed application, print, and design is a
-            step toward making professional help accessible to everyone.
+            We serve Chuka University students, local businesses, and clients across Kenya through
+            our online services. Every completed application, print, and design is a step toward
+            making professional help accessible to everyone.
           </p>
         </div>
       </section>

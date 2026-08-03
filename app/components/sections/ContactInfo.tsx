@@ -1,4 +1,4 @@
-import { Clock, Globe, Mail, MapPin, Phone, type LucideIcon } from 'lucide-react';
+import { Clock, Globe, type LucideIcon, Mail, MapPin, Phone } from 'lucide-react';
 
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
@@ -15,7 +15,12 @@ interface ContactDetail {
 }
 
 const DETAILS: ContactDetail[] = [
-  { icon: Phone, label: 'Call or WhatsApp', value: '0715 616 633', href: buildGeneralWhatsAppLink() },
+  {
+    icon: Phone,
+    label: 'Call or WhatsApp',
+    value: '0715 616 633',
+    href: buildGeneralWhatsAppLink(),
+  },
   { icon: Mail, label: 'Email', value: BUSINESS_EMAIL, href: `mailto:${BUSINESS_EMAIL}` },
   { icon: MapPin, label: 'Location', value: BUSINESS_LOCATION },
   { icon: Clock, label: 'Hours', value: 'Open Daily Until Late' },

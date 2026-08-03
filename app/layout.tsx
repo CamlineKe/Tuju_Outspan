@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -6,6 +7,7 @@ import Footer from '@/app/components/layout/Footer';
 import Navbar from '@/app/components/layout/Navbar';
 import WhatsAppFloat from '@/app/components/layout/WhatsAppFloat';
 import { localBusinessJsonLd } from '@/app/lib/utils/seo';
+
 import './globals.css';
 
 const inter = Inter({

@@ -1,8 +1,10 @@
 import Link from 'next/link';
+
 import { ArrowRight } from 'lucide-react';
+
 import type { ServiceCategory } from '@/app/lib/data/services';
-import { cn } from '@/app/lib/utils/cn';
 import { getCategoryIcon } from '@/app/lib/utils/category-icons';
+import { cn } from '@/app/lib/utils/cn';
 
 interface ServiceCardProps {
   category: ServiceCategory;
@@ -32,7 +34,10 @@ export default function ServiceCard({
       <ul className="mt-3 space-y-1">
         {category.services.slice(0, itemCount).map((service) => (
           <li key={service.name} className="flex items-start gap-2 text-sm text-gray-600">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" aria-hidden="true" />
+            <span
+              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500"
+              aria-hidden="true"
+            />
             {service.name}
           </li>
         ))}
