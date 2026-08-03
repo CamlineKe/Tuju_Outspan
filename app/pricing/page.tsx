@@ -6,7 +6,7 @@ import FAQItem from '@/app/components/ui/FAQItem';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import PricingTable from '@/app/components/sections/PricingTable';
 import { pricingCards } from '@/app/lib/data/pricing';
-import { absolutePageUrl, buildMetadata, serviceJsonLd } from '@/app/lib/utils/seo';
+import { absolutePageUrl, buildMetadata, faqJsonLd, serviceJsonLd } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const PRICING_FAQS = [
@@ -50,6 +50,10 @@ export default function PricingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(PRICING_FAQS)) }}
       />
 
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-20 text-white">

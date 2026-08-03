@@ -1,4 +1,5 @@
 import ProcessStep from '@/app/components/ui/ProcessStep';
+import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 
 const STEPS = [
@@ -28,12 +29,13 @@ export default function ProcessSteps() {
           />
           <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-3">
             {STEPS.map((step, index) => (
-              <ProcessStep
-                key={step.title}
-                stepNumber={index + 1}
-                title={step.title}
-                description={step.description}
-              />
+              <Reveal key={step.title} delay={index * 100}>
+                <ProcessStep
+                  stepNumber={index + 1}
+                  title={step.title}
+                  description={step.description}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

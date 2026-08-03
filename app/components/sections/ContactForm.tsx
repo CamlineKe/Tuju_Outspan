@@ -53,7 +53,13 @@ export default function ContactForm() {
         <label htmlFor="service" className="mb-2 block text-sm font-medium text-gray-800">
           Service Needed
         </label>
-        <select id="service" className={selectClasses} {...register('service')}>
+        <select
+          id="service"
+          className={selectClasses}
+          aria-invalid={errors.service ? true : undefined}
+          aria-describedby={errors.service ? 'service-error' : undefined}
+          {...register('service')}
+        >
           <option value="">Choose a service</option>
           {serviceCategories.map((category) => (
             <option key={category.slug} value={category.name}>
@@ -63,7 +69,9 @@ export default function ContactForm() {
           <option value="Other">Other</option>
         </select>
         {errors.service?.message && (
-          <p className="mt-1.5 text-sm text-error">{errors.service.message}</p>
+          <p id="service-error" role="alert" className="mt-1.5 text-sm text-error">
+            {errors.service.message}
+          </p>
         )}
       </div>
       <div>
@@ -75,10 +83,14 @@ export default function ContactForm() {
           rows={5}
           placeholder="How can we help?"
           className={textareaClasses}
+          aria-invalid={errors.message ? true : undefined}
+          aria-describedby={errors.message ? 'message-error' : undefined}
           {...register('message')}
         />
         {errors.message?.message && (
-          <p className="mt-1.5 text-sm text-error">{errors.message.message}</p>
+          <p id="message-error" role="alert" className="mt-1.5 text-sm text-error">
+            {errors.message.message}
+          </p>
         )}
       </div>
       <Button type="submit" className="w-full">

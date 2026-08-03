@@ -1,6 +1,7 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 
 import Button from '@/app/components/ui/Button';
+import Reveal from '@/app/components/ui/Reveal';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const TRUST_ITEMS = ['Fast Turnaround', 'Trusted by Locals', 'Open Daily Until Late'];
@@ -8,7 +9,7 @@ const TRUST_ITEMS = ['Fast Turnaround', 'Trusted by Locals', 'Open Daily Until L
 export default function Hero() {
   return (
     <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 py-20 text-center text-white lg:py-30">
-      <div className="relative z-10 mx-auto max-w-[1200px]">
+      <Reveal className="relative z-10 mx-auto max-w-[1200px]">
         <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
           Your Hustle. Our Tech. Made Easy.
         </p>
@@ -37,7 +38,7 @@ export default function Hero() {
             </li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </section>
   );
 }

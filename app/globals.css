@@ -113,6 +113,30 @@
       background-position: -200% 0;
     }
   }
+
+  /* Scroll reveal (design.md section 7). Reveal.js adds .reveal-visible when
+     the element enters the viewport. The global reduced-motion rule below and
+     the noscript style in layout.tsx keep content visible without animation. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-visible {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @layer utilities {

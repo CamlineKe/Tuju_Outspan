@@ -1,5 +1,7 @@
 import { cn } from '@/app/lib/utils/cn';
 
+import Reveal from './Reveal';
+
 interface SectionHeaderProps {
   overline?: string;
   title: string;
@@ -16,7 +18,7 @@ export default function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn('mb-12', align === 'left' ? 'text-left' : 'text-center', className)}>
+    <Reveal className={cn('mb-12', align === 'left' ? 'text-left' : 'text-center', className)}>
       {overline && (
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
           {overline}
@@ -40,6 +42,6 @@ export default function SectionHeader({
           {description}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }

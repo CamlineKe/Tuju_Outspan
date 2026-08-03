@@ -50,6 +50,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+        <noscript>
+          <style>{`.reveal { opacity: 1; transform: none; }`}</style>
+        </noscript>
         <Navbar />
         <main id="main-content" className="flex-1">
           {children}

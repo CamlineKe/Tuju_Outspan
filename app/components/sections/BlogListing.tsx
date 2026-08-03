@@ -9,6 +9,7 @@ import { ArrowRight } from 'lucide-react';
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import BlogCard from '@/app/components/ui/BlogCard';
 import Button from '@/app/components/ui/Button';
+import Reveal from '@/app/components/ui/Reveal';
 import { blogPosts, type BlogCategory } from '@/app/lib/data/blog';
 
 type BlogFilter = 'All' | BlogCategory;
@@ -77,41 +78,43 @@ export default function BlogListing() {
       <section className="bg-white px-6 pb-8 pt-12">
         <div className="mx-auto max-w-[1100px]">
           {featured && (
-            <article className="group grid grid-cols-1 overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:border-navy-800 hover:shadow-navy-md md:grid-cols-2">
-              {featured.coverImage ? (
-                <img
-                  src={featured.coverImage}
-                  alt=""
-                  loading="lazy"
-                  className="h-52 w-full object-cover md:h-full"
-                />
-              ) : (
-                <div className="flex h-52 items-center justify-center bg-navy-50 md:h-full">
-                  <span className="text-sm text-gray-400">Cover image coming soon</span>
-                </div>
-              )}
-              <div className="flex flex-col justify-center p-6 md:p-8">
-                <span className="w-fit rounded-md bg-orange-50 px-2.5 py-1 text-xs font-semibold text-orange-500">
-                  {featured.category}
-                </span>
-                <h2 className="mt-3 text-2xl font-bold text-navy-900">{featured.title}</h2>
-                <p className="mt-3 line-clamp-2 text-gray-600">{featured.excerpt}</p>
-                <p className="mt-4 text-[13px] text-gray-400">
-                  <time dateTime={featured.date}>{formattedFeaturedDate}</time> •{' '}
-                  {featured.readTimeMinutes} min read
-                </p>
-                <Link
-                  href={`/blog/${featured.slug}`}
-                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-700 transition-colors hover:text-navy-900"
-                >
-                  Read More
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                    aria-hidden="true"
+            <Reveal>
+              <article className="group grid grid-cols-1 overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:border-navy-800 hover:shadow-navy-md md:grid-cols-2">
+                {featured.coverImage ? (
+                  <img
+                    src={featured.coverImage}
+                    alt=""
+                    loading="lazy"
+                    className="h-52 w-full object-cover md:h-full"
                   />
-                </Link>
-              </div>
-            </article>
+                ) : (
+                  <div className="flex h-52 items-center justify-center bg-navy-50 md:h-full">
+                    <span className="text-sm text-gray-400">Cover image coming soon</span>
+                  </div>
+                )}
+                <div className="flex flex-col justify-center p-6 md:p-8">
+                  <span className="w-fit rounded-md bg-orange-50 px-2.5 py-1 text-xs font-semibold text-orange-500">
+                    {featured.category}
+                  </span>
+                  <h2 className="mt-3 text-2xl font-bold text-navy-900">{featured.title}</h2>
+                  <p className="mt-3 line-clamp-2 text-gray-600">{featured.excerpt}</p>
+                  <p className="mt-4 text-[13px] text-gray-400">
+                    <time dateTime={featured.date}>{formattedFeaturedDate}</time> •{' '}
+                    {featured.readTimeMinutes} min read
+                  </p>
+                  <Link
+                    href={`/blog/${featured.slug}`}
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-700 transition-colors hover:text-navy-900"
+                  >
+                    Read More
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </div>
+              </article>
+            </Reveal>
           )}
         </div>
       </section>
@@ -138,8 +141,10 @@ export default function BlogListing() {
 
       <section className="bg-white px-6 pb-20">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {gridPosts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+          {gridPosts.map((post, index) => (
+            <Reveal key={post.slug} delay={index * 100}>
+              <BlogCard post={post} />
+            </Reveal>
           ))}
         </div>
         {gridPosts.length === 0 && (

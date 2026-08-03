@@ -1,5 +1,6 @@
 import { Quote } from 'lucide-react';
 
+import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import TestimonialCard from '@/app/components/ui/TestimonialCard';
 import { testimonials } from '@/app/lib/data/testimonials';
@@ -11,13 +12,14 @@ export default function Testimonials() {
         <SectionHeader overline="TESTIMONIALS" title="What Our Clients Say" />
         {testimonials.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.author}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                service={testimonial.service}
-              />
+            {testimonials.map((testimonial, index) => (
+              <Reveal key={testimonial.author} delay={index * 100}>
+                <TestimonialCard
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  service={testimonial.service}
+                />
+              </Reveal>
             ))}
           </div>
         ) : (
