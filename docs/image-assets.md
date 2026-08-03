@@ -7,7 +7,7 @@
 
 ## 1. Current State
 
-The code already targets the paths below. Until the files exist, requests for icons and the Open Graph image return 404; that is expected and temporary. Everywhere a photo is not yet present, the UI renders branded navy-50 placeholders with an icon and text, per `design.md` section 10.
+The brand-derived assets below are generated from the TO mark and are in use. Photo slots remain pending owner content; everywhere a photo is not yet present, the UI renders branded navy-50 placeholders with an icon and text, per `design.md` section 10.
 
 ## 2. Ownership Gate
 
@@ -23,11 +23,11 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 
 | Asset | Target path | Dimensions and format | Used by |
 |-------|-------------|-----------------------|---------|
-| Open Graph image | `public/images/og/og-default.jpg` | Exactly 1200x630, JPG | Default `og:image` on every page via `seo.ts` |
-| Favicon | `public/favicon.ico` | 16x16 and 32x32, ICO | `layout.tsx` icons |
-| App icon | `public/icon-192.png` | 192x192, PNG | `layout.tsx` icons |
-| App icon | `public/icon-512.png` | 512x512, PNG | `layout.tsx` icons |
-| Apple touch icon | `public/apple-touch-icon.png` | 180x180, PNG | `layout.tsx` icons |
+| Open Graph image | `public/images/og/og-default.jpg` | Exactly 1200x630, JPG | Default `og:image` via `seo.ts` (in use) |
+| Favicon | `public/favicon.ico` | 16x16 and 32x32, ICO | `layout.tsx` icons (in use) |
+| App icon | `public/icon-192.png` | 192x192, PNG | `layout.tsx` icons (in use) |
+| App icon | `public/icon-512.png` | 512x512, PNG | `layout.tsx` icons (in use) |
+| Apple touch icon | `public/apple-touch-icon.png` | 180x180, PNG | `layout.tsx` icons (in use) |
 | Navbar logo | `public/images/logo/logo-white.png` | 356x90, navy on white | Navbar logo, in use |
 | Footer logo | `public/images/logo/logo-footer.png` | White on transparent, derived from the navbar logo | Footer brand column, in use |
 | Founder photo | `public/images/about/about-founder.webp` | Portrait 3:4, 800-1200px long edge, WebP | About origin story and "Face Behind the Brand" |

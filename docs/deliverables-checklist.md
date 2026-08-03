@@ -142,8 +142,8 @@ Implementation is complete. The remaining steps are owner content, assets, and l
 | 2 | Create WhatsApp Group + Channel | High | Pending |
 | 3 | Gather photos (founder, space, portfolio) | High | Pending |
 | 4 | Write 3-5 blog articles | Medium | Pending |
-| 5 | Design OG image (1200x630, contract in image-assets.md) | Medium | Pending |
-| 6 | Generate favicon set (contract in image-assets.md) | Medium | Pending |
+| 5 | Design OG image (1200x630, contract in image-assets.md) | Medium | Done |
+| 6 | Generate favicon set (contract in image-assets.md) | Medium | Done |
 | 7 | Scaffold project with pnpm + Next.js | High | Done |
 | 8 | Implement pages (Home → Contact → Services → Others) | High | Done |
 | 9 | Add sitemap.xml generation | Medium | Done |
