@@ -342,7 +342,7 @@ Full details in `deliverables-checklist.md`.
 | Domain name decision | `.env`, canonical URLs, sitemap | No, use placeholder until decided |
 | WhatsApp Group and Channel links | Contact page, footer, blog | No, placeholders in `.env` |
 | Real testimonials (2-3) | Home testimonials section | No, placeholders allowed |
-| Founder and space photos | About page | Founder photo in use; space photos pending |
+| Founder and space photos | About page | Founder photo and first space photo in use; more space photos pending |
 | Design portfolio images | Design and Branding page | No; gallery section in place, images pending |
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |
 | Exact service prices | Pricing page | No, use `from KSh` or `ask for quote` |

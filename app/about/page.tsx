@@ -138,18 +138,31 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-[720px] text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
-            OUR IMPACT
-          </p>
-          <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
-            Rooted in Chuka. Serving Kenya.
-          </h2>
-          <p className="mt-4 leading-relaxed text-gray-600">
-            We serve Chuka University students, local businesses, and clients across Kenya through
-            our online services. Every completed application, print, and design is a step toward
-            making professional help accessible to everyone.
-          </p>
+        <div className="mx-auto grid max-w-[1100px] grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
+          <div className="md:order-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
+              OUR IMPACT
+            </p>
+            <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
+              Rooted in Chuka. Serving Kenya.
+            </h2>
+            <p className="mt-4 leading-relaxed text-gray-600">
+              We serve Chuka University students, local businesses, and clients across Kenya through
+              our online services. Every completed application, print, and design is a step toward
+              making professional help accessible to everyone.
+            </p>
+          </div>
+          <div className="md:order-1">
+            <img
+              src="/images/about/about-space-01.webp"
+              alt="The interior of the Tuju Outspan Cyber Center at Ikonge-Ekerenyo Stage"
+              loading="lazy"
+              className="aspect-[4/3] w-full rounded-xl object-cover shadow-navy-md"
+            />
+            <p className="mt-4 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-600">
+              The shop at Ikonge-Ekerenyo Stage
+            </p>
+          </div>
         </div>
       </section>
 
