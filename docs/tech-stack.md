@@ -516,8 +516,8 @@ tuju-outspan-website/
     ├── color-palette.md
     ├── deliverables-checklist.md
     ├── design.md
-    ├── page-designs.md
-    ├── 404-and-skeletons.md
+    ├── image-assets.md
+    ├── project-structure.md
     └── tech-stack.md
 ```
 

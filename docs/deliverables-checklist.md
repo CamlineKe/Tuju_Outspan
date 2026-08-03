@@ -9,11 +9,12 @@
 | 2 | Color Palette | color-palette.md | ✅ Complete |
 | 3 | Homepage HTML Prototype | (widget rendered) | ✅ Complete |
 | 4 | Unified Design System | design.md | ✅ Complete |
-| 5 | Per-Page Design Specs | page-designs.md | ✅ Complete |
+| 5 | Per-Page Design Specs | Retired; consolidated in architecture.md section 6 | ✅ Complete |
 | 6 | Tech Stack & Dependencies | tech-stack.md | ✅ Complete |
 | 7 | Architecture Guide | architecture.md | ✅ Complete |
-| 8 | Development Phases | development-phases.md | ✅ Complete |
+| 8 | Development Phases | Retired after completion | ✅ Complete |
 | 9 | Project Structure and Asset Map | project-structure.md | ✅ Complete |
+| 10 | Image Asset Placeholder Contract | image-assets.md | ✅ Complete |
 
 ---
 
@@ -33,7 +34,7 @@
 | Homepage communicates everything | ✅ Home page has 9 sections covering all bases |
 | CTA on every service page | ✅ ServiceCategoryTemplate has 3+ CTAs per page |
 | Socials (WhatsApp group + channel) | ✅ Contact page, Footer, tech-stack.md env vars |
-| Clean, highly converting design | ✅ design.md philosophy + page-designs.md per section |
+| Clean, highly converting design | ✅ design.md philosophy + architecture.md section 6 |
 | Intentional backgrounds (no alternatives) | ✅ design.md section 8 — solid colors only, one glow exception |
 | Sell, earn trust, convert | ✅ Entire PRD structured around conversion |
 
@@ -41,20 +42,20 @@
 
 | # | Page | Route | Design Spec | Content Spec |
 |---|------|-------|-------------|--------------|
-| 1 | Home | / | ✅ page-designs.md | ✅ PRD |
-| 2 | About | /about/ | ✅ page-designs.md | ✅ PRD |
-| 3 | Services Hub | /services/ | ✅ page-designs.md | ✅ PRD |
-| 4 | Government | /services/government/ | ✅ page-designs.md | ✅ PRD |
-| 5 | Education | /services/education/ | ✅ page-designs.md | ✅ PRD |
-| 6 | Health | /services/health/ | ✅ page-designs.md | ✅ PRD |
-| 7 | Documents | /services/documents/ | ✅ page-designs.md | ✅ PRD |
-| 8 | Design & Branding | /services/design-branding/ | ✅ page-designs.md | ✅ PRD |
-| 9 | Computer & IT | /services/computer-it/ | ✅ page-designs.md | ✅ PRD |
-| 10 | Online & Career | /services/online-career/ | ✅ page-designs.md | ✅ PRD |
-| 11 | Pricing | /pricing/ | ✅ page-designs.md | ✅ PRD |
-| 12 | Contact | /contact/ | ✅ page-designs.md | ✅ PRD |
-| 13 | Blog | /blog/ | ✅ page-designs.md | ✅ PRD |
-| 14 | Blog Post | /blog/[slug]/ | ✅ page-designs.md | ✅ PRD |
+| 1 | Home | / | ✅ architecture.md §6 | ✅ PRD |
+| 2 | About | /about/ | ✅ architecture.md §6 | ✅ PRD |
+| 3 | Services Hub | /services/ | ✅ architecture.md §6 | ✅ PRD |
+| 4 | Government | /services/government/ | ✅ architecture.md §6 | ✅ PRD |
+| 5 | Education | /services/education/ | ✅ architecture.md §6 | ✅ PRD |
+| 6 | Health | /services/health/ | ✅ architecture.md §6 | ✅ PRD |
+| 7 | Documents | /services/documents/ | ✅ architecture.md §6 | ✅ PRD |
+| 8 | Design & Branding | /services/design-branding/ | ✅ architecture.md §6 | ✅ PRD |
+| 9 | Computer & IT | /services/computer-it/ | ✅ architecture.md §6 | ✅ PRD |
+| 10 | Online & Career | /services/online-career/ | ✅ architecture.md §6 | ✅ PRD |
+| 11 | Pricing | /pricing/ | ✅ architecture.md §6 | ✅ PRD |
+| 12 | Contact | /contact/ | ✅ architecture.md §6 | ✅ PRD |
+| 13 | Blog | /blog/ | ✅ architecture.md §6 | ✅ PRD |
+| 14 | Blog Post | /blog/[slug]/ | ✅ architecture.md §6 | ✅ PRD |
 
 ---
 
@@ -111,9 +112,9 @@ Honestly? **Very little.** Here's what I'd flag:
 
 1. **Sitemap / XML generation** - Decision recorded in `architecture.md` (section 9.1): generate `sitemap.xml` post-build, since Next.js static export does not auto-generate it.
 
-2. **404 Page** - Now designed. Full spec in `404-and-skeletons.md`; build it as `app/not-found.tsx`.
+2. **404 Page** - Implemented per the requirements in `architecture.md` (section 6) as `app/not-found.tsx`; Next.js injects noindex automatically.
 
-3. **Loading states** - Now designed. Specs in `404-and-skeletons.md`; file layout in `architecture.md` (section 5).
+3. **Loading states** - Implemented per the requirements in `architecture.md` (section 6); every route has a skeleton with `aria-busy` and reduced-motion support.
 
 4. **Open Graph images** — Mentioned in design.md but no actual OG image designed. Need a 1200×630px branded image.
 
@@ -133,7 +134,7 @@ Honestly? **Very little.** Here's what I'd flag:
 
 ## 📋 RECOMMENDED NEXT STEPS (In Order)
 
-Execution order for the technical steps (7-11) is defined phase by phase in `docs/development-phases.md`.
+Implementation is complete. The remaining steps are owner content, assets, and launch actions; asset details are in `docs/image-assets.md`.
 
 | Step | Action | Priority | Status |
 |------|--------|----------|--------|
@@ -141,8 +142,8 @@ Execution order for the technical steps (7-11) is defined phase by phase in `doc
 | 2 | Create WhatsApp Group + Channel | High | Pending |
 | 3 | Gather photos (founder, space, portfolio) | High | Pending |
 | 4 | Write 3-5 blog articles | Medium | Pending |
-| 5 | Design OG image (1200×630) | Medium | Pending |
-| 6 | Generate favicon set | Medium | Pending |
+| 5 | Design OG image (1200x630, contract in image-assets.md) | Medium | Pending |
+| 6 | Generate favicon set (contract in image-assets.md) | Medium | Pending |
 | 7 | Scaffold project with pnpm + Next.js | High | Done |
 | 8 | Implement pages (Home → Contact → Services → Others) | High | Done |
 | 9 | Add sitemap.xml generation | Medium | Done |
@@ -154,8 +155,8 @@ Execution order for the technical steps (7-11) is defined phase by phase in `doc
 
 ## ✅ DEVELOPMENT STATUS
 
-- Phases 0-9 implemented and committed (setup through 404, SEO, and sitemap).
-- Phase 10 in progress: content, assets, domain, and deploy remain owner actions.
+- Implementation phases 0-9 plus the design-compliance and improvement phases are complete.
+- Owner actions remain: content, assets (per image-assets.md), domain, WhatsApp links, and deploy.
 - Final verification suite (format, lint, type-check, tests, build, Lighthouse) is pending owner run.
 
 ## 💡 BOTTOM LINE
@@ -171,4 +172,4 @@ You haven't missed anything **critical**. The foundation is solid:
 
 The gaps are **content and assets** (photos, testimonials, blog posts) — not structural. The technical foundation is complete and ready to build.
 
-**Ready to start scaffolding the project?**
+**Ready to move to content and launch.**

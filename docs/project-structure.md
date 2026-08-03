@@ -1,9 +1,9 @@
 # Tuju Outspan Cyber Center: Project Structure and Asset Map
 
-> **Version:** 1.0
+> **Version:** 1.1
 > **Date:** August 2026
 > **Status:** Approved
-> **Role:** The authoritative map of every folder and file, plus asset storage and image format rules. The execution plan is `development-phases.md`; the index of decisions is `architecture.md`.
+> **Role:** The authoritative map of every folder and file, plus asset storage and image format rules. The index of decisions is `architecture.md`.
 
 ---
 
@@ -89,6 +89,7 @@ tuju-outspan-website/
 │   │       ├── Input.tsx
 │   │       ├── PricingCard.tsx
 │   │       ├── ProcessStep.tsx
+│   │       ├── Reveal.tsx
 │   │       ├── SectionHeader.tsx
 │   │       ├── ServiceCard.tsx
 │   │       ├── Skeleton.tsx
@@ -108,13 +109,11 @@ tuju-outspan-website/
 │           ├── seo.ts
 │           └── whatsapp.ts
 ├── docs/
-│   ├── 404-and-skeletons.md
 │   ├── architecture.md
 │   ├── color-palette.md
 │   ├── deliverables-checklist.md
 │   ├── design.md
-│   ├── development-phases.md
-│   ├── page-designs.md
+│   ├── image-assets.md
 │   ├── project-structure.md
 │   ├── tech-stack.md
 │   └── Tuju_Outspan_PRD.md
@@ -139,7 +138,8 @@ tuju-outspan-website/
 │       │   └── og-default.jpg
 │       └── portfolio/
 ├── scripts/
-│   └── generate-sitemap.mjs
+│   ├── generate-sitemap.mjs
+│   └── sitemap-utils.mjs
 ├── tsconfig.json
 └── vitest.config.ts
 ```
@@ -157,7 +157,7 @@ tuju-outspan-website/
 | `globals.css` | Tailwind v4 `@theme`, tokens, base styles, focus ring, skip link, reduced motion |
 | `layout.tsx` | Root layout: fonts, metadata base, Navbar, Footer, WhatsAppFloat |
 | `loading.tsx` | Global skeleton mirroring the Home page |
-| `not-found.tsx` | 404 page per `404-and-skeletons.md` |
+| `not-found.tsx` | 404 page per the requirements in `architecture.md` (section 6) |
 | `page.tsx` | Home page |
 | `about/`, `pricing/`, `contact/` | Static pages, each with its own `loading.tsx` |
 | `services/` | Hub plus 7 static category routes driven by `ServiceCategoryTemplate` |
@@ -170,7 +170,7 @@ tuju-outspan-website/
 | `layout/` | Persistent chrome | Container, Navbar, Footer, WhatsAppFloat |
 | `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare |
 | `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 7 service pages) |
-| `ui/` | Small reusable primitives | Button, Breadcrumb, cards, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
+| `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
 
 ### 2.3 `app/lib/`
 
@@ -321,8 +321,7 @@ Images are user-generated and pre-optimized; static export disables the Next.js 
 | Why does the site exist and what content? | `Tuju_Outspan_PRD.md` |
 | Exact colors and rules | `color-palette.md` |
 | How components look and move | `design.md` |
-| Per-page layouts | `page-designs.md` |
-| 404 and loading states | `404-and-skeletons.md` |
+| Per-page section map, 404 page, loading states | `architecture.md` (section 6) |
 | Versions, configs, commands | `tech-stack.md` |
-| What to build and in what order | `development-phases.md` |
+| Pending images, dimensions, formats, and placement rules | `image-assets.md` |
 | Index, decisions, data model | `architecture.md` |

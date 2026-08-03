@@ -1,8 +1,8 @@
 # Tuju Outspan Cyber Center: Architecture and Development Guide
 
-> **Version:** 1.2
+> **Version:** 1.3
 > **Date:** August 2026
-> **Status:** Implementation complete (Phases 0-9); awaiting owner verification and launch
+> **Status:** Implementation complete; awaiting owner verification, content, and launch
 > **Role:** The index and execution guide. Every other document feeds this one. This document does not replace them.
 
 ---
@@ -21,18 +21,18 @@ The source documents remain the owners of their subject matter:
 | Why does this site exist? What pages and content? | `Tuju_Outspan_PRD.md` | Business goals, 14 pages, section content, WhatsApp strategy, launch checklist |
 | What are the exact colors and rules? | `color-palette.md` | Token values, color usage rules, contrast data |
 | How should components look and move? | `design.md` | Typography, spacing, components, motion, accessibility, SEO patterns |
-| How is each page laid out, section by section? | `page-designs.md` | Per-page section specs |
-| What about the 404 page and loading states? | `404-and-skeletons.md` | 404 page spec, skeleton specs |
+| How is each page laid out, section by section? | `architecture.md` (section 6) | Condensed route-to-sections map |
+| What about the 404 page and loading states? | `architecture.md` (section 6) | 404 page requirements, skeleton requirements |
 | What versions and configs do we use? | `tech-stack.md` | Versions, configs, install and build commands |
 | What is missing or pending? | `deliverables-checklist.md` | Content gaps, open decisions, recommended next steps |
-| What is the full plan from setup to deploy? | `development-phases.md` | Phase-by-phase execution plan with tasks, files, and acceptance criteria |
+| What images are pending and where do they go? | `image-assets.md` | Asset placeholder contract, target paths, dimensions, formats |
 | What does each folder and file do? Where do assets live? | `project-structure.md` | Folder map, file responsibilities, asset storage, image formats |
 | What are the canonical decisions, data model, and verification? | `architecture.md` (this file) | Decision log, data model, verification, doc map |
 
 **Reading path:**
 
-- Setting up the project: start at Phase 0 in `development-phases.md`.
-- Building a page: read the route row in section 6, then the matching section in `page-designs.md`, then the component names in `project-structure.md`.
+- Setting up the project: follow `tech-stack.md` for versions and commands and `project-structure.md` for the file map.
+- Building a page: read the route row in section 6, then the component names in `project-structure.md`.
 - Changing a color, font, or spacing: open `color-palette.md` and `design.md`, then update the `@theme` block in `tech-stack.md` if the token list changes.
 - Adding a page or component: update the owning document and the relevant sections of `project-structure.md`. See section 12.
 
@@ -74,7 +74,7 @@ Source: `tech-stack.md`. All versions are pinned exactly.
 | Language | TypeScript 5.8.3, strict mode |
 | Styling | Tailwind CSS 4.1.0 (CSS-first `@theme` configuration) |
 | Icons | lucide-react 0.487.0 |
-| Animation | framer-motion 12.9.0 (scroll reveals, mobile menu, FAQ, page transitions) |
+| Animation | framer-motion 12.9.0 (mobile menu, WhatsApp float pulse); custom IntersectionObserver scroll reveals (`Reveal.tsx`) |
 | Forms | react-hook-form 7.56.0 + zod 3.25.1 + @hookform/resolvers 5.0.1 |
 | Class merging | clsx 2.1.1 + tailwind-merge 3.2.0 |
 | Testing | vitest 3.2.0 + Testing Library |
@@ -139,14 +139,15 @@ Source: `tech-stack.md` section 14. Values live in `.env.local` (gitignored); na
 
 ## 4. Design Contract
 
-The design is finalized in four documents. Do not invent alternatives:
+The design is finalized in two documents plus the route map in this file. Do not invent alternatives:
 
 | Contract | Owner |
 |---|---|
 | Color tokens, rules, contrast | `color-palette.md` |
 | Typography, spacing, components, motion, accessibility, SEO patterns | `design.md` |
-| Per-page section layouts | `page-designs.md` |
-| 404 page and loading skeletons | `404-and-skeletons.md` |
+| Per-page section layouts, 404 page, loading skeletons | `architecture.md` (section 6) |
+
+`page-designs.md` and `404-and-skeletons.md` were retired after implementation; their essential per-page section order and the 404/skeleton requirements are preserved in section 6.
 
 ### 4.1 Non-Negotiable Rules
 
@@ -163,7 +164,7 @@ The design is finalized in four documents. Do not invent alternatives:
 - `color-palette.md` owns the human-facing token values (hex, RGB, usage, contrast).
 - `tech-stack.md` owns the machine-facing Tailwind v4 `@theme` block in `globals.css` and marks it as derived from `color-palette.md`.
 - Shadow tokens use the `navy-*` naming set (`shadow-navy-sm`, `shadow-navy-md`, `shadow-navy-lg`) plus `shadow-orange`.
-- Phase 2 of the documentation plan removes the Tailwind v3 style config snippet from `color-palette.md` so there is exactly one color config path.
+- `color-palette.md` owns the canonical values and points to `tech-stack.md` section 2 for the machine-facing `@theme` block in `app/globals.css`. There is exactly one color config path.
 
 ---
 
@@ -174,35 +175,29 @@ The full file tree, folder map, file responsibilities, and asset storage rules a
 ### 5.1 Structure Notes
 
 - Service routes are static folders, not a dynamic `/services/[slug]` segment. All seven category pages render `ServiceCategoryTemplate` with data from `app/lib/data/services.ts`.
-- The `[slug]` loading path in `404-and-skeletons.md` therefore applies to blog posts only. Service category loading states reuse the shared skeleton components.
-- `app/loading.tsx` is the global skeleton and mirrors the Home page per the skeleton spec.
+- The dynamic `[slug]` loading path applies to blog posts only. Service category pages reuse `app/services/loading.tsx` and the shared skeleton components.
+- `app/loading.tsx` is the global skeleton and mirrors the Home page layout.
 - All client-side interactivity stays in small components: Navbar menu, FAQ accordion, blog filters, contact form, scroll reveals.
 
 ---
 
 ## 6. Route and Page Inventory
 
-All 14 pages from the PRD plus 404 and loading states. Spec source refers to the matching section in `page-designs.md`.
+All 14 pages from the PRD plus 404 and loading states are listed below. The Sections column is the condensed per-page layout map; all seven service categories share the same template sections.
 
-| # | Route | Page | Spec source | Build note |
+| # | Route | Page | Sections | Build note |
 |---|---|---|---|---|
-| 1 | `/` | Home | Page 1 | 9 sections, conversion engine |
-| 2 | `/about` | About | Page 2 | Trust building, photo placeholders |
-| 3 | `/services` | Services Hub | Page 3 | Grid, quick find, can't find banner |
-| 4 | `/services/government` | Government Services | Pages 4-10 template | Data-driven |
-| 5 | `/services/education` | Education Services | Pages 4-10 template | Data-driven |
-| 6 | `/services/health` | Health Services | Pages 4-10 template | Data-driven |
-| 7 | `/services/documents` | Document Services | Pages 4-10 template | Data-driven |
-| 8 | `/services/design-branding` | Design and Branding | Pages 4-10 template | Portfolio gallery pending images |
-| 9 | `/services/computer-it` | Computer and IT | Pages 4-10 template | Data-driven |
-| 10 | `/services/online-career` | Online and Career | Pages 4-10 template | Data-driven |
-| 11 | `/pricing` | Pricing | Page 11 | Framework pricing, ask for quote |
-| 12 | `/contact` | Contact | Page 12 | WhatsApp-first, map embed, form |
-| 13 | `/blog` | Blog | Page 13 | Featured post, filters, load more |
-| 14 | `/blog/[slug]` | Blog Post | Page 14 | `generateStaticParams` required |
-| 15 | `/404` | Not Found | `404-and-skeletons.md` | `app/not-found.tsx` |
+| 1 | `/` | Home | Navbar; Hero; Services preview; Why Choose Us; How It Works; Testimonials; Location strip; CTA banner; Footer | 9-section conversion engine |
+| 2 | `/about` | About | Page header; Origin story; Mission and values; Face behind the brand; Community impact; CTA | Trust building, photo placeholders |
+| 3 | `/services` | Services Hub | Page header; Quick find search; Services grid; Can't find it banner | 7-card grid |
+| 4-10 | `/services/{category}` | 7 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate` |
+| 11 | `/pricing` | Pricing | Page header; Pricing philosophy; Pricing cards; Bulk and student discounts; Payment methods; FAQ | Framework pricing, ask for quote |
+| 12 | `/contact` | Contact | Page header; WhatsApp card; Community links; Details and map; Inquiry form | WhatsApp-first, map embed, form |
+| 13 | `/blog` | Blog | Page header; Featured post; Category filter; Blog grid; Load more; WhatsApp channel CTA | Client-side filters and load more |
+| 14 | `/blog/[slug]` | Blog Post | Article header; Featured image; Article content with inline CTAs; Author box; Related articles; Share | `generateStaticParams` required |
+| 15 | `/404` | Not Found | Error hero; Quick links; CTA banner | `app/not-found.tsx`, noindex automatic |
 
-Loading states: `app/loading.tsx`, `app/services/loading.tsx`, `app/pricing/loading.tsx`, `app/contact/loading.tsx`, `app/blog/loading.tsx`, `app/blog/[slug]/loading.tsx`. Specs in `404-and-skeletons.md`.
+Loading states: `app/loading.tsx` (global, mirrors Home), `app/services/loading.tsx`, `app/pricing/loading.tsx`, `app/contact/loading.tsx`, `app/blog/loading.tsx`, `app/blog/[slug]/loading.tsx`. Requirements: each skeleton mirrors its page structure; containers are `aria-busy="true"` with a visually hidden "Loading content..." label; skeletons contain no focusable elements; the shimmer animation respects `prefers-reduced-motion`.
 
 ---
 
@@ -272,7 +267,7 @@ The contact form is client-side only. On submit it validates with the Zod schema
 
 ## 8. Build Order
 
-The detailed phase-by-phase execution plan, with tasks, files, acceptance criteria, and verification commands for each phase, is maintained in `docs/development-phases.md`. Phase boundaries are adjustable by the user; each phase ends with a handoff and approval before the next begins.
+Implementation phases are complete. Remaining work is owner content and launch actions, tracked in `deliverables-checklist.md` and `image-assets.md`. Future changes follow the maintenance rules in section 12.
 
 ---
 
@@ -284,7 +279,7 @@ The detailed phase-by-phase execution plan, with tasks, files, acceptance criter
 - Description template: `{Service description} Fast, reliable, and affordable at Ikonge-Ekerenyo Stage. Chat with us on WhatsApp: 0715 616 633.`
 - Open Graph per page: title, description, `og-default.jpg`, type `website`, locale `en_KE`.
 - JSON-LD: LocalBusiness on the root layout, Service per service page, FAQPage where FAQs exist, BlogPosting per article.
-- Sitemap: generated post-build so static export always ships a current `sitemap.xml`. Implementation decision: `next-sitemap` postbuild script or a checked-in static file; revisit when Phase 9 starts.
+- Sitemap: generated post-build by `scripts/generate-sitemap.mjs`, which derives routes from the exported HTML in `dist/`, so new pages and blog posts appear in `sitemap.xml` without editing the script.
 
 ### 9.2 Accessibility
 
@@ -331,7 +326,7 @@ Every completed page also passes the design quality checklist in `design.md` sec
 |---|---|---|
 | D1 | Tailwind v4 `@theme` in `tech-stack.md` is the only machine-facing color config; `color-palette.md` owns the values | Done |
 | D2 | Shadow tokens use `shadow-navy-*` naming plus `shadow-orange` | Done |
-| D3 | Lucide outline icons only; no emojis in rendered UI copy | Phase 2 cleans `page-designs.md` examples |
+| D3 | Lucide outline icons only; no emojis in rendered UI copy | Done |
 | D4 | Static export is the deployment model; `next start` is invalid with it; preview via static server | Applied in this file |
 | D5 | Contact form composes a pre-filled WhatsApp message; no email service | Applied in this file |
 | D6 | Sitemap generated post-build | Applied in this file |
@@ -351,7 +346,7 @@ Full details in `deliverables-checklist.md`.
 | Design portfolio images | Design and Branding page | No, labeled placeholder |
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |
 | Exact service prices | Pricing page | No, use `from KSh` or `ask for quote` |
-| OG image and favicon set | Launch assets | No, owner supplies in Phase 10 |
+| OG image and favicon set | Launch assets | No; contract in `image-assets.md`, placed at the end of the phases |
 | Git repo | Version control | Done, initialized on `main` with docs committed |
 | Vercel project and domain DNS | Deploy | No, later phase |
 
@@ -363,7 +358,7 @@ Rules to keep the documentation set free of duplication:
 
 1. One owner per topic. When a topic changes, edit the owning document first.
 2. `architecture.md` is the index. It summarizes and links; it does not copy full specs.
-3. When adding or renaming a page, component, or data module: update the owning document, the route inventory (section 6), the canonical structure (section 5), and the relevant build phase (section 8).
+3. When adding or renaming a page, component, or data module: update the owning document, the route inventory (section 6), and the canonical structure (section 5).
 4. When resolving an inconsistency: record it in the decision log (section 11.1) with its status.
 5. When a decision changes the build model, stack, or structure: update this file and flag it in a handoff before implementation.
 6. Record material changes in the change log below.
@@ -373,5 +368,6 @@ Rules to keep the documentation set free of duplication:
 | Version | Date | Change |
 |---|---|---|
 | 1.0 | August 2026 | Baseline created from the seven source documents. Establishes canonical structure, data model, build order, verification, and decision log. Phase 1 of the documentation reconciliation plan. |
-| 1.1 | August 2026 | Added `development-phases.md` and `project-structure.md`. Sections 5 and 8 now point to them; asset storage and image format rules moved into `project-structure.md`. |
+| 1.1 | August 2026 | Added the execution plan and the project structure map; sections 5 and 8 point to them, and asset storage and image format rules moved into `project-structure.md`. |
 | 1.2 | August 2026 | Implementation of Phases 0-9 complete. Documents synced with the codebase: structure map, sitemap tooling, and statuses updated. |
+| 1.3 | August 2026 | Implementation and improvement phases complete. Retired `development-phases.md`, `page-designs.md`, and `404-and-skeletons.md`; consolidated the per-page section map and 404/skeleton requirements into section 6, moved the asset contract to `image-assets.md`, and updated the sitemap tooling note in section 9.1. |
