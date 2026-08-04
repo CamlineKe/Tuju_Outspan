@@ -178,18 +178,19 @@ client-side.
 
 ## Documentation
 
-The repository documentation set lives in `docs/`; `architecture.md` is the index.
+The documentation set lives in [`docs/`](docs/), with
+[`architecture.md`](docs/architecture.md) as the index.
 
 | Document | Purpose |
 | --- | --- |
-| `architecture.md` | Index, decisions, data model, route map |
-| `Tuju_Outspan_PRD.md` | Product requirements and page content |
-| `design.md` | Design system, spacing, motion, accessibility |
-| `color-palette.md` | Brand colors and usage rules |
-| `tech-stack.md` | Versions, configuration, commands |
-| `project-structure.md` | Canonical file tree and responsibilities |
-| `image-assets.md` | Image inventory, dimensions, formats |
-| `deliverables-checklist.md` | Open items and launch checklist |
+| [architecture.md](docs/architecture.md) | Index, decisions, data model, route map |
+| [Tuju_Outspan_PRD.md](docs/Tuju_Outspan_PRD.md) | Product requirements and page content |
+| [design.md](docs/design.md) | Design system, spacing, motion, accessibility |
+| [color-palette.md](docs/color-palette.md) | Brand colors and usage rules |
+| [tech-stack.md](docs/tech-stack.md) | Versions, configuration, commands |
+| [project-structure.md](docs/project-structure.md) | Canonical file tree and responsibilities |
+| [image-assets.md](docs/image-assets.md) | Image inventory, dimensions, formats |
+| [deliverables-checklist.md](docs/deliverables-checklist.md) | Open items and launch checklist |
 
 ## License
 
