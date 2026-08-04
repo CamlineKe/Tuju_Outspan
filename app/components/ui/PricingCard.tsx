@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import Button from '@/app/components/ui/Button';
 import type { PricingCard as PricingCardData } from '@/app/lib/data/pricing';
 import { cn } from '@/app/lib/utils/cn';
-import { buildServiceWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildCategoryEnquiryLink } from '@/app/lib/utils/whatsapp';
 
 interface PricingCardProps {
   card: PricingCardData;
@@ -39,7 +39,7 @@ export default function PricingCard({ card, className }: PricingCardProps) {
           </li>
         ))}
       </ul>
-      <Button href={buildServiceWhatsAppLink(card.name)} size="small" className="mt-6 w-full">
+      <Button href={buildCategoryEnquiryLink(card.name)} size="small" className="mt-6 w-full">
         Get Quote
       </Button>
     </div>

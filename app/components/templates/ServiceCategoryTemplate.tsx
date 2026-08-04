@@ -7,7 +7,7 @@ import ProcessStep from '@/app/components/ui/ProcessStep';
 import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import type { ServiceCategory } from '@/app/lib/data/services';
-import { buildServiceWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildCategoryEnquiryLink } from '@/app/lib/utils/whatsapp';
 
 interface ServiceCategoryTemplateProps {
   category: ServiceCategory;
@@ -71,14 +71,14 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
         <h2 className="text-xl font-semibold text-navy-900">Transparent Pricing</h2>
         <p className="mx-auto mt-2 max-w-[520px] text-gray-600">{category.pricingNote}</p>
         <div className="mt-6 flex justify-center">
-          <Button href={buildServiceWhatsAppLink(category.name)}>Get a Quote</Button>
+          <Button href={buildCategoryEnquiryLink(category.name)}>Get a Quote</Button>
         </div>
       </section>
 
       <RelatedServices category={category} />
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white px-6 py-3 shadow-[0_-4px_12px_rgba(4,29,70,0.08)] md:hidden">
-        <Button href={buildServiceWhatsAppLink(category.name)} className="w-full">
+        <Button href={buildCategoryEnquiryLink(category.name)} className="w-full">
           Get Help on WhatsApp
         </Button>
       </div>

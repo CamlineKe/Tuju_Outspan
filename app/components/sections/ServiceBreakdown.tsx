@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-import { Check } from 'lucide-react';
-
+import ServiceEnquiryList from '@/app/components/sections/ServiceEnquiryList';
 import type { ServiceCategory } from '@/app/lib/data/services';
 import { getCategoryIcon } from '@/app/lib/utils/category-icons';
 
@@ -45,22 +44,7 @@ export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
           )}
         </div>
 
-        <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {category.services.map((service) => (
-            <li
-              key={service.name}
-              className="rounded-xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md"
-            >
-              <div className="flex items-start gap-3">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" aria-hidden="true" />
-                <div>
-                  <h3 className="font-semibold text-navy-900">{service.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{service.description}</p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <ServiceEnquiryList category={category} />
       </div>
     </section>
   );

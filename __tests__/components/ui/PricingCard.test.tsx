@@ -14,7 +14,11 @@ describe('PricingCard', () => {
     expect(screen.getAllByText('Ask for quote').length).toBeGreaterThan(0);
     expect(screen.getByRole('link', { name: /get quote/i })).toHaveAttribute(
       'href',
-      expect.stringContaining('wa.me')
+      expect.stringContaining('enquire%20about%20your%20Education%20Services')
+    );
+    expect(screen.getByRole('link', { name: /get quote/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('process%2C%20requirements%2C%20and%20cost')
     );
   });
 

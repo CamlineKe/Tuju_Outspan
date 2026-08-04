@@ -25,7 +25,17 @@ describe('ServiceCategoryTemplate', () => {
     expect(screen.getByText(government.processSteps[0].title)).toBeInTheDocument();
     expect(screen.getByText(government.faqs[0].question)).toBeInTheDocument();
     expect(screen.getByText(government.pricingNote)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /get a quote/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /get help on whatsapp/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /get a quote/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('enquire%20about%20your%20Government%20Services')
+    );
+    expect(screen.getByRole('link', { name: /get a quote/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('process%2C%20requirements%2C%20and%20cost')
+    );
+    expect(screen.getByRole('link', { name: /get help on whatsapp/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('enquire%20about%20your%20Government%20Services')
+    );
   });
 });
