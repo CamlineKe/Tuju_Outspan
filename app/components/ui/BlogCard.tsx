@@ -4,17 +4,14 @@ import Link from 'next/link';
 import { Image as ImageIcon } from 'lucide-react';
 
 import type { BlogPost } from '@/app/lib/data/blog';
+import { formatDateShort } from '@/app/lib/utils/date';
 
 interface BlogCardProps {
   post: BlogPost;
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
-  const formattedDate = new Date(post.date).toLocaleDateString('en-KE', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  });
+  const formattedDate = formatDateShort(post.date);
 
   return (
     <Link

@@ -8,8 +8,10 @@ import { Image as ImageIcon } from 'lucide-react';
 
 import PostShare from '@/app/components/sections/PostShare';
 import BlogCard from '@/app/components/ui/BlogCard';
+import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import { type BlogPost, blogPosts, getBlogPost } from '@/app/lib/data/blog';
+import { formatDateLong } from '@/app/lib/utils/date';
 import { absolutePageUrl, blogPostingJsonLd, buildMetadata } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
@@ -110,11 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
-  const formattedDate = new Date(post.date).toLocaleDateString('en-KE', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  const formattedDate = formatDateLong(post.date);
 
   return (
     <>
@@ -135,7 +133,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-center text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[720px]">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
+          <div className="flex justify-center">
+            <Breadcrumb
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Blog', href: '/blog' },
+                { label: post.title },
+              ]}
+            />
+          </div>
+          <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
             {post.category}
           </p>
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] md:text-[32px] lg:text-4xl">

@@ -12,6 +12,7 @@ import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import { type BlogCategory, blogPosts } from '@/app/lib/data/blog';
+import { formatDateShort } from '@/app/lib/utils/date';
 
 type BlogFilter = 'All' | BlogCategory;
 
@@ -47,13 +48,7 @@ export default function BlogListing() {
   };
 
   const channelLink = process.env.NEXT_PUBLIC_WHATSAPP_CHANNEL;
-  const formattedFeaturedDate = featured
-    ? new Date(featured.date).toLocaleDateString('en-KE', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      })
-    : '';
+  const formattedFeaturedDate = featured ? formatDateShort(featured.date) : '';
 
   return (
     <>

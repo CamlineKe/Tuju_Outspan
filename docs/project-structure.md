@@ -108,6 +108,7 @@ tuju-outspan-website/
 │       └── utils/
 │           ├── category-icons.ts
 │           ├── cn.ts
+│           ├── date.ts
 │           ├── seo.ts
 │           └── whatsapp.ts
 ├── docs/
@@ -180,7 +181,7 @@ tuju-outspan-website/
 |---|---|
 | `data/` | Typed content modules: services, pricing, testimonials, blog. The only content source for pages |
 | `schemas/` | Zod validation, currently the contact form |
-| `utils/` | Shared helpers: `cn.ts` (class merging), `category-icons.ts` (icon lookup), `whatsapp.ts` (link builder), `seo.ts` (metadata and JSON-LD) |
+| `utils/` | Shared helpers: `cn.ts` (class merging), `category-icons.ts` (icon lookup), `date.ts` (deterministic date formatting), `whatsapp.ts` (link builder), `seo.ts` (metadata and JSON-LD) |
 
 ### 2.4 `__tests__/`
 
@@ -230,6 +231,7 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 | File | Responsibility |
 |---|---|
 | `lib/utils/cn.ts` | `clsx` + `tailwind-merge` class merge |
+| `lib/utils/date.ts` | Deterministic blog date formatting |
 | `lib/utils/whatsapp.ts` | `wa.me` link builder with pre-filled text per service |
 | `lib/utils/seo.ts` | Title, description, Open Graph, JSON-LD builders |
 | `lib/utils/category-icons.ts` | Service category to Lucide icon lookup |
