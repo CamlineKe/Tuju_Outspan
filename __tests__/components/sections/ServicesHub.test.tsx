@@ -19,9 +19,7 @@ describe('ServicesHub', () => {
     await user.type(screen.getByLabelText('Search services'), 'KRA');
 
     expect(screen.getByRole('heading', { name: 'Government Services' })).toBeInTheDocument();
-    expect(
-      screen.queryByRole('heading', { name: 'Design and Branding' })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Design and Branding' })).not.toBeInTheDocument();
     expect(screen.getByText('1 of 7 services shown')).toBeInTheDocument();
   });
 

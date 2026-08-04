@@ -80,9 +80,7 @@ export default function ContactPage() {
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp/10">
                 <MessageCircle className="h-7 w-7 text-whatsapp" aria-hidden="true" />
               </div>
-              <h2 className="mt-5 text-2xl font-bold text-navy-900">
-                Chat with Us on WhatsApp
-              </h2>
+              <h2 className="mt-5 text-2xl font-bold text-navy-900">Chat with Us on WhatsApp</h2>
               <p className="mt-3 text-[28px] font-bold text-navy-900">0715 616 633</p>
               <p className="mt-2 text-sm text-gray-600">
                 Fastest way to get help. Usually responds within minutes.
