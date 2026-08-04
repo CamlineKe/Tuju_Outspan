@@ -23,10 +23,29 @@ export default function AboutLoading() {
         </div>
       </section>
       <section className="bg-gray-50 px-6 py-16">
-        <div className="mx-auto grid max-w-[1000px] grid-cols-1 gap-6 md:grid-cols-2">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <SkeletonCard key={index} type="testimonial" />
-          ))}
+        <div className="mx-auto max-w-[1000px]">
+          <div className="mx-auto max-w-[600px] space-y-3 text-center">
+            <Skeleton width={120} className="mx-auto" />
+            <Skeleton width={320} height={28} className="mx-auto" />
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {Array.from({ length: 2 }).map((_, index) => (
+              <SkeletonCard key={index} type="testimonial" />
+            ))}
+          </div>
+          <div className="mx-auto mt-16 max-w-[600px] space-y-3 text-center">
+            <Skeleton width={140} className="mx-auto" />
+            <Skeleton width={260} height={24} className="mx-auto" />
+          </div>
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <SkeletonCard
+                key={index}
+                type="testimonial"
+                className={index === 4 ? 'md:col-span-2' : undefined}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </div>

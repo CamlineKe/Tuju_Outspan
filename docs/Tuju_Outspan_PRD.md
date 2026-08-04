@@ -88,7 +88,7 @@ This page humanizes the brand. For a local service business, people buy from peo
 
 2. **Origin Story** — Large text block with a photo of the founder/team (to be added). Headline: "Why We Started." Story: the gap in reliable, affordable cyber services around Chuka University. The mission to make tech and government services accessible to students, professionals, and the local community. Tone: authentic, warm, ambitious.
 
-3. **Mission & Values** — Headline: "What We Stand For." 3–4 values with icons: Accessibility (tech for everyone), Integrity (no shortcuts, honest service), Speed (respect for your time), Community (rooted in Chuka, serving Kenya). Each with a short paragraph.
+3. **Mission, Vision & Values** - Headline: "What We Stand For." Mission: fast, reliable, affordable, and professional cyber and digital solutions that empower students, businesses, and the community. Vision: to be the most trusted and preferred cyber and digital service provider, recognized for excellence, innovation, and accessible technology. Core values with icons: Integrity, Professionalism, Reliability, Innovation, and Customer First. Each with a short paragraph.
 
 4. **The Face Behind the Brand** — Photo section. Image of the founder/team at the cyber center. Caption with name and role. Personal touch — critical for trust.
 

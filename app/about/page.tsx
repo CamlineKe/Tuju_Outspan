@@ -1,32 +1,67 @@
 import Image from 'next/image';
 
-import { Accessibility, type LucideIcon, ShieldCheck, Users, Zap } from 'lucide-react';
+import {
+  BadgeCheck,
+  Clock,
+  Eye,
+  HeartHandshake,
+  Lightbulb,
+  type LucideIcon,
+  ShieldCheck,
+  Target,
+} from 'lucide-react';
 
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
+import { cn } from '@/app/lib/utils/cn';
 import { buildMetadata } from '@/app/lib/utils/seo';
 import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
-const VALUES: { icon: LucideIcon; title: string; description: string }[] = [
-  {
-    icon: Accessibility,
-    title: 'Accessibility',
-    description: 'Technology and government services for everyone, regardless of background.',
-  },
+interface Statement {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const MISSION: Statement = {
+  icon: Target,
+  title: 'Our Mission',
+  description:
+    'To provide fast, reliable, affordable, and professional cyber and digital solutions that empower students, businesses, and the community through excellent customer service, innovation, and integrity.',
+};
+
+const VISION: Statement = {
+  icon: Eye,
+  title: 'Our Vision',
+  description:
+    'To be the most trusted and preferred cyber and digital service provider, recognized for excellence, innovation, and making technology accessible to everyone.',
+};
+
+const VALUES: Statement[] = [
   {
     icon: ShieldCheck,
     title: 'Integrity',
-    description: 'No shortcuts, no hidden fees. Honest service every time.',
+    description: 'We serve with honesty and transparency.',
   },
   {
-    icon: Zap,
-    title: 'Speed',
-    description: 'We respect your time and deliver quickly without cutting corners.',
+    icon: BadgeCheck,
+    title: 'Professionalism',
+    description: 'We deliver quality services with excellence.',
   },
   {
-    icon: Users,
-    title: 'Community',
-    description: 'Rooted in Chuka, serving clients across Kenya.',
+    icon: Clock,
+    title: 'Reliability',
+    description: 'We keep our promises and meet deadlines.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Innovation',
+    description: 'We embrace technology to provide better solutions.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Customer First',
+    description: 'Your success and satisfaction are our priority.',
   },
 ];
 
@@ -99,12 +134,37 @@ export default function AboutPage() {
               WHAT WE STAND FOR
             </p>
             <h2 className="mt-3 text-2xl font-bold leading-[1.25] text-navy-900 md:text-[28px] lg:text-[32px]">
-              Our Mission and Values
+              Our Mission, Vision &amp; Values
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {VALUES.map((value) => (
-              <div key={value.title} className="rounded-xl border border-gray-200 bg-white p-8">
+            {[MISSION, VISION].map((statement) => (
+              <div key={statement.title} className="rounded-xl border border-gray-200 bg-white p-8">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[10px] bg-orange-50">
+                  <statement.icon className="h-6 w-6 text-orange-500" aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-navy-900">{statement.title}</h3>
+                <p className="mt-2 leading-relaxed text-gray-600">{statement.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mx-auto mt-16 max-w-[600px] text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
+              OUR CORE VALUES
+            </p>
+            <h3 className="mt-3 text-xl font-bold text-navy-900 md:text-2xl">
+              What We Practice Every Day
+            </h3>
+          </div>
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {VALUES.map((value, index) => (
+              <div
+                key={value.title}
+                className={cn(
+                  'rounded-xl border border-gray-200 bg-white p-8',
+                  index === VALUES.length - 1 && 'md:col-span-2'
+                )}
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-[10px] bg-orange-50">
                   <value.icon className="h-6 w-6 text-orange-500" aria-hidden="true" />
                 </div>
