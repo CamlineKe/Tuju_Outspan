@@ -45,7 +45,8 @@ tuju-outspan-website/
 │   │   ├── documents/page.tsx
 │   │   ├── design-branding/page.tsx
 │   │   ├── computer-it/page.tsx
-│   │   └── online-career/page.tsx
+│   │   ├── online-career/page.tsx
+│   │   └── internet/page.tsx
 │   ├── pricing/
 │   │   ├── page.tsx
 │   │   └── loading.tsx
@@ -166,7 +167,7 @@ tuju-outspan-website/
 | `not-found.tsx` | 404 page per the requirements in `architecture.md` (section 6) |
 | `page.tsx` | Home page |
 | `about/`, `pricing/`, `contact/` | Static pages, each with its own `loading.tsx` |
-| `services/` | Hub plus 7 static category routes driven by `ServiceCategoryTemplate` |
+| `services/` | Hub plus 8 static category routes driven by `ServiceCategoryTemplate` |
 | `blog/`, `blog/[slug]/` | Blog listing and post pages; `[slug]` uses `generateStaticParams` |
 
 ### 2.2 `app/components/`
@@ -175,7 +176,7 @@ tuju-outspan-website/
 |---|---|---|
 | `layout/` | Persistent chrome | Navbar, Footer, WhatsAppFloat |
 | `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, TestimonialCarousel, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare, PortfolioGallery |
-| `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 7 service pages) |
+| `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 8 service pages) |
 | `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
 
 ### 2.3 `app/lib/`
@@ -257,7 +258,7 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 | `ui/FAQItem.tsx` | Single-open accordion |
 | `ui/Input.tsx` | Input, textarea, select, checkbox states |
 | `ui/Skeleton.tsx`, `ui/SkeletonCard.tsx` | Loading placeholders per skeleton spec |
-| `templates/ServiceCategoryTemplate.tsx` | Composition for all 7 service pages |
+| `templates/ServiceCategoryTemplate.tsx` | Composition for all 8 service pages |
 
 ---
 

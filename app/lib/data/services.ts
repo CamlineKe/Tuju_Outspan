@@ -5,7 +5,8 @@ export type ServiceSlug =
   | 'documents'
   | 'design-branding'
   | 'computer-it'
-  | 'online-career';
+  | 'online-career'
+  | 'internet';
 
 export interface ServiceItem {
   name: string;
@@ -510,6 +511,95 @@ export const serviceCategories: ServiceCategory[] = [
     ],
     pricingNote: 'Affordable per-service rates. Quote on WhatsApp.',
     related: ['education', 'documents'],
+  },
+  {
+    slug: 'internet',
+    name: 'Internet Services & Internet Sales',
+    headline: 'Internet Services & Internet Sales',
+    subheadline:
+      'High-speed internet access, data sales, and reliable Wi-Fi at only KSh 2 per minute.',
+    icon: 'Wifi',
+    imagePath: '/images/services/internet.webp',
+    services: [
+      {
+        name: 'High-speed Internet Access',
+        description: 'Fast, reliable connection for any online task.',
+      },
+      {
+        name: 'Internet Data Sales',
+        description: 'Data bundles for your phone or device, sold at the shop.',
+      },
+      {
+        name: 'Reliable Wi-Fi Services',
+        description: 'Stable Wi-Fi connection for browsing and work.',
+      },
+      {
+        name: 'Fast Downloads & Uploads',
+        description: 'Quick file transfers, downloads, and uploads.',
+      },
+      {
+        name: 'Online Gaming Access',
+        description: 'Smooth connection for online gaming.',
+      },
+      {
+        name: 'Smooth Video Streaming',
+        description: 'Buffer-free streaming for videos and media.',
+      },
+      {
+        name: 'Email Access',
+        description: 'Check, send, and manage your email with ease.',
+      },
+      {
+        name: 'Online Applications',
+        description: 'Complete applications and forms with reliable internet.',
+      },
+      {
+        name: 'Internet Browsing for Research, Work & Study',
+        description: 'Browsing support for assignments, work, and research.',
+      },
+    ],
+    processSteps: [
+      {
+        title: 'Walk In and Start',
+        description:
+          'Visit our shop around Slaughter, Chuka University premises, and request internet access.',
+      },
+      {
+        title: 'Connect and Use',
+        description: 'Browse, stream, game, download, or work at high speed.',
+      },
+      {
+        title: 'Pay Per Minute',
+        description: 'Pay only KSh 2 per minute when you finish your session.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How much does internet access cost?',
+        answer: 'Internet access is only KSh 2 per minute. Pay for the time you use when you finish.',
+      },
+      {
+        question: 'Where is the internet service available?',
+        answer:
+          'The service is available at our shop around Slaughter, Chuka University premises. It is a walk-in service.',
+      },
+      {
+        question: 'Do I need an account or appointment?',
+        answer: 'No. Walk into the shop and start your session right away.',
+      },
+      {
+        question: 'Can I download large files or stream videos?',
+        answer:
+          'Yes. Fast downloads and uploads, online gaming, and smooth video streaming are all supported.',
+      },
+      {
+        question: 'Do you sell internet data?',
+        answer: 'Yes, internet data sales are available. Ask us on WhatsApp for available bundles.',
+      },
+    ],
+    pricingNote:
+      'Internet access at only KSh 2 per minute. Available at our shop around Slaughter, Chuka University premises.',
+    related: ['online-career', 'education', 'documents'],
   },
 ];
 

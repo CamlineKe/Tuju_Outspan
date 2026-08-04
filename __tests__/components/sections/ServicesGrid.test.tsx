@@ -5,10 +5,10 @@ import ServicesGrid from '@/app/components/sections/ServicesGrid';
 import { serviceCategories } from '@/app/lib/data/services';
 
 describe('ServicesGrid', () => {
-  it('renders all seven category cards', () => {
+  it('renders all eight category cards', () => {
     render(<ServicesGrid />);
 
-    expect(screen.getAllByRole('article')).toHaveLength(7);
+    expect(screen.getAllByRole('article')).toHaveLength(8);
   });
 
   it('renders the catch-all CTA card with a WhatsApp link', () => {

@@ -94,7 +94,7 @@
 | Admin dashboard | Static site, content managed in code |
 | Multi-language | Single market (Kenya), English primary |
 | Real-time chat widget | WhatsApp IS the chat — no need for Intercom/etc |
-| CMS (Contentful, Sanity) | Overkill for 14 pages, static JSON sufficient |
+| CMS (Contentful, Sanity) | Overkill for 15 pages, static JSON sufficient |
 
 ### 4. One Design Question
 
@@ -162,7 +162,7 @@ Implementation is complete. The remaining steps are owner content, assets, and l
 ## 💡 BOTTOM LINE
 
 You haven't missed anything **critical**. The foundation is solid:
-- ✅ 14 pages fully spec'd
+- ✅ 15 pages fully spec'd
 - ✅ Design system locked
 - ✅ Tech stack decided
 - ✅ Color palette extracted from logo

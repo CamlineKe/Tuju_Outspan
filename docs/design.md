@@ -3,7 +3,7 @@
 > **Version:** 1.0  
 > **Date:** August 2026  
 > **Status:** Final — No Alternatives  
-> **Applies to:** All 14 pages
+> **Applies to:** All 15 pages
 
 ---
 
@@ -1010,7 +1010,7 @@ The canonical project structure and component tree are maintained in `architectu
 2. **Props over state** — Prefer props for data, minimize local state
 3. **Composition over configuration** — Build from small pieces
 4. **Client components only when needed** — Use Server Components by default
-5. **Reusable sections** — ServiceCategoryTemplate drives all 7 service pages
+5. **Reusable sections** — ServiceCategoryTemplate drives all 8 service pages
 
 ---
 

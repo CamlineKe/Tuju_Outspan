@@ -7,6 +7,7 @@ import {
   Laptop,
   type LucideIcon,
   Palette,
+  Wifi,
 } from 'lucide-react';
 
 export const CATEGORY_ICONS: Record<string, LucideIcon> = {
@@ -17,6 +18,7 @@ export const CATEGORY_ICONS: Record<string, LucideIcon> = {
   Palette,
   Laptop,
   Briefcase,
+  Wifi,
 };
 
 export function getCategoryIcon(name: string): LucideIcon {

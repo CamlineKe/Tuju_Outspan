@@ -20,7 +20,7 @@ The source documents remain the owners of their subject matter:
 |---|---|---|
 | How do I set up and run the project? | `README.md` (repository root) | Clone or zip setup, install, env vars, scripts, deploy |
 | How do I deploy to Vercel and validate it? | `docs/vercel-deployment.md` | Import settings, env vars, route validation, rollback |
-| Why does this site exist? What pages and content? | `Tuju_Outspan_PRD.md` | Business goals, 14 pages, section content, WhatsApp strategy, launch checklist |
+| Why does this site exist? What pages and content? | `Tuju_Outspan_PRD.md` | Business goals, 15 pages, section content, WhatsApp strategy, launch checklist |
 | What are the exact colors and rules? | `color-palette.md` | Token values, color usage rules, contrast data |
 | How should components look and move? | `design.md` | Typography, spacing, components, motion, accessibility, SEO patterns |
 | How is each page laid out, section by section? | `architecture.md` (section 6) | Condensed route-to-sections map |
@@ -185,21 +185,21 @@ The full file tree, folder map, file responsibilities, and asset storage rules a
 
 ## 6. Route and Page Inventory
 
-All 14 pages from the PRD plus 404 and loading states are listed below. The Sections column is the condensed per-page layout map; all seven service categories share the same template sections.
+All 15 pages from the PRD plus 404 and loading states are listed below. The Sections column is the condensed per-page layout map; all eight service categories share the same template sections.
 
 | # | Route | Page | Sections | Build note |
 |---|---|---|---|---|
 | 1 | `/` | Home | Navbar; Hero; Services preview; Why Choose Us; How It Works; Testimonials; Location strip; CTA banner; Footer | 9-section conversion engine |
 | 2 | `/about` | About | Page header; Origin story; Mission and values; Face behind the brand; Community impact; CTA | Trust building, photo placeholders |
-| 3 | `/services` | Services Hub | Page header; Quick find search; Services grid; Can't find it banner | 7-card grid |
-| 4-10 | `/services/{category}` | 7 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate`; design-branding also renders `PortfolioGallery` |
-| 11 | `/pricing` | Pricing | Page header; Pricing philosophy; Pricing cards; Bulk and student discounts; Payment methods; FAQ | Framework pricing, ask for quote |
-| 12 | `/contact` | Contact | Page header; WhatsApp card; Community links; Details and map; Inquiry form | WhatsApp-first, map embed, form |
-| 13 | `/blog` | Blog | Page header; Featured post; Category filter; Blog grid; Load more; WhatsApp channel CTA | Client-side filters and load more |
-| 14 | `/blog/[slug]` | Blog Post | Article header; Featured image; Article content with inline CTAs; Author box; Related articles; Share | `generateStaticParams` required |
+| 3 | `/services` | Services Hub | Page header; Quick find search; Services grid; Can't find it banner | 8-card grid |
+| 4-11 | `/services/{category}` | 8 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate`; design-branding also renders `PortfolioGallery` |
+| 12 | `/pricing` | Pricing | Page header; Pricing philosophy; Pricing cards; Bulk and student discounts; Payment methods; FAQ | Framework pricing, ask for quote |
+| 13 | `/contact` | Contact | Page header; WhatsApp card; Community links; Details and map; Inquiry form | WhatsApp-first, map embed, form |
+| 14 | `/blog` | Blog | Page header; Featured post; Category filter; Blog grid; Load more; WhatsApp channel CTA | Client-side filters and load more |
+| 15 | `/blog/[slug]` | Blog Post | Article header; Featured image; Article content with inline CTAs; Author box; Related articles; Share | `generateStaticParams` required |
 | 15 | `/404` | Not Found | Error hero; Quick links; CTA banner | `app/not-found.tsx`, noindex automatic |
 
-Loading states: `app/loading.tsx` (global, mirrors Home), `app/about/loading.tsx`, `app/services/loading.tsx` (shared by the services hub and all seven category pages, so it is intentionally generic rather than page-specific), `app/pricing/loading.tsx`, `app/contact/loading.tsx`, `app/blog/loading.tsx`, `app/blog/[slug]/loading.tsx`. Requirements: each skeleton mirrors its page structure; containers are `aria-busy="true"` with a visually hidden "Loading content..." label; skeletons contain no focusable elements; the shimmer animation respects `prefers-reduced-motion`.
+Loading states: `app/loading.tsx` (global, mirrors Home), `app/about/loading.tsx`, `app/services/loading.tsx` (shared by the services hub and all eight category pages, so it is intentionally generic rather than page-specific), `app/pricing/loading.tsx`, `app/contact/loading.tsx`, `app/blog/loading.tsx`, `app/blog/[slug]/loading.tsx`. Requirements: each skeleton mirrors its page structure; containers are `aria-busy="true"` with a visually hidden "Loading content..." label; skeletons contain no focusable elements; the shimmer animation respects `prefers-reduced-motion`.
 
 Background rhythm: every page opens with the navy-900 header and closes with the navy-900 footer. Interior sections alternate white, gray-50, navy-50, and orange-50 with no two identical backgrounds adjacent. Bold orange-500 CTA banners close the Home and About pages; other pages close on their content sections or use orange-50 accents. No decorative patterns are used anywhere (design.md section 8).
 

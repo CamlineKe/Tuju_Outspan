@@ -26,7 +26,7 @@ export default function Loading() {
             <Skeleton className="mx-auto" width={340} />
           </div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5">
-            {Array.from({ length: 7 }).map((_, index) => (
+            {Array.from({ length: 8 }).map((_, index) => (
               <SkeletonCard key={index} type="service" />
             ))}
             <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-xl border border-orange-200 bg-orange-50 p-7">

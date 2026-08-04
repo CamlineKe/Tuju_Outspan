@@ -33,7 +33,7 @@ The tech stack is **Next.js** with a component-based architecture, supporting st
 |---|------|-------|---------|
 | 1 | Home | `/` | The conversion engine. Communicates everything intentionally. |
 | 2 | About | `/about` | Humanizes the brand. Builds trust through story and values. |
-| 3 | Services Hub | `/services` | Directory of all 7 service categories. Gateway to detail pages. |
+| 3 | Services Hub | `/services` | Directory of all 8 service categories. Gateway to detail pages. |
 | 4 | Government Services | `/services/government` | Dedicated sales page for all government-related services. |
 | 5 | Education Services | `/services/education` | Dedicated sales page for education-related services. |
 | 6 | Health Services | `/services/health` | Dedicated sales page for health and social services. |
@@ -108,7 +108,7 @@ The directory. Clean, scannable, and designed to push visitors into specific ser
 
 1. **Page Header** — "Our Services" with breadcrumb. Subheadline: "Everything you need, professionally handled at one trusted cyber center."
 
-2. **Services Grid** — 7 category cards in a responsive grid. Each card: category icon (consistent style), category name, 4–5 key services listed as bullet points, "View Details →" link. Cards have intentional hover effects.
+2. **Services Grid** — 8 category cards in a responsive grid. Each card: category icon (consistent style), category name, 4–5 key services listed as bullet points, "View Details →" link. Cards have intentional hover effects.
 
 3. **Search / Quick Find** — Optional but recommended: a simple search bar at the top. "What do you need help with?" — typing "KRA" highlights the Government card, "HELB" highlights Education, etc. Reduces friction for users who know exactly what they want.
 
@@ -359,7 +359,42 @@ Dedicated sales page for online services, career support, and digital literacy.
 
 ---
 
-### Page 11: Pricing (`/pricing`)
+### Page 11: Internet Services & Internet Sales (`/services/internet`)
+
+Dedicated sales page for internet access and data sales at the cyber center.
+
+**Sections:**
+
+1. **Page Header** - "Internet Services & Internet Sales" with breadcrumb. Subheadline: "High-speed internet access, data sales, and reliable Wi-Fi at only KSh 2 per minute."
+
+2. **Service Breakdown** - Detailed list:
+   - High-speed Internet Access
+   - Internet Data Sales
+   - Reliable Wi-Fi Services
+   - Fast Downloads & Uploads
+   - Online Gaming Access
+   - Smooth Video Streaming
+   - Email Access
+   - Online Applications
+   - Internet Browsing for Research, Work & Study
+
+   Each with description.
+
+3. **How It Works** - 3 steps: (1) Walk in and start, (2) Connect and use, (3) Pay per minute.
+
+4. **FAQ** - "How much does internet access cost?" "Where is the service available?" "Do I need an account?"
+
+5. **Pricing Note** - "Internet access at only KSh 2 per minute. Available at our shop around Slaughter, Chuka University premises."
+
+6. **Related Services** - Cross-sell: "Online & Career Services" and "Education Services".
+
+7. **Sticky WhatsApp CTA** - "Get Help on WhatsApp."
+
+8. **Footer** - Same as homepage.
+
+---
+
+### Page 12: Pricing (`/pricing`)
 
 Transparency builds trust. Even without fixed prices, this page sets expectations.
 
@@ -388,7 +423,7 @@ Transparency builds trust. Even without fixed prices, this page sets expectation
 
 ---
 
-### Page 12: Contact (`/contact`)
+### Page 13: Contact (`/contact`)
 
 The closer. WhatsApp-first, with all contact channels clearly presented.
 
@@ -420,7 +455,7 @@ The closer. WhatsApp-first, with all contact channels clearly presented.
 
 ---
 
-### Page 13: Blog (`/blog`)
+### Page 14: Blog (`/blog`)
 
 SEO content hub. Drives organic traffic and positions Tuju Outspan as a helpful resource.
 
@@ -442,7 +477,7 @@ SEO content hub. Drives organic traffic and positions Tuju Outspan as a helpful 
 
 ---
 
-### Page 14: Blog Post (`/blog/[slug]`)
+### Page 15: Blog Post (`/blog/[slug]`)
 
 Individual article pages.
 
@@ -559,7 +594,7 @@ The canonical project structure, component tree, and data modules are maintained
 
 ## 12. Launch Checklist
 
-- [x] All 14 pages built (final review pending)
+- [x] All 15 pages built (final review pending)
 - [ ] WhatsApp links tested and working (pending verification)
 - [ ] Mobile responsiveness verified (pending)
 - [x] SEO meta tags on all pages (implemented)

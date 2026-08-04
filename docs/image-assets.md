@@ -37,6 +37,8 @@ Until that agreement is reached, do not add images to `public/`. Keep this docum
 | Blog covers | `public/images/blog/blog-<slug>.webp` | 16:9, 1200px long edge, WebP | Blog cards and post pages, wired per post in `blog.ts` |
 | Testimonial avatars | Not yet decided | Not yet decided | Testimonials section, only if the owner wants avatars |
 
+> Note: `public/images/services/internet.webp` is currently a placeholder duplicate of `computer-it.webp` until the owner provides a real internet service photo.
+
 ## 4. Rules (inherited from `project-structure.md` section 4)
 
 - Assets live only under `public/`. Referenced by path, never hotlinked.

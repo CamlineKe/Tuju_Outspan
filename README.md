@@ -10,7 +10,7 @@ conversion-focused design and fast static hosting.
 
 ## Features
 
-- 14 pages: home, about, services hub, 7 service categories, pricing, contact, blog
+- 15 pages: home, about, services hub, 8 service categories, pricing, contact, blog, blog post
 - WhatsApp-first CTAs with pre-filled messages and a floating chat button
 - Searchable services directory and a quick inquiry form that opens WhatsApp
 - Static export with SEO metadata, Open Graph, and JSON-LD structured data
