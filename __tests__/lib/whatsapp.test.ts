@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildServiceWhatsAppLink, buildWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import {
+  buildCategoryEnquiryLink,
+  buildContextualWhatsAppLink,
+  buildServiceEnquiryLink,
+  buildServiceWhatsAppLink,
+  buildWhatsAppLink,
+} from '@/app/lib/utils/whatsapp';
 
 const NUMBER = '254715616633';
 
@@ -21,5 +27,68 @@ describe('buildServiceWhatsAppLink', () => {
     const link = buildServiceWhatsAppLink('HELB Application', NUMBER);
     expect(link).toContain('HELB%20Application');
     expect(link).toContain('need%20help%20with');
+  });
+});
+
+describe('buildServiceEnquiryLink', () => {
+  const kraPin = {
+    name: 'KRA PIN Registration',
+    description: 'New KRA PIN registration for individuals and businesses.',
+  };
+
+  it('pre-fills a service-specific enquiry message', () => {
+    const link = buildServiceEnquiryLink(kraPin, NUMBER);
+    expect(link).toContain('I%27d%20like%20to%20enquire%20about%20KRA%20PIN%20Registration');
+    expect(link).toContain('New%20KRA%20PIN%20registration%20for%20individuals%20and%20businesses.');
+    expect(link).toContain('process%2C%20requirements%2C%20and%20cost');
+  });
+
+  it('uses the custom waMessage override when provided', () => {
+    const link = buildServiceEnquiryLink(
+      { ...kraPin, waMessage: 'Hi Tuju Outspan, please help me register for a KRA PIN.' },
+      NUMBER
+    );
+    expect(link).toContain('please%20help%20me%20register%20for%20a%20KRA%20PIN');
+    expect(link).not.toContain('process%2C%20requirements%2C%20and%20cost');
+  });
+});
+
+describe('buildCategoryEnquiryLink', () => {
+  it('pre-fills a category enquiry message', () => {
+    const link = buildCategoryEnquiryLink('Government Services', NUMBER);
+    expect(link).toContain('your%20Government%20Services.');
+    expect(link).toContain('process%2C%20requirements%2C%20and%20cost');
+  });
+});
+
+describe('buildContextualWhatsAppLink', () => {
+  const cases = [
+    ['general', 'question%20about%20your%20services'],
+    ['hero', 'enquire%20about%20your%20services'],
+    ['pricing', 'a%20quote%20for%20your%20services'],
+    ['contact', 'get%20in%20touch'],
+    ['about', 'know%20more%20about%20Tuju%20Outspan'],
+    ['blog', 'question%20about%20this%20topic'],
+    ['not-found', 'couldn%27t%20find%20what%20I%20was%20looking%20for'],
+    ['cta', 'get%20started'],
+    ['services-catch-all', 'isn%27t%20listed'],
+    ['service-card-catch-all', 'can%27t%20find%20the%20service%20I%20need'],
+  ] as const;
+
+  it('uses the crafted message for each context', () => {
+    for (const [context, expected] of cases) {
+      expect(buildContextualWhatsAppLink(context, undefined, NUMBER)).toContain(expected);
+    }
+  });
+
+  it('uses the service-category label when provided', () => {
+    const link = buildContextualWhatsAppLink('service-category', 'Government Services', NUMBER);
+    expect(link).toContain('your%20Government%20Services.');
+  });
+
+  it('throws when the service-category label is missing', () => {
+    expect(() => buildContextualWhatsAppLink('service-category', undefined, NUMBER)).toThrow(
+      'Label is required'
+    );
   });
 });

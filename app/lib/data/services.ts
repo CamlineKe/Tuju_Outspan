@@ -11,6 +11,10 @@ export type ServiceSlug =
 export interface ServiceItem {
   name: string;
   description: string;
+  /** What the client should have ready, shown in the service enquiry modal. */
+  details?: string;
+  /** Optional full WhatsApp message override; defaults to a standard enquiry template. */
+  waMessage?: string;
 }
 
 export interface FAQ {
