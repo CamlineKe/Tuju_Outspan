@@ -57,6 +57,8 @@ Sections alternate backgrounds to create visual rhythm without adding decoration
 
 **Adopted page rhythm:** Every page opens with the navy-900 header and closes with the navy-900 footer. Interior sections alternate between white, gray-50, navy-50, and orange-50 with no two identical backgrounds adjacent. Bold orange-500 CTA banners close the Home and About pages with an inverted white button; softer orange-50 accents are used for pricing notes and the blog channel CTA. The blog grid and services hub grid use gray-50 so their white cards stand out. No decorative patterns, textures, or gradients are used anywhere; visual interest comes from photos, cards, and motion.
 
+**Spacing standard:** Subpage heroes use `pb-10 pt-28 lg:pt-32`, standard content sections use `py-16` (64px), compact accent strips use `py-12` (48px), the closing CTA banner uses `py-[72px]`, and the location strip uses `py-5`. The Home and 404 heroes keep a larger `py-[136px]` opener as the flagship exception.
+
 ---
 
 ## 3. Typography System

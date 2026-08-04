@@ -59,7 +59,6 @@ tuju-outspan-website/
 │   │       └── loading.tsx
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── Container.tsx
 │   │   │   ├── Footer.tsx
 │   │   │   ├── Navbar.tsx
 │   │   │   └── WhatsAppFloat.tsx
@@ -170,7 +169,7 @@ tuju-outspan-website/
 
 | Folder | Purpose | Contents |
 |---|---|---|
-| `layout/` | Persistent chrome | Container, Navbar, Footer, WhatsAppFloat |
+| `layout/` | Persistent chrome | Navbar, Footer, WhatsAppFloat |
 | `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare, PortfolioGallery |
 | `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 7 service pages) |
 | `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
@@ -244,7 +243,6 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 | `layout/Navbar.tsx` | Fixed nav, scroll state, active links, mobile menu |
 | `layout/Footer.tsx` | 4-column footer with quick links, services, contact, social buttons |
 | `layout/WhatsAppFloat.tsx` | Floating WhatsApp button, one-time pulse |
-| `layout/Container.tsx` | Max-width wrapper (1200px, 24px padding) |
 | `ui/Breadcrumb.tsx` | Dark-background breadcrumb trail |
 | `ui/Button.tsx` | All button variants and sizes |
 | `ui/ServiceCard.tsx` | Service category card with icon, list, link |

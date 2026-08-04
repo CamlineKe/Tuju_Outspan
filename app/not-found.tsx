@@ -38,12 +38,6 @@ export default function NotFound() {
   return (
     <>
       <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-20 pt-28 text-center text-white lg:py-[136px]">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] font-bold text-navy-800 opacity-10 lg:text-[280px]"
-        >
-          TO
-        </span>
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <p className="text-[80px] font-bold leading-none opacity-15 lg:text-[120px]">404</p>
           <h1 className="mt-2 text-[28px] font-bold leading-[1.2] md:text-[32px] lg:text-4xl">
