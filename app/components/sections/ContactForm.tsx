@@ -37,7 +37,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 text-left">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="grid gap-5 text-left sm:grid-cols-2"
+    >
       <Input
         label="Name"
         placeholder="Your name"
@@ -50,7 +54,7 @@ export default function ContactForm() {
         error={errors.phone?.message}
         {...register('phone')}
       />
-      <div>
+      <div className="sm:col-span-2">
         <label htmlFor="service" className="mb-2 block text-sm font-medium text-gray-800">
           Service Needed
         </label>
@@ -75,7 +79,7 @@ export default function ContactForm() {
           </p>
         )}
       </div>
-      <div>
+      <div className="sm:col-span-2">
         <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-800">
           Message
         </label>
@@ -94,7 +98,7 @@ export default function ContactForm() {
           </p>
         )}
       </div>
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full sm:col-span-2">
         <MessageCircle className="h-5 w-5" aria-hidden="true" />
         Send Message
       </Button>
