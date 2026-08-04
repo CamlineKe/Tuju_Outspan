@@ -19,6 +19,16 @@ conversion-focused design and fast static hosting.
 
 ## Tech Stack
 
+![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black)
+![React](https://img.shields.io/badge/React-19.1.0-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6)
+![Node.js](https://img.shields.io/badge/Node.js-22+-green)
+![pnpm](https://img.shields.io/badge/pnpm-10-F69220)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.0-38BDF8)
+![Vitest](https://img.shields.io/badge/Vitest-3.2.0-729B1B)
+![Vercel](https://img.shields.io/badge/Vercel-Static_Export-black)
+![License](https://img.shields.io/badge/License-UNLICENSED-red)
+
 The site is a static Next.js application. Next.js 15 App Router builds every page
 at deploy time into plain HTML, CSS, and JavaScript, so the result runs on any
 static host with no server required. TypeScript keeps the codebase type-safe,
