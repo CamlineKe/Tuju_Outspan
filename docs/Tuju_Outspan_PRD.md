@@ -68,7 +68,7 @@ The homepage is the single most important page. It must communicate trust, range
 
 5. **Process Steps** — Section header: "How It Works." 3-step horizontal flow: (1) "Message Us on WhatsApp" — describe your need; (2) "We Handle It" — our team processes your request professionally; (3) "Get Results" — receive your documents, approvals, or prints. Simple icons, connected by a subtle line. Reinforces ease.
 
-6. **Social Proof / Testimonials** — Section header: "What Our Clients Say." 3 testimonial cards in a row. Each: quote text, client name, service used. Even if informal, authentic testimonials build massive trust. Placeholder for now — content to be added later.
+6. **Social Proof / Testimonials** - Section header: "What Our Clients Say." Four real testimonials in a carousel showing two at a time on desktop and one on mobile, with previous/next arrows and dot indicators. Slides alternate direction: first position enters from the left, second from the right, and so on. Autoplay advances every 6 seconds and pauses on hover or focus. Each card: quote text, initials avatar, client name, service used.
 
 7. **Location & Hours Strip** — Compact bar. Left: "📍 Ikonge–Ekerenyo Stage, Chuka University" | Center: "⏰ Open Daily Until Late" | Right: "📞 0715 616 633". Clean, scannable, reinforces accessibility.
 
@@ -516,7 +516,7 @@ WhatsApp is the primary conversion channel. It must be omnipresent but not annoy
 
 | Content | Status | Needed For |
 |---------|--------|------------|
-| Testimonials (2–3) | ⏳ Pending | Home page, Social Proof section |
+| Testimonials (4) | ✅ Added | Home page, Social Proof section |
 | Founder/Team Photo | ⏳ Pending | About page |
 | Physical Space Photos | ⏳ Pending | About page, Gallery |
 | Design Portfolio (printed work) | ⏳ Pending | Design & Branding page |
@@ -564,7 +564,7 @@ The canonical project structure, component tree, and data modules are maintained
 - [ ] Mobile responsiveness verified (pending)
 - [x] SEO meta tags on all pages (implemented)
 - [ ] Google Maps embed on Contact page (pending embed URL)
-- [ ] Testimonials added (owner content)
+- [x] Testimonials added (owner content)
 - [ ] Photos added (owner content)
 - [ ] Blog posts published (minimum 3; one starter post exists)
 - [ ] WhatsApp Group and Channel created and linked (owner)

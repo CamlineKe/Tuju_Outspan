@@ -76,7 +76,7 @@ Source: `tech-stack.md`. All versions are pinned exactly.
 | Language | TypeScript 5.8.3, strict mode |
 | Styling | Tailwind CSS 4.1.0 (CSS-first `@theme` configuration) |
 | Icons | lucide-react 0.487.0 |
-| Animation | framer-motion 12.9.0 (mobile menu, WhatsApp float pulse); custom IntersectionObserver scroll reveals (`Reveal.tsx`) |
+| Animation | framer-motion 12.9.0 (mobile menu, WhatsApp float pulse, testimonials carousel with 6s autoplay); custom IntersectionObserver scroll reveals (`Reveal.tsx`) |
 | Forms | react-hook-form 7.56.0 + zod 3.25.1 + @hookform/resolvers 5.0.1 |
 | Class merging | clsx 2.1.1 + tailwind-merge 3.2.0 |
 | Testing | vitest 3.2.0 + Testing Library |
@@ -159,7 +159,7 @@ The design is finalized in two documents plus the route map in this file. Do not
 - Spacing is multiples of 4px. Typography follows the token scale in `design.md` section 3.
 - Icons are Lucide outline icons. No emojis as UI icons and no emojis in rendered copy.
 - Focus states, skip link, keyboard navigation, and `prefers-reduced-motion` are required (WCAG 2.1 AA).
-- No parallax, auto-playing carousels, or decorative animation.
+- No parallax or decorative animation; carousel autoplay only with pause on hover/focus and reduced-motion support.
 
 ### 4.2 Token Ownership
 
@@ -250,7 +250,7 @@ The seven categories and their service lists come from PRD pages 4-10 and are au
 
 | Module | Content |
 |---|---|
-| `testimonials.ts` | Quote, author, service used. 3 placeholders until real content arrives |
+| `testimonials.ts` | Quote, author, service used. 4 real testimonials |
 | `pricing.ts` | 7 pricing cards, each with items marked `from KSh ...` or `ask for quote`, featured flag |
 | `blog.ts` | Posts with slug, title, excerpt, category, date, read time, author, cover image, content blocks |
 
@@ -296,7 +296,7 @@ Implementation phases are complete. Remaining work is owner content and launch a
 
 - Load time under 2 seconds on 3G; Lighthouse >= 90 across categories.
 - Images lazy-loaded below the fold, pre-optimized before entering `public/`.
-- No parallax, autoplay carousels, or decorative animation.
+- No parallax or decorative animation; carousel autoplay only with pause on hover/focus and reduced-motion support.
 
 ### 9.4 Analytics
 
@@ -345,7 +345,7 @@ Full details in `deliverables-checklist.md`.
 |---|---|---|
 | Domain name decision | `.env`, canonical URLs, sitemap | No, use placeholder until decided |
 | WhatsApp Group and Channel links | Contact page, footer, blog | No, placeholders in `.env` |
-| Real testimonials (2-3) | Home testimonials section | No, placeholders allowed |
+| Real testimonials (2-3) | Home testimonials section | No; 4 real testimonials added |
 | Founder and space photos | About page | Founder photo and first space photo in use; more space photos pending |
 | Design portfolio images | Design and Branding page | No; gallery section in place, images pending |
 | Blog articles (3-5) | Blog pages | No, ship with placeholder-free stub data only after approval |

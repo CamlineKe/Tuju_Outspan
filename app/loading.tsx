@@ -87,10 +87,25 @@ export default function Loading() {
             <Skeleton className="mx-auto" width={120} />
             <Skeleton className="mx-auto" width={260} height={28} />
           </div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <SkeletonCard key={index} type="testimonial" />
-            ))}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <SkeletonCard type="testimonial" className="p-8 md:p-10" />
+            <div className="hidden md:block">
+              <SkeletonCard type="testimonial" className="p-8 md:p-10" />
+            </div>
+          </div>
+          <div className="mt-8 flex items-center justify-center gap-5">
+            <Skeleton variant="circular" width={44} height={44} />
+            <div className="flex items-center gap-2">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <Skeleton
+                  key={index}
+                  width={index === 0 ? 24 : 10}
+                  height={10}
+                  className="rounded-full"
+                />
+              ))}
+            </div>
+            <Skeleton variant="circular" width={44} height={44} />
           </div>
         </div>
       </section>

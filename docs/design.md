@@ -282,26 +282,39 @@ Link:
 ```
 Background: White
 Border: 1px solid Gray-200
-Border-radius: 12px
-Padding: 28px
+Border-radius: 16px
+Padding: 32px (40px on desktop)
+Shadow: Navy shadow (soft)
+Layout: Centered
+
+Quote icon:
+  Icon: Quote (lucide)
+  Color: Orange-500
+  Size: 36px
 
 Stars:
   Color: Orange-500
-  Size: 16px
-  Letter-spacing: 2px
+  Size: 20px
 
 Quote:
-  Font: Body (16px), italic
+  Font: Body-large (18px, 20px on desktop)
   Color: Gray-700
   Line-height: 1.6
 
+Author avatar:
+  Shape: Circle, 56px
+  Background: Navy-900
+  Text: White initials, bold
+
 Author:
-  Font: Body-small (14px), weight 700
+  Font: Body (16px), weight 700
   Color: Navy-900
 
-Service tag:
-  Font: Caption (13px)
-  Color: Gray-400
+Service pill:
+  Background: Orange-50
+  Text: Caption (12px), weight 600
+  Color: Orange-600
+  Border-radius: Full
 ```
 
 #### Pricing Card
@@ -560,7 +573,7 @@ Description:
 |---------|---------|-----|-------|
 | Services Grid | auto-fit, minmax(280px, 1fr) | 20px | Service cards, blog cards |
 | Features Grid | repeat(4, 1fr) | 24px | Why Choose Us, process steps |
-| Testimonials | repeat(3, 1fr) | 20px | Review cards |
+| Testimonials | 2-up carousel (1-up mobile), max-width 1000px | 20px | Review cards |
 | Footer | 1.5fr 1fr 1fr 1.5fr | 40px | Footer columns |
 | Pricing | repeat(3, 1fr) | 24px | Pricing cards |
 
@@ -662,6 +675,18 @@ Motion communicates, not decorates. Every animation has a purpose:
 **Trigger:** Intersection Observer at 10% visibility threshold.
 **Stagger:** 100ms delay between sibling elements.
 
+#### Carousel Slide
+
+```text
+direction alternates by position:
+  enter: x 64px (left) or x -64px (right) + fade
+  center: x 0, opacity 1
+  exit: opposite side of entry + fade
+  duration: 300ms, ease-out
+```
+
+Alternating directions: first position enters from the left, second from the right, third from the left, and so on. Desktop shows two cards per view, mobile shows one. Autoplay advances one position every 6 seconds and pauses on hover or focus. With `prefers-reduced-motion`, slides crossfade with no horizontal movement.
+
 #### Navbar Scroll
 
 ```css
@@ -699,7 +724,7 @@ Motion communicates, not decorates. Every animation has a purpose:
 ### What NOT to Animate
 
 - No parallax scrolling — distracting, hurts performance
-- No auto-playing carousels — users miss content, feels pushy
+- No unmanaged auto-playing carousels: autoplay only with pause on hover/focus and reduced-motion support
 - No loading spinners longer than 2s — skeleton screens instead
 - No bounce animations on page load — feels unprofessional
 - No particle effects, confetti, or decorative motion

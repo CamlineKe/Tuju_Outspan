@@ -65,7 +65,7 @@
 
 | Content | Needed For | Status |
 |---------|------------|--------|
-| Real testimonials (2-3) | Home testimonials section | ⏳ You said you'll add later |
+| Real testimonials (4) | Home testimonials section | ✅ Added |
 | Founder/team photo | About page | ⏳ You said you'll include |
 | Physical space photos | About page, Gallery | ⏳ You said you'll include |
 | Design portfolio images | Design & Branding page | ⏳ You said you'll include |
@@ -170,6 +170,6 @@ You haven't missed anything **critical**. The foundation is solid:
 - ✅ Content gaps identified
 - ✅ Architecture guide connects all docs (architecture.md)
 
-The gaps are **content and assets** (photos, testimonials, blog posts) — not structural. The technical foundation is complete and ready to build.
+The gaps are **content and assets** (photos, blog posts), not structural. The technical foundation is complete and ready to build.
 
 **Ready to move to content and launch.**
