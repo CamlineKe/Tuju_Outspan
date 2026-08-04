@@ -12,7 +12,7 @@ interface ServiceBreakdownProps {
 export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
   const Icon = getCategoryIcon(category.icon);
   return (
-    <section className="bg-white px-6 py-20">
+    <section className="bg-white px-6 py-16">
       <div className="mx-auto max-w-[1100px]">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
           <div>

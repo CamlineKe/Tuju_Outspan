@@ -12,7 +12,7 @@ const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${e
 
 export default function ContactInfo() {
   return (
-    <section className="bg-white px-6 py-20">
+    <section className="bg-white px-6 py-16">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 lg:grid-cols-[45%_55%]">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">

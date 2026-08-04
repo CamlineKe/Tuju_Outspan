@@ -15,7 +15,7 @@ interface ServiceCategoryTemplateProps {
 export default function ServiceCategoryTemplate({ category }: ServiceCategoryTemplateProps) {
   return (
     <>
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-white lg:pt-32">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb
             items={[
@@ -33,7 +33,7 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
 
       <ServiceBreakdown category={category} />
 
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-[900px]">
           <SectionHeader overline="HOW IT WORKS" title="Simple as 1-2-3" />
           <div className="relative">
@@ -55,7 +55,7 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-[720px]">
           <SectionHeader overline="FAQ" title="Common Questions" />
           {category.faqs.map((faq) => (

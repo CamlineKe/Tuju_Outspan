@@ -57,7 +57,7 @@ export default function BlogListing() {
 
   return (
     <>
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-white lg:pt-32">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
@@ -69,7 +69,7 @@ export default function BlogListing() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pb-8 pt-12">
+      <section className="bg-white px-6 pb-8 pt-10">
         <div className="mx-auto max-w-[1100px]">
           {featured && (
             <Reveal>
@@ -136,7 +136,7 @@ export default function BlogListing() {
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 pb-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {gridPosts.map((post, index) => (
             <Reveal key={post.slug} delay={index * 100}>

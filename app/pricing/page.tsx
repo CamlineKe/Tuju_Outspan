@@ -56,7 +56,7 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(PRICING_FAQS)) }}
       />
 
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-white lg:pt-32">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Pricing' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
@@ -68,14 +68,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-12">
+      <section className="bg-white px-6 py-16">
         <p className="mx-auto max-w-[640px] text-center leading-relaxed text-gray-600">
           We believe in honest pricing. Rates depend on service complexity, urgency, and volume.
           Below are starting estimates; confirm your exact quote on WhatsApp.
         </p>
       </section>
 
-      <section className="bg-gray-50 px-6 py-16 lg:pb-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-[1000px]">
           <SectionHeader overline="PRICING" title="Transparent Rates" />
           <PricingTable />
@@ -112,7 +112,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-[720px]">
           <SectionHeader overline="FAQ" title="Common Questions" />
           {PRICING_FAQS.map((faq) => (

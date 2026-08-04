@@ -61,7 +61,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd()) }}
       />
 
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-white lg:pt-32">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[1200px]">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
           <h1 className="mt-4 text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px] lg:text-4xl">
@@ -73,7 +73,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-white px-6 py-16">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal className="h-full">
             <div className="flex h-full flex-col rounded-2xl border-2 border-whatsapp bg-white p-8 shadow-[0_8px_32px_rgba(37,211,102,0.15)] md:p-10">
@@ -132,7 +132,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-[1200px]">
           <SectionHeader
             overline="COMMUNITY"
@@ -191,7 +191,7 @@ export default function ContactPage() {
 
       <ContactInfo />
 
-      <section className="bg-navy-50 px-6 py-20">
+      <section className="bg-navy-50 px-6 py-16">
         <div className="mx-auto max-w-[720px]">
           <SectionHeader
             overline="SEND A MESSAGE"

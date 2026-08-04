@@ -12,7 +12,7 @@ export default function PortfolioGallery() {
   const isEmpty = portfolioItems.length === 0;
 
   return (
-    <section className="bg-white px-6 py-20">
+    <section className="bg-white px-6 py-16">
       <div className="mx-auto max-w-[1100px]">
         <SectionHeader
           overline="OUR WORK"

@@ -5,14 +5,14 @@ export default function PricingLoading() {
   return (
     <div aria-busy="true">
       <span className="sr-only">Loading content...</span>
-      <section className="bg-navy-900 px-6 pb-15 pt-28 lg:pt-32">
+      <section className="bg-navy-900 px-6 pb-10 pt-28 lg:pt-32">
         <div className="mx-auto max-w-[1200px] space-y-4">
           <Skeleton width={160} />
           <Skeleton width={260} height={36} />
           <Skeleton width={380} />
         </div>
       </section>
-      <section className="bg-white px-6 py-12">
+      <section className="bg-white px-6 py-16">
         <Skeleton className="mx-auto" width={520} />
       </section>
       <section className="bg-gray-50 px-6 py-16">

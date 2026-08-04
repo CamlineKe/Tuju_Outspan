@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }}
       />
 
-      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-15 pt-28 text-center text-white lg:pt-32">
+      <section className="hero-glow relative overflow-hidden bg-navy-900 px-6 pb-10 pt-28 text-center text-white lg:pt-32">
         <div className="relative z-10 mx-auto max-w-[720px]">
           <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-orange-400">
             {post.category}
@@ -160,11 +160,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
       </section>
 
-      <section className="bg-white px-6 pb-20 pt-12">
+      <section className="bg-white px-6 pt-12 pb-16">
         <div className="mx-auto max-w-[680px]">{renderContent(post)}</div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-8">
+      <section className="bg-gray-50 px-6 py-12">
         <div className="mx-auto flex max-w-[680px] items-start gap-4">
           <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-navy-50 text-lg font-bold text-navy-900">
             TO
@@ -197,7 +197,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
       )}
 
-      <section className="bg-navy-50 px-6 py-8">
+      <section className="bg-navy-50 px-6 py-12">
         <div className="mx-auto max-w-[680px] text-center">
           <p className="text-gray-600">Found this helpful? Share it.</p>
           <div className="mt-4">
