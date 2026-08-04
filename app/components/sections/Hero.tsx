@@ -17,8 +17,9 @@ export default function Hero() {
           All Your Digital &amp; Government Services, Handled Professionally
         </h1>
         <p className="mx-auto mt-4 max-w-[560px] text-lg text-gray-400">
-          From KRA and HELB to design and printing. Fast, reliable, and affordable at
-          Ikonge-Ekerenyo Stage.
+          KRA, HELB, SHA, NTSA, and KUCCPS, plus printing and design. Skip the queues and the
+          stress; we handle the paperwork so you can focus on your hustle. Physically and online
+          at Ikonge-Ekerenyo Stage.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href={buildGeneralWhatsAppLink()} size="large">
