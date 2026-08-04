@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,6 +25,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const wasMenuOpenRef = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -52,6 +55,50 @@ export default function Navbar() {
       document.body.style.overflow = previousBodyOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
     };
+  }, [menuOpen]);
+
+  // Move focus into the menu when it opens, restore it when it closes, close
+  // on Escape, and keep Tab cycling within the overlay while it is open.
+  useEffect(() => {
+    if (menuOpen) {
+      wasMenuOpenRef.current = true;
+      closeButtonRef.current?.focus();
+      const onKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          setMenuOpen(false);
+          return;
+        }
+        if (event.key !== 'Tab') {
+          return;
+        }
+        const container = document.getElementById('mobile-menu');
+        if (!container) {
+          return;
+        }
+        const focusable = Array.from(
+          container.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+        );
+        if (focusable.length === 0) {
+          return;
+        }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      };
+      document.addEventListener('keydown', onKeyDown);
+      return () => document.removeEventListener('keydown', onKeyDown);
+    }
+    if (wasMenuOpenRef.current) {
+      wasMenuOpenRef.current = false;
+      menuButtonRef.current?.focus();
+    }
+    return undefined;
   }, [menuOpen]);
 
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
@@ -105,9 +152,12 @@ export default function Navbar() {
             WhatsApp
           </Link>
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             className="inline-flex h-11 w-11 items-center justify-center text-white lg:hidden"
           >
             <Menu className="h-6 w-6" aria-hidden="true" />
@@ -118,6 +168,10 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -133,6 +187,7 @@ export default function Navbar() {
                 className="h-20 w-auto"
               />
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"

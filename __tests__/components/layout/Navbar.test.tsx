@@ -25,8 +25,20 @@ describe('Navbar', () => {
     render(<Navbar />);
     await user.click(screen.getByRole('button', { name: /open menu/i }));
     const closeButton = await screen.findByRole('button', { name: /close menu/i });
+    expect(closeButton).toHaveFocus();
     await user.click(closeButton);
     // AnimatePresence keeps the menu in the DOM during its 300ms exit animation.
+    await waitForElementToBeRemoved(closeButton);
+  });
+
+  it('closes the mobile menu with the Escape key', async () => {
+    const user = userEvent.setup();
+    render(<Navbar />);
+    await user.click(screen.getByRole('button', { name: /open menu/i }));
+    const closeButton = await screen.findByRole('button', { name: /close menu/i });
+
+    await user.keyboard('{Escape}');
+
     await waitForElementToBeRemoved(closeButton);
   });
 });
