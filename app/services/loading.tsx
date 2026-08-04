@@ -12,27 +12,25 @@ export default function ServicesLoading() {
           <Skeleton width={420} />
         </div>
       </section>
-      <section className="bg-white px-6 py-10">
-        <div className="mx-auto max-w-[600px] space-y-4">
-          <Skeleton className="mx-auto" width={120} />
-          <Skeleton className="mx-auto" width={280} height={24} />
-          <Skeleton className="mx-auto" width={360} height={14} />
-          <Skeleton variant="rounded" width="100%" height={56} />
-        </div>
-      </section>
-      <section className="bg-gray-50 px-6 py-16">
+      <section className="bg-white px-6 py-16">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 7 }).map((_, index) => (
+          {Array.from({ length: 6 }).map((_, index) => (
             <SkeletonCard key={index} type="service" />
           ))}
         </div>
       </section>
-      <section className="bg-navy-50 px-6 py-16">
-        <div className="mx-auto max-w-[1100px] space-y-4">
-          <Skeleton className="mx-auto md:mx-0" width={300} height={24} />
-          <Skeleton className="mx-auto md:mx-0" width={220} height={14} />
-          <Skeleton variant="rounded" width={180} height={44} />
+      <section className="bg-gray-50 px-6 py-16">
+        <div className="mx-auto max-w-[1100px] space-y-5">
+          <Skeleton width={240} height={28} />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <Skeleton key={index} variant="rounded" height={96} />
+            ))}
+          </div>
         </div>
+      </section>
+      <section className="bg-navy-50 px-6 py-16">
+        <Skeleton variant="rounded" className="mx-auto" width={440} height={160} />
       </section>
     </div>
   );

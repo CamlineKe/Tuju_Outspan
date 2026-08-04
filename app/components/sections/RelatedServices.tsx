@@ -1,3 +1,4 @@
+import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import ServiceCard from '@/app/components/ui/ServiceCard';
 import { getServiceCategory } from '@/app/lib/data/services';
@@ -17,14 +18,15 @@ export default function RelatedServices({ category }: RelatedServicesProps) {
       <div className="mx-auto max-w-[1100px]">
         <SectionHeader align="left" title="You Might Also Need" />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {related.map((item) => (
-            <ServiceCard
-              key={item.slug}
-              category={item}
-              itemCount={2}
-              iconSize="h-5 w-5"
-              className="p-5"
-            />
+          {related.map((item, index) => (
+            <Reveal key={item.slug} className="h-full" delay={index * 100}>
+              <ServiceCard
+                category={item}
+                itemCount={2}
+                iconSize="h-5 w-5"
+                className="h-full p-5"
+              />
+            </Reveal>
           ))}
         </div>
       </div>

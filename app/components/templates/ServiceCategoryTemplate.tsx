@@ -4,6 +4,7 @@ import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import FAQItem from '@/app/components/ui/FAQItem';
 import ProcessStep from '@/app/components/ui/ProcessStep';
+import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import type { ServiceCategory } from '@/app/lib/data/services';
 import { buildServiceWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -41,14 +42,16 @@ export default function ServiceCategoryTemplate({ category }: ServiceCategoryTem
               className="absolute left-[17%] right-[17%] top-7 hidden h-0.5 bg-gray-200 md:block"
               aria-hidden="true"
             />
-            <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-3">
+            <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {category.processSteps.map((step, index) => (
-                <ProcessStep
-                  key={step.title}
-                  stepNumber={index + 1}
-                  title={step.title}
-                  description={step.description}
-                />
+                <Reveal key={step.title} className="h-full" delay={index * 100}>
+                  <ProcessStep
+                    stepNumber={index + 1}
+                    title={step.title}
+                    description={step.description}
+                    className="h-full rounded-xl border border-gray-200 bg-white p-7"
+                  />
+                </Reveal>
               ))}
             </div>
           </div>

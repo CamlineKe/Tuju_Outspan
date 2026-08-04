@@ -14,7 +14,7 @@ export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
   return (
     <section className="bg-white px-6 py-16">
       <div className="mx-auto max-w-[1100px]">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[3fr_2fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500">
               WHAT WE OFFER
@@ -26,25 +26,23 @@ export default function ServiceBreakdown({ category }: ServiceBreakdownProps) {
               {category.subheadline}
             </p>
           </div>
-          <div>
-            {category.imagePath ? (
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-navy-md">
-                <Image
-                  src={category.imagePath}
-                  alt={`${category.name} at Tuju Outspan Cyber Center`}
-                  fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
-                />
+          {category.imagePath ? (
+            <div className="relative min-h-[300px] overflow-hidden rounded-xl shadow-navy-md">
+              <Image
+                src={category.imagePath}
+                alt={`${category.name} at Tuju Outspan Cyber Center`}
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <div className="flex min-h-[300px] items-center justify-center">
+              <div className="flex h-30 w-30 items-center justify-center rounded-[20px] bg-navy-50">
+                <Icon className="h-14 w-14 text-navy-900" aria-hidden="true" />
               </div>
-            ) : (
-              <div className="flex items-center justify-center">
-                <div className="flex h-30 w-30 items-center justify-center rounded-[20px] bg-navy-50">
-                  <Icon className="h-14 w-14 text-navy-900" aria-hidden="true" />
-                </div>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
