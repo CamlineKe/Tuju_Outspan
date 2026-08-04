@@ -367,6 +367,7 @@ succeed and the deployed smoke tests in section 6 are complete.
 
 Use this final checklist before announcing the website:
 
+- [ ] Next.js 15.5.x and React 19.1.x are on the patched release lines.
 - [ ] WhatsApp number, group, channel, email, and location are confirmed and
       placeholders are removed.
 - [ ] Canonical URL and custom domain are confirmed as `tujuoutspan.co.ke`.

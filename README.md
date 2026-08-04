@@ -19,8 +19,8 @@ conversion-focused design and fast static hosting.
 
 ## Tech Stack
 
-![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black)
-![React](https://img.shields.io/badge/React-19.1.0-61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.22-black)
+![React](https://img.shields.io/badge/React-19.1.9-61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6)
 ![Node.js](https://img.shields.io/badge/Node.js-22+-green)
 ![pnpm](https://img.shields.io/badge/pnpm-10-F69220)

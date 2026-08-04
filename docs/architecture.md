@@ -72,7 +72,7 @@ Source: `tech-stack.md`. All versions are pinned exactly.
 
 | Layer | Choice |
 |---|---|
-| Framework | Next.js 15.3.4, App Router |
+| Framework | Next.js 15.5.22, App Router |
 | Language | TypeScript 5.8.3, strict mode |
 | Styling | Tailwind CSS 4.1.0 (CSS-first `@theme` configuration) |
 | Icons | lucide-react 0.487.0 |

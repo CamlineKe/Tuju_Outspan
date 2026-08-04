@@ -14,9 +14,9 @@
 
 | Package | Version | Purpose | Why This Version |
 |---------|---------|---------|------------------|
-| `next` | `15.3.4` | React framework with App Router, SSR/SSG, file-based routing | Latest stable with App Router maturity, React 19 support, improved caching |
-| `react` | `19.1.0` | UI library | Latest stable, concurrent features, improved performance |
-| `react-dom` | `19.1.0` | React DOM renderer | Matches React version |
+| `next` | `15.5.22` | React framework with App Router, SSR/SSG, file-based routing | Maintained LTS line with all security patches through July 2026 |
+| `react` | `19.1.9` | UI library | Latest patched 19.1 line, security fixes for React Server Components |
+| `react-dom` | `19.1.9` | React DOM renderer | Matches React version |
 | `typescript` | `5.8.3` | Type safety, IntelliSense, catch errors at build time | Latest stable with performance improvements |
 
 ---
@@ -139,7 +139,7 @@ import { CheckCircle, Phone, MapPin, Clock } from 'lucide-react';
 
 | Package | Version | Purpose | Why This Version |
 |---------|---------|---------|------------------|
-| `next` (built-in) | `15.3.4` | Metadata API, Open Graph, JSON-LD | Next.js App Router has native SEO support via `metadata` export |
+| `next` (built-in) | `15.5.22` | Metadata API, Open Graph, JSON-LD | Next.js App Router has native SEO support via `metadata` export |
 
 **No additional SEO packages needed.** Next.js handles:
 - `<title>` and `<meta>` tags
@@ -167,10 +167,10 @@ import { CheckCircle, Phone, MapPin, Clock } from 'lucide-react';
 | Package | Version | Type | Purpose | Why This Version |
 |---------|---------|------|---------|------------------|
 | `@types/node` | `22.15.0` | dev | TypeScript types for Node.js | Matches Node 22 LTS |
-| `@types/react` | `19.1.0` | dev | TypeScript types for React | Matches React 19 |
-| `@types/react-dom` | `19.1.0` | dev | TypeScript types for React DOM | Matches React DOM 19 |
+| `@types/react` | `19.1.9` | dev | TypeScript types for React | Matches React 19.1 |
+| `@types/react-dom` | `19.1.9` | dev | TypeScript types for React DOM | Matches React DOM 19.1 |
 | `eslint` | `9.25.0` | dev | Linting, code quality | Latest ESLint v9 with flat config |
-| `eslint-config-next` | `15.3.4` | dev | Next.js recommended ESLint rules | Matches Next.js version |
+| `eslint-config-next` | `15.5.22` | dev | Next.js recommended ESLint rules | Matches Next.js version |
 | `@eslint/js` | `9.25.0` | dev | ESLint JavaScript plugin | Matches ESLint version |
 | `typescript-eslint` | `8.31.0` | dev | TypeScript ESLint parser and rules | Latest, supports ESLint v9 |
 | `prettier` | `3.5.3` | dev | Code formatting | Opinionated, consistent formatting |
@@ -355,9 +355,9 @@ afterEach(() => {
     "clsx": "2.1.1",
     "framer-motion": "12.9.0",
     "lucide-react": "0.487.0",
-    "next": "15.3.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "15.5.22",
+    "react": "19.1.9",
+    "react-dom": "19.1.9",
     "react-hook-form": "7.56.0",
     "tailwind-merge": "3.2.0",
     "zod": "3.25.1",
@@ -372,11 +372,11 @@ afterEach(() => {
     "@testing-library/user-event": "14.6.0",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/node": "22.15.0",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.0",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.9",
     "@vitejs/plugin-react": "4.4.0",
     "eslint": "9.25.0",
-    "eslint-config-next": "15.3.4",
+    "eslint-config-next": "15.5.22",
     "jsdom": "26.1.0",
     "postcss": "8.5.3",
     "prettier": "3.5.3",
@@ -622,7 +622,7 @@ mkdir tuju-outspan-website && cd tuju-outspan-website
 pnpm init
 
 # 3. Install core dependencies
-pnpm add next@15.3.4 react@19.1.0 react-dom@19.1.0
+pnpm add next@15.5.22 react@19.1.9 react-dom@19.1.9
 
 # 4. Install styling & UI
 pnpm add tailwindcss@4.1.0 @tailwindcss/postcss@4.1.0 postcss@8.5.3 clsx@2.1.1 tailwind-merge@3.2.0
@@ -637,10 +637,10 @@ pnpm add framer-motion@12.9.0
 pnpm add react-hook-form@7.56.0 zod@3.25.1 @hookform/resolvers@5.0.1
 
 # 8. Install dev dependencies
-pnpm add -D typescript@5.8.3 @types/node@22.15.0 @types/react@19.1.0 @types/react-dom@19.1.0
+pnpm add -D typescript@5.8.3 @types/node@22.15.0 @types/react@19.1.9 @types/react-dom@19.1.9
 
 # 9. Install linting & formatting
-pnpm add -D eslint@9.25.0 eslint-config-next@15.3.4 @eslint/eslintrc@3.3.1 @eslint/js@9.25.0 typescript-eslint@8.31.0
+pnpm add -D eslint@9.25.0 eslint-config-next@15.5.22 @eslint/eslintrc@3.3.1 @eslint/js@9.25.0 typescript-eslint@8.31.0
 pnpm add -D prettier@3.5.3 prettier-plugin-tailwindcss@0.6.11 @trivago/prettier-plugin-sort-imports@5.2.2
 
 # 10. Install testing
@@ -688,9 +688,9 @@ vercel --prod         # Production deployment
 
 | Package | Version | Size (gzipped) | Purpose |
 |---------|---------|----------------|---------|
-| next | 15.3.4 | ~120 KB | Framework |
-| react | 19.1.0 | ~40 KB | UI library |
-| react-dom | 19.1.0 | ~70 KB | DOM renderer |
+| next | 15.5.22 | ~120 KB | Framework |
+| react | 19.1.9 | ~40 KB | UI library |
+| react-dom | 19.1.9 | ~70 KB | DOM renderer |
 | framer-motion | 12.9.0 | ~40 KB | Animations |
 | lucide-react | 0.487.0 | ~20 KB (tree-shaken) | Icons |
 | react-hook-form | 7.56.0 | ~10 KB | Form handling |
