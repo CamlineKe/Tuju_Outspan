@@ -20,4 +20,9 @@ describe('ServiceCard', () => {
     render(<ServiceCard category={government} itemCount={2} />);
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
+
+  it('renders the subheadline when showDescription is true', () => {
+    render(<ServiceCard category={government} showDescription />);
+    expect(screen.getByText(government.subheadline)).toBeInTheDocument();
+  });
 });

@@ -10,6 +10,7 @@ interface ServiceCardProps {
   category: ServiceCategory;
   itemCount?: number;
   iconSize?: string;
+  showDescription?: boolean;
   className?: string;
 }
 
@@ -17,13 +18,14 @@ export default function ServiceCard({
   category,
   itemCount = 3,
   iconSize = 'h-6 w-6',
+  showDescription = false,
   className,
 }: ServiceCardProps) {
   const Icon = getCategoryIcon(category.icon);
   return (
     <article
       className={cn(
-        'group rounded-xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md',
+        'group flex flex-col rounded-xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md',
         className
       )}
     >
@@ -31,6 +33,9 @@ export default function ServiceCard({
         <Icon className={cn('text-navy-900', iconSize)} aria-hidden="true" />
       </div>
       <h3 className="mt-4 text-xl font-semibold text-navy-900">{category.name}</h3>
+      {showDescription && (
+        <p className="mt-2 text-sm leading-relaxed text-gray-600">{category.subheadline}</p>
+      )}
       <ul className="mt-3 space-y-1">
         {category.services.slice(0, itemCount).map((service) => (
           <li key={service.name} className="flex items-start gap-2 text-sm text-gray-600">
@@ -44,7 +49,7 @@ export default function ServiceCard({
       </ul>
       <Link
         href={`/services/${category.slug}`}
-        className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-navy-700 transition-colors group-hover:text-navy-900"
+        className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-navy-700 transition-colors group-hover:text-navy-900"
       >
         View Details
         <ArrowRight
