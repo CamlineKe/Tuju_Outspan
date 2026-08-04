@@ -18,22 +18,28 @@ export default function Loading() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto mb-12 max-w-[400px] space-y-3 text-center">
             <Skeleton className="mx-auto" width={120} />
             <Skeleton className="mx-auto" width={300} height={28} />
             <Skeleton className="mx-auto" width={340} />
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, index) => (
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5">
+            {Array.from({ length: 7 }).map((_, index) => (
               <SkeletonCard key={index} type="service" />
             ))}
+            <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-xl border border-orange-200 bg-orange-50 p-7">
+              <Skeleton variant="circular" width={32} height={32} />
+              <Skeleton width={180} height={20} />
+              <Skeleton width={140} />
+              <Skeleton variant="rounded" width={160} height={44} />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-[1000px]">
           <div className="mx-auto mb-12 max-w-[300px] space-y-3 text-center">
             <Skeleton className="mx-auto" width={100} />
@@ -41,7 +47,10 @@ export default function Loading() {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from({ length: 4 }).map((_, index) => (
-              <div key={index} className="space-y-4 text-center">
+              <div
+                key={index}
+                className="space-y-4 rounded-xl border border-gray-200 bg-white p-7 text-center"
+              >
                 <Skeleton variant="circular" className="mx-auto" width={56} height={56} />
                 <Skeleton className="mx-auto" width={80} />
                 <Skeleton className="mx-auto" width={140} />
@@ -51,15 +60,18 @@ export default function Loading() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-[900px]">
           <div className="mx-auto mb-12 max-w-[300px] space-y-3 text-center">
             <Skeleton className="mx-auto" width={120} />
             <Skeleton className="mx-auto" width={260} height={28} />
           </div>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {Array.from({ length: 3 }).map((_, index) => (
-              <div key={index} className="space-y-4 text-center">
+              <div
+                key={index}
+                className="space-y-4 rounded-xl border border-gray-200 bg-white p-7 text-center"
+              >
                 <Skeleton variant="circular" className="mx-auto" width={56} height={56} />
                 <Skeleton className="mx-auto" width={120} />
                 <Skeleton className="mx-auto" width={160} />
@@ -69,7 +81,7 @@ export default function Loading() {
         </div>
       </section>
 
-      <section className="bg-navy-50 px-6 py-20">
+      <section className="bg-navy-50 px-6 py-16">
         <div className="mx-auto max-w-[1000px]">
           <div className="mx-auto mb-12 max-w-[300px] space-y-3 text-center">
             <Skeleton className="mx-auto" width={120} />

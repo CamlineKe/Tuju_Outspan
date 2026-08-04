@@ -18,13 +18,13 @@ const PILLARS: Pillar[] = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-gray-50 px-6 py-20">
+    <section className="bg-white px-6 py-16">
       <div className="mx-auto max-w-[1000px]">
         <SectionHeader overline="WHY US" title="Why Tuju Outspan?" />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 100}>
-              <div className="group px-5 py-8 text-center">
+            <Reveal key={pillar.title} className="h-full" delay={index * 100}>
+              <div className="group h-full rounded-xl border border-gray-200 bg-white p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[14px] border-2 border-gray-200 bg-white transition-colors group-hover:border-orange-500 group-hover:bg-orange-50">
                   <pillar.icon className="h-6 w-6 text-navy-900" aria-hidden="true" />
                 </div>

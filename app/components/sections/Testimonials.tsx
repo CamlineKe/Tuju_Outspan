@@ -7,7 +7,7 @@ import { testimonials } from '@/app/lib/data/testimonials';
 
 export default function Testimonials() {
   return (
-    <section className="bg-navy-50 px-6 py-20">
+    <section className="bg-navy-50 px-6 py-16">
       <div className="mx-auto max-w-[1000px]">
         <SectionHeader overline="TESTIMONIALS" title="What Our Clients Say" />
         {testimonials.length > 0 ? (
