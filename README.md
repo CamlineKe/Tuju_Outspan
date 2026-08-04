@@ -96,7 +96,7 @@ tuju-outspan-website/
 ├── app/                  # Next.js App Router: pages, components, data, utils
 │   ├── components/       # layout, sections, templates, ui
 │   ├── lib/              # data, schemas, utils (SEO, WhatsApp, dates)
-│   ├── services/         # services hub + 7 category pages
+│   ├── services/         # services hub + 8 category pages
 │   └── ...
 ├── docs/                 # design and architecture documentation
 ├── __tests__/            # Vitest + Testing Library suites

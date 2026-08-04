@@ -62,7 +62,7 @@ The homepage is the single most important page. It must communicate trust, range
 
 2. **Hero Section** — Full-width, clean background (intentional subtle pattern or solid with depth). Large headline: "All Your Digital & Government Services — Handled Professionally." Subheadline: "From KRA and HELB to design and printing. Fast, reliable, and affordable at Ikonge–Ekerenyo Stage." Two CTAs: Primary orange "Chat on WhatsApp" button. Secondary navy "Explore Services" link. Trust badges below: "✓ Fast Turnaround | ✓ Trusted by Locals | ✓ Open Daily Until Late."
 
-3. **Services Preview** — Section header: "All Services at One Desk." 7 category cards in a responsive grid (2×4 on desktop, 2×4 on tablet, 1 column mobile). Each card: category icon, name, top 3 services listed, "View Details →" link. Cards are clean with intentional hover states (subtle lift + shadow).
+3. **Services Preview** — Section header: "All Services at One Desk." 8 category cards in a responsive grid (2×4 on desktop, 2×4 on tablet, 1 column mobile). Each card: category icon, name, top 3 services listed, with the whole card linking to its service page and a "View Details" arrow indicator. Cards are clean with intentional hover states (subtle lift + shadow).
 
 4. **Why Choose Us** — Section header: "Why Tuju Outspan?" 4 pillars in a row: Fast (clock icon — "Quick turnaround, no long queues"), Reliable (shield icon — "Support you can trust, every time"), Affordable (tag icon — "Fair, student-friendly prices"), Friendly (heart icon — "Professional help with a personal touch"). Each with icon, title, and one-line description.
 
@@ -74,7 +74,7 @@ The homepage is the single most important page. It must communicate trust, range
 
 8. **Final CTA Banner** — Full-width navy or orange banner. Headline: "Ready to Get Started?" Subtext: "One WhatsApp message is all it takes." Large WhatsApp button. No distractions.
 
-9. **Footer** — 4-column layout: (1) Logo + tagline + brief description; (2) Quick Links (Home, Services, Pricing, About, Blog, Contact); (3) Services (7 category links); (4) Contact info (phone, email, location, hours) + Social links (WhatsApp Group, WhatsApp Channel). Bottom bar: copyright + "Online services available countrywide."
+9. **Footer** — 4-column layout: (1) Logo + tagline + brief description; (2) Quick Links (Home, Services, Pricing, About, Blog, Contact); (3) Services (8 category links); (4) Contact info (phone, email, location, hours) + Social links (WhatsApp Group, WhatsApp Channel). Bottom bar: copyright + "Online services available countrywide."
 
 ---
 
@@ -108,7 +108,7 @@ The directory. Clean, scannable, and designed to push visitors into specific ser
 
 1. **Page Header** — "Our Services" with breadcrumb. Subheadline: "Everything you need, professionally handled at one trusted cyber center."
 
-2. **Services Grid** — 8 category cards in a responsive grid. Each card: category icon (consistent style), category name, 4–5 key services listed as bullet points, "View Details →" link. Cards have intentional hover effects.
+2. **Services Grid** — 8 category cards in a responsive grid. Each card: category icon (consistent style), category name, 4–5 key services listed as bullet points, with the whole card linking to its service page and a "View Details" arrow indicator. Cards have intentional hover effects.
 
 3. **Search / Quick Find** — Optional but recommended: a simple search bar at the top. "What do you need help with?" — typing "KRA" highlights the Government card, "HELB" highlights Education, etc. Reduces friction for users who know exactly what they want.
 

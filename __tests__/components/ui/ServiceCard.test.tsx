@@ -7,13 +7,13 @@ import { serviceCategories } from '@/app/lib/data/services';
 const government = serviceCategories.find((category) => category.slug === 'government')!;
 
 describe('ServiceCard', () => {
-  it('renders the category name and details link', () => {
+  it('renders the category name with a whole-card link to the service page', () => {
     render(<ServiceCard category={government} />);
+
+    const cardLink = screen.getByRole('link', { name: /government services/i });
     expect(screen.getByRole('heading', { name: 'Government Services' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /view details/i })).toHaveAttribute(
-      'href',
-      '/services/government'
-    );
+    expect(cardLink).toHaveAttribute('href', '/services/government');
+    expect(screen.getAllByRole('link')).toHaveLength(1);
   });
 
   it('shows the requested number of services', () => {

@@ -23,7 +23,8 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   const Icon = getCategoryIcon(category.icon);
   return (
-    <article
+    <Link
+      href={`/services/${category.slug}`}
       className={cn(
         'group flex flex-col rounded-xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-navy-md',
         className
@@ -47,16 +48,13 @@ export default function ServiceCard({
           </li>
         ))}
       </ul>
-      <Link
-        href={`/services/${category.slug}`}
-        className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-navy-700 transition-colors group-hover:text-navy-900"
-      >
+      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-navy-700 transition-colors group-hover:text-navy-900">
         View Details
         <ArrowRight
           className="h-4 w-4 transition-transform group-hover:translate-x-1"
           aria-hidden="true"
         />
-      </Link>
-    </article>
+      </span>
+    </Link>
   );
 }

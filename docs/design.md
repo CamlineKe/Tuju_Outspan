@@ -271,10 +271,10 @@ List items:
   Bullet: Orange-500 dot
   Gap: 4px between items
 
-Link:
-  Font: Body-small (14px), weight 600
-  Color: Navy-700
-  Arrow icon that shifts right on hover
+Whole card:
+  Entire card is a single link to the service page
+  View Details text and arrow act as visual indicators
+  Arrow icon shifts right on hover
 ```
 
 #### Testimonial Card

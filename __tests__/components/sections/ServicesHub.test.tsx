@@ -8,7 +8,7 @@ describe('ServicesHub', () => {
   it('renders all eight category cards', () => {
     render(<ServicesHub />);
 
-    expect(screen.getAllByRole('article')).toHaveLength(8);
+    expect(screen.getAllByRole('link', { name: /view details/i })).toHaveLength(8);
     expect(screen.getByRole('heading', { name: 'Government Services' })).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: 'Internet Services & Internet Sales' })
