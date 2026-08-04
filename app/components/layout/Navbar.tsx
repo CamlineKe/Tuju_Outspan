@@ -10,10 +10,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, MessageCircle, X } from 'lucide-react';
 
 import { cn } from '@/app/lib/utils/cn';
-import {
-  buildContextualWhatsAppLink,
-  getWhatsAppContextForPath,
-} from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink, getWhatsAppContextForPath } from '@/app/lib/utils/whatsapp';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },

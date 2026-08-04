@@ -18,8 +18,8 @@ export default function Hero() {
         </h1>
         <p className="mx-auto mt-4 max-w-[560px] text-lg text-gray-400">
           KRA, HELB, SHA, NTSA, and KUCCPS, plus printing and design. Skip the queues and the
-          stress; we handle the paperwork so you can focus on your hustle. Physically and online
-          at Ikonge-Ekerenyo Stage.
+          stress; we handle the paperwork so you can focus on your hustle. Physically and online at
+          Ikonge-Ekerenyo Stage.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href={buildContextualWhatsAppLink('hero')} size="large">

@@ -355,7 +355,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Standard size passport photos, ready instantly.',
         details: 'Walk in or send a clear photo; we confirm the specifications on WhatsApp.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like to enquire about passport photos. What are the specifications and cost?',
+          "Hi Tuju Outspan, I'd like to enquire about passport photos. What are the specifications and cost?",
       },
       {
         name: 'Birth Certificate Applications',
@@ -416,7 +416,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Custom logos and graphic design for your brand.',
         details: 'Share your idea or reference images; tell us your brand colors.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like to enquire about logo design. Could you share samples, timelines, and a quote?',
+          "Hi Tuju Outspan, I'd like to enquire about logo design. Could you share samples, timelines, and a quote?",
       },
       {
         name: 'Posters and Banners',
@@ -433,7 +433,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Custom prints for individuals, teams, and events.',
         details: 'Tell us the design, colors, sizes, and quantity.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like a quote for custom t-shirt printing. I\'ll share the design, sizes, and quantity.',
+          "Hi Tuju Outspan, I'd like a quote for custom t-shirt printing. I'll share the design, sizes, and quantity.",
       },
       {
         name: 'Branding and Rebranding Packages',
@@ -500,9 +500,10 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'Windows Installation and Setup',
         description: 'Windows installation, drivers, and setup.',
-        details: 'Bring your machine in or tell us the model; have your license key if you have one.',
+        details:
+          'Bring your machine in or tell us the model; have your license key if you have one.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like to enquire about Windows installation. What do I need to bring?',
+          "Hi Tuju Outspan, I'd like to enquire about Windows installation. What do I need to bring?",
       },
       {
         name: 'Data Backup and Recovery',
@@ -568,7 +569,8 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'Email Creation and Setup',
         description: 'Gmail, Outlook, and business email setup.',
-        details: 'Tell us the email provider and your preferred name; have your phone number ready.',
+        details:
+          'Tell us the email provider and your preferred name; have your phone number ready.',
       },
       {
         name: 'Online Applications',
@@ -585,7 +587,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Clean, professional CVs that stand out.',
         details: 'Share your education, experience, and the role you are targeting.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like help with my CV. I\'ll share my education and experience details.',
+          "Hi Tuju Outspan, I'd like help with my CV. I'll share my education and experience details.",
       },
       {
         name: 'Job Application Support',
@@ -642,14 +644,14 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Fast, reliable connection for any online task.',
         details: 'This is a walk-in service at the shop; no account needed.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like to enquire about high-speed internet access at your shop. How do I get started?',
+          "Hi Tuju Outspan, I'd like to enquire about high-speed internet access at your shop. How do I get started?",
       },
       {
         name: 'Internet Data Sales',
         description: 'Data bundles for your phone or device, sold at the shop.',
         details: 'Tell us your network and how much data you need.',
         waMessage:
-          'Hi Tuju Outspan, I\'d like to enquire about data bundles. What networks and bundles do you currently have?',
+          "Hi Tuju Outspan, I'd like to enquire about data bundles. What networks and bundles do you currently have?",
       },
       {
         name: 'Reliable Wi-Fi Services',
@@ -705,7 +707,8 @@ export const serviceCategories: ServiceCategory[] = [
     faqs: [
       {
         question: 'How much does internet access cost?',
-        answer: 'Internet access is only KSh 2 per minute. Pay for the time you use when you finish.',
+        answer:
+          'Internet access is only KSh 2 per minute. Pay for the time you use when you finish.',
       },
       {
         question: 'Where is the internet service available?',

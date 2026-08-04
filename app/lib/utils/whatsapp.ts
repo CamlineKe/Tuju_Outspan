@@ -70,23 +70,23 @@ function contextualMessage(context: WhatsAppContext, label?: string): string {
     case 'general':
       return 'Hi Tuju Outspan, I have a question about your services.';
     case 'hero':
-      return 'Hi Tuju Outspan, I\'d like to enquire about your services.';
+      return "Hi Tuju Outspan, I'd like to enquire about your services.";
     case 'pricing':
-      return 'Hi Tuju Outspan, I\'d like a quote for your services.';
+      return "Hi Tuju Outspan, I'd like a quote for your services.";
     case 'contact':
-      return 'Hi Tuju Outspan, I\'d like to get in touch.';
+      return "Hi Tuju Outspan, I'd like to get in touch.";
     case 'about':
-      return 'Hi Tuju Outspan, I\'d like to know more about Tuju Outspan Cyber Center.';
+      return "Hi Tuju Outspan, I'd like to know more about Tuju Outspan Cyber Center.";
     case 'blog':
       return 'Hi Tuju Outspan, I have a question about this topic.';
     case 'not-found':
-      return 'Hi Tuju Outspan, I couldn\'t find what I was looking for. Can you help?';
+      return "Hi Tuju Outspan, I couldn't find what I was looking for. Can you help?";
     case 'cta':
-      return 'Hi Tuju Outspan, I\'d like to get started. Please help with my enquiry.';
+      return "Hi Tuju Outspan, I'd like to get started. Please help with my enquiry.";
     case 'services-catch-all':
-      return 'Hi Tuju Outspan, I\'m looking for a service that isn\'t listed. Can you help?';
+      return "Hi Tuju Outspan, I'm looking for a service that isn't listed. Can you help?";
     case 'service-card-catch-all':
-      return 'Hi Tuju Outspan, I can\'t find the service I need. Can you help?';
+      return "Hi Tuju Outspan, I can't find the service I need. Can you help?";
     case 'service-category':
       if (!trimmedLabel) {
         throw new Error('Label is required for the service-category WhatsApp context');

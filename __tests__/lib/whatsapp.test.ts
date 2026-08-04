@@ -31,7 +31,9 @@ describe('buildServiceEnquiryLink', () => {
   it('pre-fills a service-specific enquiry message', () => {
     const link = buildServiceEnquiryLink(kraPin, NUMBER);
     expect(link).toContain('I%27d%20like%20to%20enquire%20about%20KRA%20PIN%20Registration');
-    expect(link).toContain('New%20KRA%20PIN%20registration%20for%20individuals%20and%20businesses.');
+    expect(link).toContain(
+      'New%20KRA%20PIN%20registration%20for%20individuals%20and%20businesses.'
+    );
     expect(link).toContain('process%2C%20requirements%2C%20and%20cost');
   });
 

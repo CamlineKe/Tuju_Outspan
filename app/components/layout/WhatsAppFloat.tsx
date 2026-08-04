@@ -8,10 +8,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 import { cn } from '@/app/lib/utils/cn';
-import {
-  buildContextualWhatsAppLink,
-  getWhatsAppContextForPath,
-} from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink, getWhatsAppContextForPath } from '@/app/lib/utils/whatsapp';
 
 const PULSE_SESSION_KEY = 'tuju-outspan-whatsapp-pulsed';
 
