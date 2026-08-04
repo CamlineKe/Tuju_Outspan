@@ -340,7 +340,7 @@ afterEach(() => {
     "dev": "next dev --turbopack",
     "build": "next build",
     "postbuild": "node scripts/generate-sitemap.mjs",
-    "start": "next start",
+    "preview": "npx serve dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
@@ -550,7 +550,7 @@ export default nextConfig;
 
 If you later need server features (API routes, dynamic rendering), change to `output: 'standalone'`.
 
-**Preview:** `next start` and `pnpm start` require `output: 'standalone'` and are invalid with static export. Preview the build with `npx serve dist` after `pnpm build`, or with `vercel dev` during development.
+**Preview:** `pnpm start` is not included because `next start` requires `output: 'standalone'` and is invalid with static export. Preview the build with `pnpm preview` (which runs `npx serve dist`) after `pnpm build`, or with `vercel dev` during development.
 
 ---
 
