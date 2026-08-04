@@ -176,10 +176,10 @@ The full file tree, folder map, file responsibilities, and asset storage rules a
 
 ### 5.1 Structure Notes
 
-- Service routes are static folders, not a dynamic `/services/[slug]` segment. All seven category pages render `ServiceCategoryTemplate` with data from `app/lib/data/services.ts`.
+- Service routes are static folders, not a dynamic `/services/[slug]` segment. All eight category pages render `ServiceCategoryTemplate` with data from `app/lib/data/services.ts`.
 - The dynamic `[slug]` loading path applies to blog posts only. Service category pages reuse `app/services/loading.tsx` and the shared skeleton components.
 - `app/loading.tsx` is the global skeleton and mirrors the Home page layout.
-- All client-side interactivity stays in small components: Navbar menu, FAQ accordion, blog filters, contact form, scroll reveals.
+- All client-side interactivity stays in small components: Navbar menu, FAQ accordion, blog filters, contact form, service enquiry modal, scroll reveals.
 
 ---
 
@@ -192,7 +192,7 @@ All 15 pages from the PRD plus 404 and loading states are listed below. The Sect
 | 1 | `/` | Home | Navbar; Hero; Services preview; Why Choose Us; How It Works; Testimonials; Location strip; CTA banner; Footer | 9-section conversion engine |
 | 2 | `/about` | About | Page header; Origin story; Mission and values; Face behind the brand; Community impact; CTA | Trust building, photo placeholders |
 | 3 | `/services` | Services Hub | Page header; Quick find search; Services grid; Can't find it banner | 8-card grid |
-| 4-11 | `/services/{category}` | 8 Service Categories | Page header; Service breakdown; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate`; design-branding also renders `PortfolioGallery` |
+| 4-11 | `/services/{category}` | 8 Service Categories | Page header; Service breakdown with per-service enquiry modal; How It Works; FAQ; Pricing note; Related services; Sticky mobile CTA | All render `ServiceCategoryTemplate`; design-branding also renders `PortfolioGallery` |
 | 12 | `/pricing` | Pricing | Page header; Pricing philosophy; Pricing cards; Bulk and student discounts; Payment methods; FAQ | Framework pricing, ask for quote |
 | 13 | `/contact` | Contact | Page header; WhatsApp card; Community links; Details and map; Inquiry form | WhatsApp-first, map embed, form |
 | 14 | `/blog` | Blog | Page header; Featured post; Category filter; Blog grid; Load more; WhatsApp channel CTA | Client-side filters and load more |
@@ -211,12 +211,14 @@ All content data lives in `app/lib/data/` as typed TypeScript modules. No CMS. S
 
 ### 7.1 Services (`services.ts`)
 
-One `ServiceCategory` type covering the seven categories:
+One `ServiceCategory` type covering the eight categories:
 
 ```ts
 interface ServiceItem {
   name: string;
   description: string;
+  details?: string; // what the client should have ready, shown in the enquiry modal
+  waMessage?: string; // optional full WhatsApp message override
 }
 
 interface FAQ {
@@ -244,7 +246,7 @@ interface ServiceCategory {
 }
 ```
 
-The seven categories and their service lists come from PRD pages 4-10 and are authoritative there.
+The eight categories and their service lists come from PRD pages 4-10 and are authoritative there.
 
 ### 7.2 Supporting Data
 
@@ -259,7 +261,7 @@ The seven categories and their service lists come from PRD pages 4-10 and are au
 | Module | Responsibility |
 |---|---|
 | `utils/cn.ts` | `clsx` + `tailwind-merge` class merge helper |
-| `utils/whatsapp.ts` | `wa.me` link builder with pre-filled text, e.g. `Hi Tuju Outspan, I need help with {service}` |
+| `utils/whatsapp.ts` | `wa.me` link builders: service enquiry, category enquiry, and page-context messages; path-to-context mapper for the floating button and navbar |
 | `utils/seo.ts` | Metadata builders: page title, description, Open Graph, JSON-LD (LocalBusiness, Service, FAQPage, BlogPosting) |
 | `schemas/contact.ts` | Zod schema: name, phone, service needed, message |
 
@@ -336,6 +338,7 @@ Every completed page also passes the design quality checklist in `design.md` sec
 | D6 | Sitemap generated post-build | Applied in this file |
 | D7 | Service routes are static folders sharing `ServiceCategoryTemplate`; no `/services/[slug]` segment | Applied in this file |
 | D8 | FAQ accordion is single-open | Source: `deliverables-checklist.md` |
+| D9 | Individual services open a confirmation modal before WhatsApp; all WhatsApp CTAs use crafted page-context messages | Applied in this file |
 
 ### 11.2 Open Items
 
@@ -375,3 +378,4 @@ Rules to keep the documentation set free of duplication:
 | 1.1 | August 2026 | Added the execution plan and the project structure map; sections 5 and 8 point to them, and asset storage and image format rules moved into `project-structure.md`. |
 | 1.2 | August 2026 | Implementation of Phases 0-9 complete. Documents synced with the codebase: structure map, sitemap tooling, and statuses updated. |
 | 1.3 | August 2026 | Implementation and improvement phases complete. Retired `development-phases.md`, `page-designs.md`, and `404-and-skeletons.md`; consolidated the per-page section map and 404/skeleton requirements into section 6, moved the asset contract to `image-assets.md`, and updated the sitemap tooling note in section 9.1. |
+| 1.4 | August 2026 | Added the per-service WhatsApp enquiry modal, crafted page-context messages for every entry point, and service-level details and message overrides in the services data. |

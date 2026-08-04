@@ -15,7 +15,7 @@ import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import { cn } from '@/app/lib/utils/cn';
 import { buildMetadata } from '@/app/lib/utils/seo';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 interface Statement {
   icon: LucideIcon;
@@ -236,7 +236,7 @@ export default function AboutPage() {
         <p className="mt-2 text-white/85">We are one message away.</p>
         <div className="mt-6 flex justify-center">
           <Button
-            href={buildGeneralWhatsAppLink()}
+            href={buildContextualWhatsAppLink('about')}
             className="bg-white text-navy-900 hover:bg-white/90"
           >
             Chat on WhatsApp

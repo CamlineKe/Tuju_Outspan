@@ -7,7 +7,7 @@ import FAQItem from '@/app/components/ui/FAQItem';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import { pricingCards } from '@/app/lib/data/pricing';
 import { absolutePageUrl, buildMetadata, faqJsonLd, serviceJsonLd } from '@/app/lib/utils/seo';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const PRICING_FAQS = [
   {
@@ -91,7 +91,7 @@ export default function PricingPage() {
             contact us.
           </p>
           <div className="mt-6 flex justify-center">
-            <Button href={buildGeneralWhatsAppLink()} variant="outline">
+            <Button href={buildContextualWhatsAppLink('pricing')} variant="outline">
               Ask About Discounts
             </Button>
           </div>
@@ -120,7 +120,7 @@ export default function PricingPage() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <Button href={buildGeneralWhatsAppLink()} size="large">
+          <Button href={buildContextualWhatsAppLink('pricing')} size="large">
             Get Your Exact Quote
           </Button>
         </div>

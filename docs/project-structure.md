@@ -77,6 +77,7 @@ tuju-outspan-website/
 │   │   │   ├── PortfolioGallery.tsx
 │   │   │   ├── RelatedServices.tsx
 │   │   │   ├── ServiceBreakdown.tsx
+│   │   │   ├── ServiceEnquiryList.tsx
 │   │   │   ├── ServicesGrid.tsx
 │   │   ├── ServicesHub.tsx
 │   │   │   ├── Testimonials.tsx
@@ -95,6 +96,7 @@ tuju-outspan-website/
 │   │       ├── Reveal.tsx
 │   │       ├── SectionHeader.tsx
 │   │       ├── ServiceCard.tsx
+│   │       ├── ServiceEnquiryModal.tsx
 │   │       ├── Skeleton.tsx
 │   │       ├── SkeletonCard.tsx
 │   │       └── TestimonialCard.tsx
@@ -175,9 +177,9 @@ tuju-outspan-website/
 | Folder | Purpose | Contents |
 |---|---|---|
 | `layout/` | Persistent chrome | Navbar, Footer, WhatsAppFloat |
-| `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, TestimonialCarousel, LocationStrip, CTABanner, ServiceBreakdown, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare, PortfolioGallery |
+| `sections/` | Page-level building blocks | Hero, ServicesGrid, ServicesHub, WhyChooseUs, ProcessSteps, Testimonials, TestimonialCarousel, LocationStrip, CTABanner, ServiceBreakdown, ServiceEnquiryList, RelatedServices, PricingTable, ContactInfo, ContactForm, BlogListing, PostShare, PortfolioGallery |
 | `templates/` | Page composition patterns | ServiceCategoryTemplate (drives all 8 service pages) |
-| `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, Skeleton, SkeletonCard |
+| `ui/` | Small reusable primitives | Button, Breadcrumb, cards, Reveal, SectionHeader, ProcessStep, FAQItem, Input, ServiceEnquiryModal, Skeleton, SkeletonCard |
 
 ### 2.3 `app/lib/`
 
@@ -226,7 +228,7 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 
 | File | Exports | Consumers |
 |---|---|---|
-| `lib/data/services.ts` | `ServiceCategory` type, `serviceCategories` array (7) | ServicesGrid, ServiceCategoryTemplate, RelatedServices, pricing filters |
+| `lib/data/services.ts` | `ServiceCategory` type, `serviceCategories` array (8), per-service enquiry details and message overrides | ServicesGrid, ServicesHub, ServiceCategoryTemplate, ServiceEnquiryList, RelatedServices, pricing filters, contact form |
 | `lib/data/pricing.ts` | Pricing card data (7 cards) | PricingTable, PricingCard |
 | `lib/data/testimonials.ts` | Testimonial array (3 placeholders) | Testimonials section |
 | `lib/data/blog.ts` | Post type and posts array | Blog listing, blog post pages, `generateStaticParams` |
@@ -237,7 +239,7 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 |---|---|
 | `lib/utils/cn.ts` | `clsx` + `tailwind-merge` class merge |
 | `lib/utils/date.ts` | Deterministic blog date formatting |
-| `lib/utils/whatsapp.ts` | `wa.me` link builder with pre-filled text per service |
+| `lib/utils/whatsapp.ts` | `wa.me` link builders: service enquiry, category enquiry, and page-context messages; path-to-context mapper for the floating button and navbar |
 | `lib/utils/seo.ts` | Title, description, Open Graph, JSON-LD builders |
 | `lib/utils/category-icons.ts` | Service category to Lucide icon lookup |
 | `lib/schemas/contact.ts` | Zod schema: name, phone, service, message |
@@ -248,7 +250,9 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 |---|---|
 | `layout/Navbar.tsx` | Fixed nav, scroll state, active links, mobile menu |
 | `layout/Footer.tsx` | 4-column footer with quick links, services, contact, social buttons |
-| `layout/WhatsAppFloat.tsx` | Floating WhatsApp button, one-time pulse |
+| `layout/WhatsAppFloat.tsx` | Floating WhatsApp button, one-time pulse, page-aware pre-filled message |
+| `sections/ServiceEnquiryList.tsx` | Interactive service list with per-service enquiry modal |
+| `ui/ServiceEnquiryModal.tsx` | Accessible service confirmation dialog with prefilled WhatsApp link |
 | `ui/Breadcrumb.tsx` | Dark-background breadcrumb trail |
 | `ui/Button.tsx` | All button variants and sizes |
 | `ui/ServiceCard.tsx` | Service category card with icon, list, link |

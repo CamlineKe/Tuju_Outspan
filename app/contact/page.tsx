@@ -17,7 +17,7 @@ import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import { buildMetadata, contactPageJsonLd } from '@/app/lib/utils/seo';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 export const metadata = buildMetadata({
   title: 'Contact Us',
@@ -42,7 +42,7 @@ const DETAILS: ContactDetail[] = [
     icon: Phone,
     label: 'Call or WhatsApp',
     value: '0715 616 633',
-    href: buildGeneralWhatsAppLink(),
+    href: buildContextualWhatsAppLink('contact'),
   },
   { icon: Mail, label: 'Email', value: BUSINESS_EMAIL, href: `mailto:${BUSINESS_EMAIL}` },
   { icon: MapPin, label: 'Location', value: BUSINESS_LOCATION },
@@ -86,7 +86,11 @@ export default function ContactPage() {
                 Fastest way to get help. Usually responds within minutes.
               </p>
               <div className="mt-auto pt-8">
-                <Button href={buildGeneralWhatsAppLink()} variant="whatsapp" className="w-full">
+                <Button
+                  href={buildContextualWhatsAppLink('contact')}
+                  variant="whatsapp"
+                  className="w-full"
+                >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   Start Chat
                 </Button>

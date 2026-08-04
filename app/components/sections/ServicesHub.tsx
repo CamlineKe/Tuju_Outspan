@@ -9,7 +9,7 @@ import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import ServiceCard from '@/app/components/ui/ServiceCard';
 import { serviceCategories } from '@/app/lib/data/services';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 export default function ServicesHub() {
   const [query, setQuery] = useState('');
@@ -120,7 +120,7 @@ export default function ServicesHub() {
             </h2>
             <p className="mt-2 text-gray-600">We probably do it. Just ask.</p>
           </div>
-          <Button href={buildGeneralWhatsAppLink()}>
+          <Button href={buildContextualWhatsAppLink('services-catch-all')}>
             <MessageCircle className="h-5 w-5" aria-hidden="true" />
             Ask on WhatsApp
           </Button>

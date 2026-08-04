@@ -15,7 +15,10 @@ describe('ServicesGrid', () => {
     render(<ServicesGrid />);
 
     expect(screen.getByRole('heading', { name: /can't find what you need/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /ask on whatsapp/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /ask on whatsapp/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('can%27t%20find%20the%20service%20I%20need')
+    );
   });
 
   it('shows category descriptions on the cards', () => {

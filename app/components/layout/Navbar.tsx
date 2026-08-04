@@ -10,7 +10,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, MessageCircle, X } from 'lucide-react';
 
 import { cn } from '@/app/lib/utils/cn';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import {
+  buildContextualWhatsAppLink,
+  getWhatsAppContextForPath,
+} from '@/app/lib/utils/whatsapp';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -102,6 +105,10 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+  const { context: whatsappContext, label: whatsappLabel } = getWhatsAppContextForPath(
+    pathname ?? ''
+  );
+  const whatsappHref = buildContextualWhatsAppLink(whatsappContext, whatsappLabel);
 
   return (
     <header
@@ -143,7 +150,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href={buildGeneralWhatsAppLink()}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-[10px] bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:inline-flex"
@@ -213,7 +220,7 @@ export default function Navbar() {
             </ul>
             <div className="p-6">
               <Link
-                href={buildGeneralWhatsAppLink()}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center gap-2 rounded-[10px] bg-orange-500 px-5 py-3.5 font-semibold text-white transition-colors hover:bg-orange-600"

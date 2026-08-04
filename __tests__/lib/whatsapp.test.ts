@@ -4,8 +4,8 @@ import {
   buildCategoryEnquiryLink,
   buildContextualWhatsAppLink,
   buildServiceEnquiryLink,
-  buildServiceWhatsAppLink,
   buildWhatsAppLink,
+  getWhatsAppContextForPath,
 } from '@/app/lib/utils/whatsapp';
 
 const NUMBER = '254715616633';
@@ -19,14 +19,6 @@ describe('buildWhatsAppLink', () => {
 
   it('throws when no number is configured', () => {
     expect(() => buildWhatsAppLink('Hello', '')).toThrow('WhatsApp number');
-  });
-});
-
-describe('buildServiceWhatsAppLink', () => {
-  it('pre-fills the service name in the message', () => {
-    const link = buildServiceWhatsAppLink('HELB Application', NUMBER);
-    expect(link).toContain('HELB%20Application');
-    expect(link).toContain('need%20help%20with');
   });
 });
 
@@ -90,5 +82,32 @@ describe('buildContextualWhatsAppLink', () => {
     expect(() => buildContextualWhatsAppLink('service-category', undefined, NUMBER)).toThrow(
       'Label is required'
     );
+  });
+});
+
+describe('getWhatsAppContextForPath', () => {
+  it('maps service category pages to the service-category context with a label', () => {
+    expect(getWhatsAppContextForPath('/services/government')).toEqual({
+      context: 'service-category',
+      label: 'Government Services',
+    });
+  });
+
+  it('handles trailing slashes', () => {
+    expect(getWhatsAppContextForPath('/services/health/')).toEqual({
+      context: 'service-category',
+      label: 'Health and Social Services',
+    });
+  });
+
+  it('maps the main pages to their contexts', () => {
+    expect(getWhatsAppContextForPath('/')).toEqual({ context: 'general' });
+    expect(getWhatsAppContextForPath('/services')).toEqual({ context: 'general' });
+    expect(getWhatsAppContextForPath('/pricing')).toEqual({ context: 'pricing' });
+    expect(getWhatsAppContextForPath('/contact')).toEqual({ context: 'contact' });
+    expect(getWhatsAppContextForPath('/about')).toEqual({ context: 'about' });
+    expect(getWhatsAppContextForPath('/blog')).toEqual({ context: 'blog' });
+    expect(getWhatsAppContextForPath('/blog/some-post')).toEqual({ context: 'blog' });
+    expect(getWhatsAppContextForPath('/unknown')).toEqual({ context: 'general' });
   });
 });

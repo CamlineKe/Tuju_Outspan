@@ -28,6 +28,7 @@ describe('ServiceEnquiryList', () => {
     const dialog = screen.getByRole('dialog', { name: firstService.name });
     expect(dialog).toBeInTheDocument();
     expect(screen.getByText(firstService.description)).toBeInTheDocument();
+    expect(screen.getByText(/have your national id/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /enquire on whatsapp/i })).toHaveAttribute(
       'href',
       buildServiceEnquiryLink(firstService)

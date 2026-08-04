@@ -27,8 +27,12 @@ export default function ContactForm() {
   });
 
   const onSubmit = (values: ContactFormValues) => {
+    const enquiryLine =
+      values.service === 'Other'
+        ? 'Hi Tuju Outspan, I have a question about your services.'
+        : `Hi Tuju Outspan, I'd like to enquire about ${values.service}.`;
     const message = [
-      `Hi Tuju Outspan, I need help with ${values.service}.`,
+      enquiryLine,
       `Name: ${values.name}`,
       `Phone: ${values.phone}`,
       `Message: ${values.message}`,
@@ -67,9 +71,13 @@ export default function ContactForm() {
         >
           <option value="">Choose a service</option>
           {serviceCategories.map((category) => (
-            <option key={category.slug} value={category.name}>
-              {category.name}
-            </option>
+            <optgroup key={category.slug} label={category.name}>
+              {category.services.map((service) => (
+                <option key={service.name} value={service.name}>
+                  {service.name}
+                </option>
+              ))}
+            </optgroup>
           ))}
           <option value="Other">Other</option>
         </select>

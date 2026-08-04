@@ -2,7 +2,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 const TRUST_ITEMS = ['Fast Turnaround', 'Trusted by Locals', 'Open Daily Until Late'];
 
@@ -22,7 +22,7 @@ export default function Hero() {
           at Ikonge-Ekerenyo Stage.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href={buildGeneralWhatsAppLink()} size="large">
+          <Button href={buildContextualWhatsAppLink('hero')} size="large">
             <MessageCircle className="h-5 w-5" aria-hidden="true" />
             Chat on WhatsApp
           </Button>

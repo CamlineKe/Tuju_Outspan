@@ -5,7 +5,7 @@ import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
 import ServiceCard from '@/app/components/ui/ServiceCard';
 import { serviceCategories } from '@/app/lib/data/services';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 export default function ServicesGrid() {
   return (
@@ -30,7 +30,11 @@ export default function ServicesGrid() {
               </h3>
               <p className="mt-2 text-sm text-gray-600">We probably do it. Just ask.</p>
               <div className="mt-auto pt-6">
-                <Button href={buildGeneralWhatsAppLink()} variant="outline" className="w-full">
+                <Button
+                  href={buildContextualWhatsAppLink('service-card-catch-all')}
+                  variant="outline"
+                  className="w-full"
+                >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   Ask on WhatsApp
                 </Button>

@@ -18,6 +18,10 @@ describe('Navbar', () => {
     expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Blog' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Contact' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'WhatsApp' })).toHaveAttribute(
+      'href',
+      expect.stringContaining('question%20about%20your%20services')
+    );
   });
 
   it('opens and closes the mobile menu', async () => {
@@ -26,6 +30,10 @@ describe('Navbar', () => {
     await user.click(screen.getByRole('button', { name: /open menu/i }));
     const closeButton = await screen.findByRole('button', { name: /close menu/i });
     expect(closeButton).toHaveFocus();
+    expect(screen.getByRole('link', { name: /chat on whatsapp/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('question%20about%20your%20services')
+    );
     await user.click(closeButton);
     // AnimatePresence keeps the menu in the DOM during its 300ms exit animation.
     await waitForElementToBeRemoved(closeButton);

@@ -13,7 +13,7 @@ import Button from '@/app/components/ui/Button';
 import { type BlogPost, blogPosts, getBlogPost } from '@/app/lib/data/blog';
 import { formatDateLong } from '@/app/lib/utils/date';
 import { absolutePageUrl, blogPostingJsonLd, buildMetadata } from '@/app/lib/utils/seo';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -40,7 +40,7 @@ function InlineCta() {
   return (
     <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-[10px] bg-navy-50 p-5 sm:flex-row sm:items-center">
       <p className="text-navy-900">Need help with this? Chat with us on WhatsApp.</p>
-      <Button href={buildGeneralWhatsAppLink()} size="small">
+      <Button href={buildContextualWhatsAppLink('blog')} size="small">
         Chat Now
       </Button>
     </div>
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               Your trusted cyber center in Chuka. Fast, reliable, affordable.
             </p>
             <a
-              href={buildGeneralWhatsAppLink()}
+              href={buildContextualWhatsAppLink('blog')}
               className="mt-2 inline-block text-sm font-semibold text-navy-600 hover:underline"
             >
               Ask a Question

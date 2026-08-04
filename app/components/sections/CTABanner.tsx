@@ -2,7 +2,7 @@ import { MessageCircle } from 'lucide-react';
 
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
 
 export default function CTABanner() {
   return (
@@ -16,7 +16,7 @@ export default function CTABanner() {
         </p>
         <div className="mt-8 flex justify-center">
           <Button
-            href={buildGeneralWhatsAppLink()}
+            href={buildContextualWhatsAppLink('cta')}
             size="large"
             className="bg-white text-navy-900 hover:bg-white/90"
           >

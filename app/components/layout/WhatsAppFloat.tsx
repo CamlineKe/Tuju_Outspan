@@ -8,7 +8,10 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 import { cn } from '@/app/lib/utils/cn';
-import { buildGeneralWhatsAppLink } from '@/app/lib/utils/whatsapp';
+import {
+  buildContextualWhatsAppLink,
+  getWhatsAppContextForPath,
+} from '@/app/lib/utils/whatsapp';
 
 const PULSE_SESSION_KEY = 'tuju-outspan-whatsapp-pulsed';
 
@@ -16,6 +19,9 @@ export default function WhatsAppFloat() {
   const pathname = usePathname();
   const [shouldPulse, setShouldPulse] = useState(false);
   const hideOnMobile = /^\/services\/.+$/.test(pathname ?? '');
+  const { context: whatsappContext, label: whatsappLabel } = getWhatsAppContextForPath(
+    pathname ?? ''
+  );
 
   useEffect(() => {
     try {
@@ -31,7 +37,7 @@ export default function WhatsAppFloat() {
 
   return (
     <motion.a
-      href={buildGeneralWhatsAppLink()}
+      href={buildContextualWhatsAppLink(whatsappContext, whatsappLabel)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

@@ -53,52 +53,72 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'KRA PIN Registration',
         description: 'New KRA PIN registration for individuals and businesses.',
+        details: 'Have your national ID and a phone number ready.',
       },
-      { name: 'KRA PIN Updates', description: 'Corrections and updates to your KRA PIN details.' },
+      {
+        name: 'KRA PIN Updates',
+        description: 'Corrections and updates to your KRA PIN details.',
+        details: 'Have your current KRA PIN and the details that need changing.',
+      },
       {
         name: 'NIL Returns Filing',
         description: 'Filing of nil tax returns to keep your KRA account compliant.',
+        details: 'Have your KRA PIN and ID number ready.',
       },
       {
         name: 'Tax Compliance Certificate (TCC)',
         description: 'Application and follow-up for your tax compliance certificate.',
+        details: 'Have your KRA PIN ready; we confirm any extra documents on WhatsApp.',
       },
       {
         name: 'eCitizen Services',
         description: 'Account setup and transactions on the eCitizen platform.',
+        details: 'Have your ID and a phone number ready for account setup.',
       },
       {
         name: 'NTSA Driving License Services',
         description: 'Application, renewal, and follow-up for driving licenses.',
+        details: 'Have your ID, phone number, and current license details ready.',
       },
       {
         name: 'Smart DL Application',
         description: 'Digital driving license application and collection.',
+        details: 'Have your ID and a recent passport photo ready.',
       },
-      { name: 'TIMS Account Services', description: 'TIMS account creation and transactions.' },
+      {
+        name: 'TIMS Account Services',
+        description: 'TIMS account creation and transactions.',
+        details: 'Have your ID and logbook details ready.',
+      },
       {
         name: 'Logbook Assistance',
         description: 'Logbook applications, duplicates, and related processes.',
+        details: 'Have your logbook (if available) and ID ready.',
       },
       {
         name: 'Vehicle Ownership Transfer',
         description: 'Transfer of vehicle ownership handled end to end.',
+        details: 'Have the logbook and the buyer and seller IDs ready.',
       },
       {
         name: 'Passport Applications',
         description: 'Passport booking, application, and tracking.',
+        details: 'Have your ID or birth certificate, passport photos, and a phone number ready.',
       },
       {
         name: 'Good Conduct Applications',
         description: 'Certificate of good conduct application and tracking.',
+        details: 'Have your ID and a phone number ready.',
       },
       {
         name: 'Birth Certificate Applications',
         description: 'Birth certificate application and follow-up.',
+        details: 'Have details for both parents and your ID or birth certificate ready.',
       },
       {
         name: 'Civil Applications',
         description: 'Assistance with other civil registration processes.',
+        details: 'Tell us which civil document you need; have your ID ready.',
       },
     ],
     processSteps: [
@@ -156,30 +176,37 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'KUCCPS Applications',
         description: 'Course application and placement for new students.',
+        details: 'Have your KCSE index number and phone number ready.',
       },
       {
         name: 'KUCCPS Revision and Course Transfer',
         description: 'Revision of choices and course transfer requests.',
+        details: 'Have your KCSE index number and current course details ready.',
       },
       {
         name: 'HELB Applications (First Time)',
         description: 'First-time HELB loan applications handled accurately.',
+        details: 'Have your ID, KCSE index number, and admission details ready.',
       },
       {
         name: 'HELB Subsequent Loan Applications',
         description: 'Renewal applications for continuing students.',
+        details: 'Have your HELB account details ready.',
       },
       {
         name: 'HELB Appeals and Clearance',
         description: 'Appeals, clearance, and follow-up with HELB.',
+        details: 'Have your HELB account details and the issue you need resolved ready.',
       },
       {
         name: 'Results Checking and Verification',
         description: 'Checking and verifying academic results.',
+        details: 'Have your index number or registration details ready.',
       },
       {
         name: 'Academic Document Preparation',
         description: 'Preparation and formatting of academic documents.',
+        details: 'Have the documents or notes you need prepared ready.',
       },
     ],
     processSteps: [
@@ -229,23 +256,32 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'SHA Registration',
         description: 'Social Health Authority registration for new members.',
+        details: 'Have your national ID and phone number ready.',
       },
       {
         name: 'SHA Updates and Changes',
         description: 'Updating personal details and beneficiary changes on SHA.',
+        details: 'Have your SHA details and the changes you need made ready.',
       },
-      { name: 'NSSF Services', description: 'NSSF registration and account assistance.' },
+      {
+        name: 'NSSF Services',
+        description: 'NSSF registration and account assistance.',
+        details: 'Have your ID and NSSF number (if you have one) ready.',
+      },
       {
         name: 'NHIF Support and Applications',
         description: 'NHIF support, applications, and account help.',
+        details: 'Have your ID and phone number ready.',
       },
       {
         name: 'Health Application Assistance',
         description: 'Help with health scheme applications and forms.',
+        details: 'Tell us which health form or scheme you need help with; have your ID ready.',
       },
       {
         name: 'Account Assistance and Troubleshooting',
         description: 'Resolving account issues with health schemes.',
+        details: 'Have the account details and a description of the issue ready.',
       },
     ],
     processSteps: [
@@ -284,26 +320,52 @@ export const serviceCategories: ServiceCategory[] = [
     icon: 'FileText',
     imagePath: '/images/services/documents.webp',
     services: [
-      { name: 'Printing', description: 'Black and white, color, and large format printing.' },
-      { name: 'Photocopying', description: 'Fast, clean photocopies at competitive rates.' },
+      {
+        name: 'Printing',
+        description: 'Black and white, color, and large format printing.',
+        details: 'Have your document or file ready to share or bring in.',
+      },
+      {
+        name: 'Photocopying',
+        description: 'Fast, clean photocopies at competitive rates.',
+        details: 'Bring the original documents or share files with us.',
+      },
       {
         name: 'Scanning and Digital Conversion',
         description: 'Turning paper documents into digital files.',
+        details: 'Have the documents ready to scan.',
       },
-      { name: 'Lamination', description: 'Protective lamination for documents and cards.' },
+      {
+        name: 'Lamination',
+        description: 'Protective lamination for documents and cards.',
+        details: 'Bring the documents or cards you need laminated.',
+      },
       {
         name: 'Typing and Document Formatting',
         description: 'Typing handwritten notes and formatting documents.',
+        details: 'Have the handwritten notes or draft ready.',
       },
-      { name: 'Binding', description: 'Spiral, thermal, and perfect binding options.' },
-      { name: 'Passport Photos', description: 'Standard size passport photos, ready instantly.' },
+      {
+        name: 'Binding',
+        description: 'Spiral, thermal, and perfect binding options.',
+        details: 'Bring the pages or printed document you need bound.',
+      },
+      {
+        name: 'Passport Photos',
+        description: 'Standard size passport photos, ready instantly.',
+        details: 'Walk in or send a clear photo; we confirm the specifications on WhatsApp.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like to enquire about passport photos. What are the specifications and cost?',
+      },
       {
         name: 'Birth Certificate Applications',
         description: 'Application and follow-up for birth certificates.',
+        details: 'Have details for both parents and your ID or birth certificate ready.',
       },
       {
         name: 'Academic Document Preparation',
         description: 'Preparation and formatting of academic documents.',
+        details: 'Have the documents or notes you need prepared ready.',
       },
     ],
     processSteps: [
@@ -352,24 +414,41 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'Graphic Design and Logo Creation',
         description: 'Custom logos and graphic design for your brand.',
+        details: 'Share your idea or reference images; tell us your brand colors.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like to enquire about logo design. Could you share samples, timelines, and a quote?',
       },
-      { name: 'Posters and Banners', description: 'All sizes, print-ready.' },
+      {
+        name: 'Posters and Banners',
+        description: 'All sizes, print-ready.',
+        details: 'Tell us the size and purpose; share any logos or text to include.',
+      },
       {
         name: 'Business Cards and Flyers',
         description: 'Design and printing for cards and flyers.',
+        details: 'Share your logo, details, and how many you need.',
       },
       {
         name: 'T-Shirt Printing and Custom Apparel',
         description: 'Custom prints for individuals, teams, and events.',
+        details: 'Tell us the design, colors, sizes, and quantity.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like a quote for custom t-shirt printing. I\'ll share the design, sizes, and quantity.',
       },
       {
         name: 'Branding and Rebranding Packages',
         description: 'Complete branding packages for businesses.',
+        details: 'Share your current brand and what you want to change.',
       },
-      { name: 'Brochure and Menu Design', description: 'Print-ready brochures and menus.' },
+      {
+        name: 'Brochure and Menu Design',
+        description: 'Print-ready brochures and menus.',
+        details: 'Share your content, menu items, or brochure text.',
+      },
       {
         name: 'Social Media Graphics',
         description: 'Posts, covers, and ad creatives for social media.',
+        details: 'Tell us the platform, purpose, and any images or logos to use.',
       },
     ],
     processSteps: [
@@ -408,24 +487,42 @@ export const serviceCategories: ServiceCategory[] = [
     icon: 'Laptop',
     imagePath: '/images/services/computer-it.webp',
     services: [
-      { name: 'Computer Package Classes', description: 'Basic to advanced computer training.' },
-      { name: 'Software Installation', description: 'Office, design tools, and more.' },
+      {
+        name: 'Computer Package Classes',
+        description: 'Basic to advanced computer training.',
+        details: 'Tell us your level and the package you want to learn.',
+      },
+      {
+        name: 'Software Installation',
+        description: 'Office, design tools, and more.',
+        details: 'Tell us the software you need and the device type.',
+      },
       {
         name: 'Windows Installation and Setup',
         description: 'Windows installation, drivers, and setup.',
+        details: 'Bring your machine in or tell us the model; have your license key if you have one.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like to enquire about Windows installation. What do I need to bring?',
       },
       {
         name: 'Data Backup and Recovery',
         description: 'Protecting and recovering your important data.',
+        details: 'Describe what happened and what data you need recovered.',
       },
-      { name: 'Virus and Malware Removal', description: 'Cleaning infected machines.' },
+      {
+        name: 'Virus and Malware Removal',
+        description: 'Cleaning infected machines.',
+        details: 'Bring your machine in; describe the issue you are seeing.',
+      },
       {
         name: 'PC Troubleshooting and Repair',
         description: 'Diagnosing and fixing computer issues.',
+        details: 'Describe the problem and bring your machine in.',
       },
       {
         name: 'System Optimization',
         description: 'Making your computer faster and more reliable.',
+        details: 'Bring your machine in or describe the performance issue.',
       },
     ],
     processSteps: [
@@ -471,24 +568,39 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'Email Creation and Setup',
         description: 'Gmail, Outlook, and business email setup.',
+        details: 'Tell us the email provider and your preferred name; have your phone number ready.',
       },
       {
         name: 'Online Applications',
         description: 'Job, school, and program applications completed online.',
+        details: 'Tell us the application and have your documents ready.',
       },
-      { name: 'Online Form Filling', description: 'Accurate filling of online forms.' },
+      {
+        name: 'Online Form Filling',
+        description: 'Accurate filling of online forms.',
+        details: 'Tell us the form and have the required details ready.',
+      },
       {
         name: 'CV Writing and Professional Editing',
         description: 'Clean, professional CVs that stand out.',
+        details: 'Share your education, experience, and the role you are targeting.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like help with my CV. I\'ll share my education and experience details.',
       },
-      { name: 'Job Application Support', description: 'End-to-end help applying for jobs.' },
+      {
+        name: 'Job Application Support',
+        description: 'End-to-end help applying for jobs.',
+        details: 'Share your CV and the jobs you want to apply for.',
+      },
       {
         name: 'Online Research and Data Collection',
         description: 'Research and data gathering for any purpose.',
+        details: 'Tell us the topic and the format you need the results in.',
       },
       {
         name: 'Social Media Account Setup',
         description: 'Creating and setting up social media accounts.',
+        details: 'Tell us the platform and have your phone number or email ready.',
       },
     ],
     processSteps: [
@@ -528,38 +640,51 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: 'High-speed Internet Access',
         description: 'Fast, reliable connection for any online task.',
+        details: 'This is a walk-in service at the shop; no account needed.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like to enquire about high-speed internet access at your shop. How do I get started?',
       },
       {
         name: 'Internet Data Sales',
         description: 'Data bundles for your phone or device, sold at the shop.',
+        details: 'Tell us your network and how much data you need.',
+        waMessage:
+          'Hi Tuju Outspan, I\'d like to enquire about data bundles. What networks and bundles do you currently have?',
       },
       {
         name: 'Reliable Wi-Fi Services',
         description: 'Stable Wi-Fi connection for browsing and work.',
+        details: 'This is available at the shop; walk in to connect.',
       },
       {
         name: 'Fast Downloads & Uploads',
         description: 'Quick file transfers, downloads, and uploads.',
+        details: 'Bring your device or files; the service runs at the shop.',
       },
       {
         name: 'Online Gaming Access',
         description: 'Smooth connection for online gaming.',
+        details: 'Walk into the shop; bring your account login details.',
       },
       {
         name: 'Smooth Video Streaming',
         description: 'Buffer-free streaming for videos and media.',
+        details: 'This is available at the shop; bring your account login if needed.',
       },
       {
         name: 'Email Access',
         description: 'Check, send, and manage your email with ease.',
+        details: 'Have your email login details ready.',
       },
       {
         name: 'Online Applications',
         description: 'Complete applications and forms with reliable internet.',
+        details: 'Tell us the application and have your documents ready.',
       },
       {
         name: 'Internet Browsing for Research, Work & Study',
         description: 'Browsing support for assignments, work, and research.',
+        details: 'Tell us your assignment or research topic; bring your files if needed.',
       },
     ],
     processSteps: [

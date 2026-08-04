@@ -1,3 +1,5 @@
+import { serviceCategories } from '@/app/lib/data/services';
+
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '';
 
 export type WhatsAppContext =
@@ -19,6 +21,11 @@ export interface ServiceEnquiryDetails {
   waMessage?: string;
 }
 
+export interface WhatsAppPathContext {
+  context: WhatsAppContext;
+  label?: string;
+}
+
 function digitsOnly(value: string): string {
   return value.replace(/\D/g, '');
 }
@@ -29,17 +36,6 @@ export function buildWhatsAppLink(message: string, phoneNumber: string = WHATSAP
     throw new Error('WhatsApp number is not configured (NEXT_PUBLIC_WHATSAPP_NUMBER)');
   }
   return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
-}
-
-export function buildServiceWhatsAppLink(
-  serviceName: string,
-  phoneNumber: string = WHATSAPP_NUMBER
-): string {
-  return buildWhatsAppLink(`Hi Tuju Outspan, I need help with ${serviceName}.`, phoneNumber);
-}
-
-export function buildGeneralWhatsAppLink(phoneNumber: string = WHATSAPP_NUMBER): string {
-  return buildWhatsAppLink('Hi Tuju Outspan, I have a question.', phoneNumber);
 }
 
 /** Pre-fills a WhatsApp enquiry for one specific service, e.g. KRA PIN Registration. */
@@ -108,4 +104,29 @@ export function buildContextualWhatsAppLink(
   phoneNumber: string = WHATSAPP_NUMBER
 ): string {
   return buildWhatsAppLink(contextualMessage(context, label), phoneNumber);
+}
+
+/** Maps a route to the WhatsApp context (and category label) for that page. */
+export function getWhatsAppContextForPath(pathname: string): WhatsAppPathContext {
+  const [first, second] = pathname.replace(/^\/+|\/+$/g, '').split('/');
+  if (first === 'services' && second) {
+    const category = serviceCategories.find((item) => item.slug === second);
+    if (category) {
+      return { context: 'service-category', label: category.name };
+    }
+  }
+  switch (first) {
+    case 'pricing':
+      return { context: 'pricing' };
+    case 'contact':
+      return { context: 'contact' };
+    case 'about':
+      return { context: 'about' };
+    case 'blog':
+      return { context: 'blog' };
+    case 'services':
+      return { context: 'general' };
+    default:
+      return { context: 'general' };
+  }
 }
