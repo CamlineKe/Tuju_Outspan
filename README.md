@@ -65,16 +65,16 @@ flowchart TB
   Export --> Host
 ```
 
-| Layer | Technology | Purpose |
-| --- | --- | --- |
-| Framework | Next.js 15 (App Router) | Pages, routing, static export |
-| Language | TypeScript 5 | Type-safe application code |
-| UI | React 19 + Tailwind CSS 4 | Components and design system |
-| Animation | framer-motion + custom reveals | Mobile menu and scroll animations |
-| Forms | react-hook-form + Zod | Contact form validation |
-| Testing | Vitest + Testing Library | Unit and component tests |
-| Package manager | pnpm 10 | Dependencies and scripts |
-| Hosting | Vercel or any static host | `dist/` static output |
+| Layer           | Technology                     | Purpose                           |
+| --------------- | ------------------------------ | --------------------------------- |
+| Framework       | Next.js 15 (App Router)        | Pages, routing, static export     |
+| Language        | TypeScript 5                   | Type-safe application code        |
+| UI              | React 19 + Tailwind CSS 4      | Components and design system      |
+| Animation       | framer-motion + custom reveals | Mobile menu and scroll animations |
+| Forms           | react-hook-form + Zod          | Contact form validation           |
+| Testing         | Vitest + Testing Library       | Unit and component tests          |
+| Package manager | pnpm 10                        | Dependencies and scripts          |
+| Hosting         | Vercel or any static host      | `dist/` static output             |
 
 ## Project Structure
 
@@ -129,15 +129,15 @@ Copy the template and edit the values:
 cp .env.example .env.local
 ```
 
-| Variable | Purpose | Required |
-| --- | --- | --- |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Business WhatsApp number with country code | Yes |
-| `NEXT_PUBLIC_BUSINESS_EMAIL` | Contact email used in the footer and contact page | Yes |
-| `NEXT_PUBLIC_BUSINESS_LOCATION` | Shop location shown across the site | Yes |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL for SEO and the sitemap | Yes |
-| `NEXT_PUBLIC_MAPS_EMBED_URL` | Google Maps embed URL for the contact page | Optional |
-| `NEXT_PUBLIC_WHATSAPP_GROUP` | WhatsApp group invite link | Placeholder |
-| `NEXT_PUBLIC_WHATSAPP_CHANNEL` | WhatsApp channel link | Placeholder |
+| Variable                        | Purpose                                           | Required    |
+| ------------------------------- | ------------------------------------------------- | ----------- |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER`   | Business WhatsApp number with country code        | Yes         |
+| `NEXT_PUBLIC_BUSINESS_EMAIL`    | Contact email used in the footer and contact page | Yes         |
+| `NEXT_PUBLIC_BUSINESS_LOCATION` | Shop location shown across the site               | Yes         |
+| `NEXT_PUBLIC_SITE_URL`          | Canonical site URL for SEO and the sitemap        | Yes         |
+| `NEXT_PUBLIC_MAPS_EMBED_URL`    | Google Maps embed URL for the contact page        | Optional    |
+| `NEXT_PUBLIC_WHATSAPP_GROUP`    | WhatsApp group invite link                        | Placeholder |
+| `NEXT_PUBLIC_WHATSAPP_CHANNEL`  | WhatsApp channel link                             | Placeholder |
 
 `.env.local` is gitignored and never committed.
 
@@ -151,15 +151,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Script | Command | What it does |
-| --- | --- | --- |
-| dev | `pnpm dev` | Start the development server with Turbopack |
-| build | `pnpm build` | Static export to `dist/`, then generate `sitemap.xml` |
-| preview | `pnpm preview` | Serve the built `dist/` locally via `npx serve` |
-| test:ci | `pnpm test:ci` | Run the full Vitest suite once |
-| type-check | `pnpm type-check` | Run TypeScript without emitting |
-| lint | `pnpm lint` | Run ESLint |
-| format:check | `pnpm format:check` | Verify Prettier formatting |
+| Script       | Command             | What it does                                          |
+| ------------ | ------------------- | ----------------------------------------------------- |
+| dev          | `pnpm dev`          | Start the development server with Turbopack           |
+| build        | `pnpm build`        | Static export to `dist/`, then generate `sitemap.xml` |
+| preview      | `pnpm preview`      | Serve the built `dist/` locally via `npx serve`       |
+| test:ci      | `pnpm test:ci`      | Run the full Vitest suite once                        |
+| type-check   | `pnpm type-check`   | Run TypeScript without emitting                       |
+| lint         | `pnpm lint`         | Run ESLint                                            |
+| format:check | `pnpm format:check` | Verify Prettier formatting                            |
 
 ## Build and Deploy
 
@@ -181,16 +181,16 @@ client-side.
 The documentation set lives in [`docs/`](docs/), with
 [`architecture.md`](docs/architecture.md) as the index.
 
-| Document | Purpose |
-| --- | --- |
-| [architecture.md](docs/architecture.md) | Index, decisions, data model, route map |
-| [Tuju_Outspan_PRD.md](docs/Tuju_Outspan_PRD.md) | Product requirements and page content |
-| [design.md](docs/design.md) | Design system, spacing, motion, accessibility |
-| [color-palette.md](docs/color-palette.md) | Brand colors and usage rules |
-| [tech-stack.md](docs/tech-stack.md) | Versions, configuration, commands |
-| [project-structure.md](docs/project-structure.md) | Canonical file tree and responsibilities |
-| [image-assets.md](docs/image-assets.md) | Image inventory, dimensions, formats |
-| [deliverables-checklist.md](docs/deliverables-checklist.md) | Open items and launch checklist |
+| Document                                                    | Purpose                                       |
+| ----------------------------------------------------------- | --------------------------------------------- |
+| [architecture.md](docs/architecture.md)                     | Index, decisions, data model, route map       |
+| [Tuju_Outspan_PRD.md](docs/Tuju_Outspan_PRD.md)             | Product requirements and page content         |
+| [design.md](docs/design.md)                                 | Design system, spacing, motion, accessibility |
+| [color-palette.md](docs/color-palette.md)                   | Brand colors and usage rules                  |
+| [tech-stack.md](docs/tech-stack.md)                         | Versions, configuration, commands             |
+| [project-structure.md](docs/project-structure.md)           | Canonical file tree and responsibilities      |
+| [image-assets.md](docs/image-assets.md)                     | Image inventory, dimensions, formats          |
+| [deliverables-checklist.md](docs/deliverables-checklist.md) | Open items and launch checklist               |
 
 ## License
 
