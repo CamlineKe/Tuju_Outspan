@@ -19,6 +19,7 @@ The source documents remain the owners of their subject matter:
 | Question | Open | What it contains |
 |---|---|---|
 | How do I set up and run the project? | `README.md` (repository root) | Clone or zip setup, install, env vars, scripts, deploy |
+| How do I deploy to Vercel and validate it? | `docs/vercel-deployment.md` | Import settings, env vars, route validation, rollback |
 | Why does this site exist? What pages and content? | `Tuju_Outspan_PRD.md` | Business goals, 14 pages, section content, WhatsApp strategy, launch checklist |
 | What are the exact colors and rules? | `color-palette.md` | Token values, color usage rules, contrast data |
 | How should components look and move? | `design.md` | Typography, spacing, components, motion, accessibility, SEO patterns |

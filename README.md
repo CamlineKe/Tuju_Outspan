@@ -186,6 +186,9 @@ Because the site is a static export, there are no API routes and no server-side
 features. WhatsApp, the contact form, blog filters, and the mobile menu all run
 client-side.
 
+To deploy on Vercel with the correct import settings, environment variables,
+and route validation, follow the [Vercel deployment guide](docs/vercel-deployment.md).
+
 ## Documentation
 
 The documentation set lives in [`docs/`](docs/), with
@@ -201,6 +204,7 @@ The documentation set lives in [`docs/`](docs/), with
 | [project-structure.md](docs/project-structure.md)           | Canonical file tree and responsibilities      |
 | [image-assets.md](docs/image-assets.md)                     | Image inventory, dimensions, formats          |
 | [deliverables-checklist.md](docs/deliverables-checklist.md) | Open items and launch checklist               |
+| [vercel-deployment.md](docs/vercel-deployment.md)           | Import settings, env vars, validation         |
 
 ## License
 

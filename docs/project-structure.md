@@ -119,6 +119,7 @@ tuju-outspan-website/
 │   ├── image-assets.md
 │   ├── project-structure.md
 │   ├── tech-stack.md
+│   ├── vercel-deployment.md
 │   └── Tuju_Outspan_PRD.md
 ├── eslint.config.mjs
 ├── next.config.ts
@@ -144,6 +145,7 @@ tuju-outspan-website/
 │   ├── generate-sitemap.mjs
 │   └── sitemap-utils.mjs
 ├── tsconfig.json
+├── vercel.json
 └── vitest.config.ts
 ```
 
@@ -204,6 +206,7 @@ The documentation set. Each file owns one topic; `architecture.md` is the index.
 | `postcss.config.mjs` | Tailwind v4 PostCSS plugin |
 | `eslint.config.mjs` | ESLint flat config |
 | `.prettierrc` | Prettier with Tailwind and import sorting |
+| `vercel.json` | Vercel project config: framework preset and trailing-slash redirects |
 | `vitest.config.ts` | jsdom test environment |
 | `.env.example`, `.env.local` | Public environment variables |
 
