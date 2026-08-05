@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 
-import { Check, Link2, MessageCircle } from 'lucide-react';
+import { Check, Link2 } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import { absolutePageUrl } from '@/app/lib/utils/seo';
 import { buildWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -36,7 +37,7 @@ export default function PostShare({ title, slug }: PostShareProps) {
         variant="outline"
         size="small"
       >
-        <MessageCircle className="h-4 w-4" aria-hidden="true" />
+        <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
         Share on WhatsApp
       </Button>
       <Button variant="outline" size="small" onClick={onCopy}>

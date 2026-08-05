@@ -1,5 +1,4 @@
-import { MessageCircle } from 'lucide-react';
-
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import SectionHeader from '@/app/components/ui/SectionHeader';
@@ -24,7 +23,7 @@ export default function ServicesGrid() {
           ))}
           <Reveal className="h-full" delay={serviceCategories.length * 100}>
             <div className="flex h-full flex-col justify-center rounded-xl border border-orange-200 bg-orange-50 p-7">
-              <MessageCircle className="h-8 w-8 text-orange-500" aria-hidden="true" />
+              <WhatsAppIcon className="h-8 w-8 text-orange-500" aria-hidden="true" />
               <h3 className="mt-4 text-xl font-semibold text-navy-900">
                 Can&apos;t Find What You Need?
               </h3>
@@ -35,7 +34,7 @@ export default function ServicesGrid() {
                   variant="outline"
                   className="w-full"
                 >
-                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
                   Ask on WhatsApp
                 </Button>
               </div>

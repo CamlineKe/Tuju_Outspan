@@ -7,8 +7,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, MessageCircle, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import { cn } from '@/app/lib/utils/cn';
 import { buildContextualWhatsAppLink, getWhatsAppContextForPath } from '@/app/lib/utils/whatsapp';
 
@@ -152,7 +153,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-[10px] bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:inline-flex"
           >
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
             WhatsApp
           </Link>
           <button
@@ -222,7 +223,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center gap-2 rounded-[10px] bg-orange-500 px-5 py-3.5 font-semibold text-white transition-colors hover:bg-orange-600"
               >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
                 Chat on WhatsApp
               </Link>
             </div>

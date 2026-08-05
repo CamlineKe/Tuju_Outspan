@@ -3,8 +3,8 @@
 import { useForm } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { MessageCircle } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import Input from '@/app/components/ui/Input';
 import { serviceCategories } from '@/app/lib/data/services';
@@ -107,7 +107,7 @@ export default function ContactForm() {
         )}
       </div>
       <Button type="submit" className="w-full sm:col-span-2">
-        <MessageCircle className="h-5 w-5" aria-hidden="true" />
+        <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
         Send Message
       </Button>
     </form>

@@ -1,5 +1,6 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -23,7 +24,7 @@ export default function Hero() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href={buildContextualWhatsAppLink('hero')} size="large">
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
             Chat on WhatsApp
           </Button>
           <Button href="/services" variant="outline-light" size="large">

@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import { cn } from '@/app/lib/utils/cn';
 import { buildContextualWhatsAppLink, getWhatsAppContextForPath } from '@/app/lib/utils/whatsapp';
 
@@ -46,7 +46,7 @@ export default function WhatsAppFloat() {
         hideOnMobile && 'hidden md:flex'
       )}
     >
-      <MessageCircle className="h-7 w-7" aria-hidden="true" />
+      <WhatsAppIcon className="h-7 w-7" aria-hidden="true" />
       <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
         Chat with us
       </span>

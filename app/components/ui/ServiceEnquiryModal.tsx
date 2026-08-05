@@ -3,8 +3,9 @@
 import { useEffect, useRef } from 'react';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import type { ServiceItem } from '@/app/lib/data/services';
 import { buildServiceEnquiryLink } from '@/app/lib/utils/whatsapp';
@@ -151,7 +152,7 @@ export default function ServiceEnquiryModal({
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row-reverse">
             <Button href={buildServiceEnquiryLink(service)} className="flex-1">
-              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
               Enquire on WhatsApp
             </Button>
             <Button variant="outline" onClick={onClose} className="flex-1">

@@ -1,5 +1,4 @@
-import { MessageCircle } from 'lucide-react';
-
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
 import { buildContextualWhatsAppLink } from '@/app/lib/utils/whatsapp';
@@ -20,7 +19,7 @@ export default function CTABanner() {
             size="large"
             className="bg-white text-navy-900 hover:bg-white/90"
           >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
             Chat on WhatsApp
           </Button>
         </div>

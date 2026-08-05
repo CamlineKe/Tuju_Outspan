@@ -3,8 +3,9 @@
 import { useState } from 'react';
 
 import { AnimatePresence } from 'framer-motion';
-import { Check, MessageCircle } from 'lucide-react';
+import { Check } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Button from '@/app/components/ui/Button';
 import ServiceEnquiryModal from '@/app/components/ui/ServiceEnquiryModal';
 import type { ServiceCategory, ServiceItem } from '@/app/lib/data/services';
@@ -38,7 +39,7 @@ export default function ServiceEnquiryList({ category }: ServiceEnquiryListProps
               aria-haspopup="dialog"
               className="mt-4 self-start"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
               Enquire
             </Button>
           </li>

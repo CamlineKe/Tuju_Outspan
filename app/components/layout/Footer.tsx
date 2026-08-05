@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Clock, Mail, MapPin, Megaphone, MessageCircle, Phone } from 'lucide-react';
+import { Clock, Mail, MapPin, Megaphone, Phone } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import { serviceCategories } from '@/app/lib/data/services';
 
 const QUICK_LINKS = [
@@ -105,7 +106,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-navy-800 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" aria-hidden="true" />
                 WhatsApp Group
               </a>
             )}

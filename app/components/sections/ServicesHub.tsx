@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from 'react';
 
-import { MessageCircle, Search, SearchX, X } from 'lucide-react';
+import { Search, SearchX, X } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
 import Button from '@/app/components/ui/Button';
 import Reveal from '@/app/components/ui/Reveal';
@@ -121,7 +122,7 @@ export default function ServicesHub() {
             <p className="mt-2 text-gray-600">We probably do it. Just ask.</p>
           </div>
           <Button href={buildContextualWhatsAppLink('services-catch-all')}>
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
             Ask on WhatsApp
           </Button>
         </div>

@@ -5,11 +5,11 @@ import {
   Mail,
   MapPin,
   Megaphone,
-  MessageCircle,
   Phone,
   Users,
 } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/app/components/icons/WhatsAppIcon';
 import ContactForm from '@/app/components/sections/ContactForm';
 import ContactInfo from '@/app/components/sections/ContactInfo';
 import Breadcrumb from '@/app/components/ui/Breadcrumb';
@@ -78,7 +78,7 @@ export default function ContactPage() {
           <Reveal className="h-full">
             <div className="flex h-full flex-col rounded-2xl border-2 border-whatsapp bg-white p-8 shadow-[0_8px_32px_rgba(37,211,102,0.15)] md:p-10">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp/10">
-                <MessageCircle className="h-7 w-7 text-whatsapp" aria-hidden="true" />
+                <WhatsAppIcon className="h-7 w-7 text-whatsapp" aria-hidden="true" />
               </div>
               <h2 className="mt-5 text-2xl font-bold text-navy-900">Chat with Us on WhatsApp</h2>
               <p className="mt-3 text-[28px] font-bold text-navy-900">0715 616 633</p>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   variant="whatsapp"
                   className="w-full"
                 >
-                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
                   Start Chat
                 </Button>
               </div>
